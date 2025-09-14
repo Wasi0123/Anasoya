@@ -1,9 +1,561 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<title>foobar</title>
-	</head>
-	<body>
-		<div>foobar</div>
-	</body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grilling Services - Grillardes Anna Soya</title>
+    <style>
+        /* Brand Color Variables */
+        :root {
+            --burgundy: #8B0000;
+            --gold: #FFD700;
+            --charcoal: #1C1C1C;
+            --white: #FFFFFF;
+        }
+        
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Open Sans', sans-serif;
+        }
+        
+        body {
+            background-color: var(--white);
+            color: var(--charcoal);
+            line-height: 1.6;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            color: var(--burgundy);
+            margin-bottom: 1rem;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 0;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--burgundy);
+            color: var(--white);
+            padding: 12px 24px;
+            border: none;
+            border-radius: 4px;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .btn:hover {
+            background-color: var(--gold);
+            color: var(--charcoal);
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: var(--charcoal);
+            padding: 1rem 0;
+        }
+        
+        .logo {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--gold);
+            text-decoration: none;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('grill-hero.jpg');
+            background-size: cover;
+            background-position: center;
+            color: var(--white);
+            text-align: center;
+            padding: 5rem 1rem;
+        }
+        
+        .hero h1 {
+            font-size: 2.5rem;
+            color: var(--white);
+            margin-bottom: 1.5rem;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+        }
+        
+        /* Services Section */
+        .services-intro {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .packages {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+            margin-bottom: 3rem;
+        }
+        
+        .package-card {
+            background-color: var(--white);
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 2rem;
+            flex: 1;
+            min-width: 300px;
+            max-width: 350px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .package-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .package-card h3 {
+            color: var(--burgundy);
+            border-bottom: 2px solid var(--gold);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .price {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--burgundy);
+            margin: 1rem 0;
+        }
+        
+        .features {
+            list-style-type: none;
+            margin: 1.5rem 0;
+        }
+        
+        .features li {
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        
+        .features li:before {
+            content: "✓";
+            color: var(--gold);
+            position: absolute;
+            left: 0;
+        }
+        
+        /* Booking Form Section */
+        .booking {
+            background-color: #f9f9f9;
+            padding: 4rem 0;
+        }
+        
+        .booking-form {
+            background-color: var(--white);
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+        
+        textarea.form-control {
+            min-height: 120px;
+            resize: vertical;
+        }
+        
+        /* Testimonials Section */
+        .testimonials {
+            padding: 4rem 0;
+            text-align: center;
+        }
+        
+        .testimonial-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+        
+        .testimonial-card {
+            background-color: var(--white);
+            border-radius: 8px;
+            padding: 1.5rem;
+            flex: 1;
+            min-width: 300px;
+            max-width: 350px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+        
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--burgundy);
+        }
+        
+        /* FAQ Section */
+        .faq {
+            background-color: #f9f9f9;
+            padding: 4rem 0;
+        }
+        
+        .faq-item {
+            margin-bottom: 1.5rem;
+            background-color: var(--white);
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+        
+        .faq-question {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--burgundy);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--charcoal);
+            color: var(--white);
+            padding: 3rem 0 1.5rem;
+            text-align: center;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-section {
+            flex: 1;
+            min-width: 250px;
+            margin-bottom: 1.5rem;
+        }
+        
+        .footer-section h3 {
+            color: var(--gold);
+            margin-bottom: 1rem;
+        }
+        
+        .social-links a {
+            color: var(--white);
+            margin-right: 1rem;
+            font-size: 1.5rem;
+            text-decoration: none;
+        }
+        
+        .copyright {
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .package-card {
+                min-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo">Grillardes Anna Soya</a>
+            <!-- Navigation would go here -->
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Professional Grilling Services</h1>
+            <p>Elevate your events with our expert grill masters and premium quality ingredients. From intimate gatherings to large corporate events, we bring the authentic taste of grilled perfection to you.</p>
+            <a href="#booking" class="btn">Book Now</a>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="container">
+        <div class="services-intro">
+            <h2>Our Service Packages</h2>
+            <p>We offer flexible packages to suit events of all sizes. All packages include our expert grill masters, premium equipment, and the highest quality ingredients.</p>
+        </div>
+
+        <div class="packages">
+            <!-- Basic Package -->
+            <div class="package-card">
+                <h3>Basic Event Package</h3>
+                <p>Perfect for small gatherings and intimate events</p>
+                <div class="price">$350</div>
+                <ul class="features">
+                    <li>Up to 3 hours of service</li>
+                    <li>Serves up to 25 guests</li>
+                    <li>2 grill masters</li>
+                    <li>Basic grilling equipment</li>
+                    <li>3 protein options</li>
+                    <li>2 side dishes</li>
+                </ul>
+                <a href="#booking" class="btn">Select Package</a>
+            </div>
+
+            <!-- Standard Package -->
+            <div class="package-card">
+                <h3>Standard Event Package</h3>
+                <p>Our most popular choice for medium-sized events</p>
+                <div class="price">$650</div>
+                <ul class="features">
+                    <li>Up to 5 hours of service</li>
+                    <li>Serves up to 50 guests</li>
+                    <li>3 grill masters</li>
+                    <li>Premium grilling equipment</li>
+                    <li>4 protein options</li>
+                    <li>3 side dishes</li>
+                    <li>Custom spice blends</li>
+                </ul>
+                <a href="#booking" class="btn">Select Package</a>
+            </div>
+
+            <!-- Premium Package -->
+            <div class="package-card">
+                <h3>Premium Event Package</h3>
+                <p>The ultimate grilling experience for large events</p>
+                <div class="price">$1,200</div>
+                <ul class="features">
+                    <li>Full day service (up to 8 hours)</li>
+                    <li>Serves up to 100 guests</li>
+                    <li>4 grill masters</li>
+                    <li>Professional-grade equipment</li>
+                    <li>5 protein options</li>
+                    <li>4 side dishes</li>
+                    <li>Custom spice blends</li>
+                    <li>Complimentary spice gift sets</li>
+                </ul>
+                <a href="#booking" class="btn">Select Package</a>
+            </div>
+        </div>
+
+        <div class="services-intro">
+            <p>Don't see what you're looking for? We offer custom packages tailored to your specific needs. <a href="#booking">Request a custom quote</a>.</p>
+        </div>
+    </section>
+
+    <!-- Booking Form Section -->
+    <section id="booking" class="booking">
+        <div class="container">
+            <h2 class="text-center">Book Our Grilling Services</h2>
+            <p class="text-center">Fill out the form below and we'll get back to you within 24 hours to confirm your booking.</p>
+            
+            <div class="booking-form">
+                <form id="booking-form">
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" class="form-control" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" class="form-control" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" class="form-control" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="event-type">Event Type</label>
+                        <select id="event-type" class="form-control" required>
+                            <option value="">Select Event Type</option>
+                            <option value="wedding">Wedding</option>
+                            <option value="corporate">Corporate Event</option>
+                            <option value="birthday">Birthday Party</option>
+                            <option value="family">Family Gathering</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="event-date">Event Date</label>
+                        <input type="date" id="event-date" class="form-control" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="guests">Number of Guests</label>
+                        <input type="number" id="guests" class="form-control" min="10" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="package">Preferred Package</label>
+                        <select id="package" class="form-control">
+                            <option value="">Select a Package</option>
+                            <option value="basic">Basic Event Package ($350)</option>
+                            <option value="standard">Standard Event Package ($650)</option>
+                            <option value="premium">Premium Event Package ($1,200)</option>
+                            <option value="custom">Custom Package (Quote Required)</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Additional Information</label>
+                        <textarea id="message" class="form-control" placeholder="Tell us about your event, dietary restrictions, or special requests"></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn">Submit Booking Request</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <h2>What Our Clients Say</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"Anna Soya's team made our corporate event unforgettable. The food was exceptional, and their professionalism was outstanding."</p>
+                    <p class="testimonial-author">- Marc Tremblay, Tech Solutions Inc.</p>
+                </div>
+                
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"We hired Grillardes Anna Soya for our wedding reception, and it was the best decision we made. The flavors were incredible!"</p>
+                    <p class="testimonial-author">- Sophie and Jean, Montreal</p>
+                </div>
+                
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"The spices and marinades took our company picnic to another level. Everyone is still talking about it weeks later."</p>
+                    <p class="testimonial-author">- Lisa Chen, Marketing Director</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq">
+        <div class="container">
+            <h2 class="text-center">Frequently Asked Questions</h2>
+            
+            <div class="faq-item">
+                <h3 class="faq-question">How far in advance should I book your services?</h3>
+                <p>We recommend booking at least 2-3 weeks in advance for smaller events and 4-6 weeks for larger events or during peak season (May-September).</p>
+            </div>
+            
+            <div class="faq-item">
+                <h3 class="faq-question">What areas do you serve?</h3>
+                <p>We primarily serve Montreal and surrounding areas. Additional travel fees may apply for events outside our standard service area.</p>
+            </div>
+            
+            <div class="faq-item">
+                <h3 class="faq-question">Do you provide utensils, plates, and serving equipment?</h3>
+                <p>Our packages include grilling equipment and serving tools for the food we prepare. We can provide disposable plates and utensils for an additional fee, or you may choose to provide your own.</p>
+            </div>
+            
+            <div class="faq-item">
+                <h3 class="faq-question">Can you accommodate dietary restrictions?</h3>
+                <p>Yes, we can accommodate various dietary restrictions with advance notice. Please include any special requirements in your booking form.</p>
+            </div>
+            
+            <div class="faq-item">
+                <h3 class="faq-question">What is your cancellation policy?</h3>
+                <p>We require a 50% deposit to secure your booking. Cancellations made more than 14 days before the event will receive a full refund. Cancellations within 7-14 days receive a 50% refund. No refunds for cancellations within 7 days of the event.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <p>Email: info@annasoya.com</p>
+                    <p>Phone: (514) 123-4567</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Follow Us</h3>
+                    <div class="social-links">
+                        <a href="#">Instagram</a>
+                        <a href="#">Facebook</a>
+                        <a href="#">Twitter</a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Hours</h3>
+                    <p>Monday-Friday: 9am-5pm</p>
+                    <p>Weekends: By appointment only</p>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 Grillardes Anna Soya. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple form validation
+        document.getElementById('booking-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Basic validation
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const date = document.getElementById('event-date').value;
+            
+            if (!name || !email || !date) {
+                alert('Please fill out all required fields.');
+                return;
+            }
+            
+            // If validation passes, show success message (in a real implementation, this would submit to a server)
+            alert('Thank you for your booking request! We will contact you within 24 hours to confirm your event details.');
+            this.reset();
+        });
+    </script>
+</body>
 </html>
