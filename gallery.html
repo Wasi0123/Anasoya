@@ -132,6 +132,7 @@
         .nav-menu {
             display: flex;
             list-style: none;
+            align-items: center;
         }
         
         .nav-menu li {
@@ -158,6 +159,26 @@
             background: none;
             border: none;
             cursor: pointer;
+        }
+        
+        /* Language Toggle Button */
+        .language-toggle {
+            background: none;
+            border: 2px solid var(--gold);
+            color: var(--white);
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            margin-left: 15px;
+        }
+        
+        .language-toggle:hover {
+            background-color: var(--gold);
+            color: var(--charcoal);
         }
         
         /* Page Header */
@@ -392,6 +413,8 @@
         
         .footer-links {
             list-style: none;
+            margin: 0;
+            padding: 0;
         }
         
         .footer-links li {
@@ -492,7 +515,7 @@
             }
         }
         
-        @media (max-width: 768px) {
+        @media (max-width: 868px) {
             h1 {
                 font-size: 2.2rem;
             }
@@ -512,6 +535,7 @@
                 transition: left 0.3s ease;
                 padding: 40px 20px;
                 z-index: 999;
+                overflow-y: auto;
             }
             
             .nav-menu.active {
@@ -553,6 +577,13 @@
             .gallery-item {
                 height: 250px;
             }
+            
+            .language-toggle {
+                margin: 15px 0;
+                order: 3;
+                width: 100%;
+                text-align: center;
+            }
         }
         
         @media (max-width: 576px) {
@@ -591,12 +622,14 @@
                 <i class="fas fa-bars"></i>
             </button>
             <ul class="nav-menu">
-                <li><a href="./index.html">Home</a></li>
-                <li><a href="./about.html">About Us</a></li>
-                <li><a href="./services.html">Services</a></li>
-                <li><a href="./gallery.html">Gallery</a></li>
-                <li><a href="./contact.html">Contact</a></li>
-
+                <li><a href="./index.html" data-en="Home" data-fr="Accueil">Home</a></li>
+                <li><a href="./about.html" data-en="About Us" data-fr="À Propos">About Us</a></li>
+                <li><a href="./services.html" data-en="Services" data-fr="Services">Services</a></li>
+                <li><a href="./gallery.html" data-en="Gallery" data-fr="Galerie">Gallery</a></li>
+                <li><a href="./contact.html" data-en="Contact" data-fr="Contact">Contact</a></li>
+                <li>
+                    <button class="language-toggle" id="languageToggle">FR</button>
+                </li>
             </ul>
         </div>
     </header>
@@ -604,26 +637,25 @@
     <!-- Page Header -->
     <section class="page-header">
         <div class="container">
-            <h1>Our <span>Gallery</span></h1>
-            <p>Explore mouth-watering images of our premium soya, signature spices, and memorable grilling events</p>
+            <h1 data-en="Our Gallery" data-fr="Notre Galerie">Our <span>Gallery</span></h1>
+            <p data-en="Explore mouth-watering images of our premium soya, signature spices, and memorable grilling events" data-fr="Découvrez des images alléchantes de notre soya premium, nos épices signature et nos événements de grillade mémorables">Explore mouth-watering images of our premium soya, signature spices, and memorable grilling events</p>
         </div>
     </section>
 
     <!-- Gallery Section -->
-     <!-- Gallery Section -->
-	 <section class="gallery-section" id="spicee">
+    <section class="gallery-section" id="spicee">
         <div class="container">
             <div class="section-title">
-                <h2>Delicious Moments</h2>
-                <p>Browse through our collection of culinary masterpieces and memorable events</p>
+                <h2 data-en="Delicious Moments" data-fr="Moments Délicieux">Delicious Moments</h2>
+                <p data-en="Browse through our collection of culinary masterpieces and memorable events" data-fr="Parcourez notre collection de chefs-d'œuvre culinaires et d'événements mémorables">Browse through our collection of culinary masterpieces and memorable events</p>
             </div>
             
             <div class="gallery-filters">
-                <button class="filter-btn active" data-filter="all">All</button>
-                <button class="filter-btn" data-filter="soya">Soya Dishes</button>
-                <button class="filter-btn" data-filter="spices">Spices</button>
-                <button class="filter-btn" data-filter="events">Events</button>
-                <button class="filter-btn" data-filter="grilling">Grilling</button>
+                <button class="filter-btn active" data-filter="all" data-en="All" data-fr="Tous">All</button>
+                <button class="filter-btn" data-filter="soya" data-en="Soya Dishes" data-fr="Plats de Soya">Soya Dishes</button>
+                <button class="filter-btn" data-filter="spices" data-en="Spices" data-fr="Épices">Spices</button>
+                <button class="filter-btn" data-filter="events" data-en="Events" data-fr="Événements">Events</button>
+                <button class="filter-btn" data-filter="grilling" data-en="Grilling" data-fr="Grillade">Grilling</button>
             </div>
             
             <div class="gallery-grid">
@@ -631,48 +663,48 @@
                 <div class="gallery-item" data-category="soya">
                     <img src="./g1.jpeg" alt="Premium Soya Tray" class="gallery-img">
                     <div class="gallery-overlay">
-                        <h3 class="gallery-title">Premium Soya Tray</h3>
-                        <p class="gallery-desc">Our signature soya served with roasted vegetables</p>
+                        <h3 class="gallery-title" data-en="Premium Soya Tray" data-fr="Plateau de Soya Premium">Premium Soya Tray</h3>
+                        <p class="gallery-desc" data-en="Our signature soya served with roasted vegetables" data-fr="Notre soya signature servi avec des légumes rôtis">Our signature soya served with roasted vegetables</p>
                     </div>
                 </div>
                 
                 <div class="gallery-item" data-category="soya">
                     <img src="./g0.jpeg" alt="Gourmet Soya Plate" class="gallery-img">
                     <div class="gallery-overlay">
-                        <h3 class="gallery-title">Gourmet Soya Plate</h3>
-                        <p class="gallery-desc">Tender soya slices with garlic mashed potatoes</p>
+                        <h3 class="gallery-title" data-en="Gourmet Soya Plate" data-fr="Assiette Gourmet Soya">Gourmet Soya Plate</h3>
+                        <p class="gallery-desc" data-en="Tender soya slices with garlic mashed potatoes" data-fr="Tranches de soya tendres avec purée de pommes de terre à l'ail">Tender soya slices with garlic mashed potatoes</p>
                     </div>
                 </div>
                 
                 <div class="gallery-item" data-category="soya">
                     <img src="./g3.jpeg" alt="Soya Snack Cup" class="gallery-img">
                     <div class="gallery-overlay">
-                        <h3 class="gallery-title">Soya Snack Cup</h3>
-                        <p class="gallery-desc">Perfect for on-the-go enjoyment</p>
+                        <h3 class="gallery-title" data-en="Soya Snack Cup" data-fr="Coupe-Collation Soya">Soya Snack Cup</h3>
+                        <p class="gallery-desc" data-en="Perfect for on-the-go enjoyment" data-fr="Parfait pour une dégustation sur le pouce">Perfect for on-the-go enjoyment</p>
                     </div>
                 </div>
                 
                 <div class="gallery-item" data-category="soya">
                     <img src="./g4.jpeg" alt="Soya Platter" class="gallery-img">
                     <div class="gallery-overlay">
-                        <h3 class="gallery-title">Soya Platter</h3>
-                        <p class="gallery-desc">Perfect for sharing with family and friends</p>
+                        <h3 class="gallery-title" data-en="Soya Platter" data-fr="Plateau de Soya">Soya Platter</h3>
+                        <p class="gallery-desc" data-en="Perfect for sharing with family and friends" data-fr="Parfait pour partager avec la famille et les amis">Perfect for sharing with family and friends</p>
                     </div>
                 </div>
                 
                 <div class="gallery-item" data-category="soya">
                     <img src="./g5.jpeg" alt="Soya Grill" class="gallery-img">
                     <div class="gallery-overlay">
-                        <h3 class="gallery-title">Soya Grill</h3>
-                        <p class="gallery-desc">Fresh off the grill with our signature spices</p>
+                        <h3 class="gallery-title" data-en="Soya Grill" data-fr="Grillade de Soya">Soya Grill</h3>
+                        <p class="gallery-desc" data-en="Fresh off the grill with our signature spices" data-fr="Fraîchement sorti du grill avec nos épices signature">Fresh off the grill with our signature spices</p>
                     </div>
                 </div>
                 
                 <div class="gallery-item" data-category="soya">
                     <img src="./g6.jpeg" alt="Soya Feast" class="gallery-img">
                     <div class="gallery-overlay">
-                        <h3 class="gallery-title">Soya Feast</h3>
-                        <p class="gallery-desc">A complete meal with sides and sauces</p>
+                        <h3 class="gallery-title" data-en="Soya Feast" data-fr="Festin de Soya">Soya Feast</h3>
+                        <p class="gallery-desc" data-en="A complete meal with sides and sauces" data-fr="Un repas complet avec accompagnements et sauces">A complete meal with sides and sauces</p>
                     </div>
                 </div>
                 
@@ -680,48 +712,48 @@
                 <div class="gallery-item" data-category="spices">
                     <img src="./gs2.jpeg" alt="Signature Spice Collection" class="gallery-img">
                     <div class="gallery-overlay">
-                        <h3 class="gallery-title">Signature Spice Collection</h3>
-                        <p class="gallery-desc">Our handcrafted spice blends</p>
+                        <h3 class="gallery-title" data-en="Signature Spice Collection" data-fr="Collection d'Épices Signature">Signature Spice Collection</h3>
+                        <p class="gallery-desc" data-en="Our handcrafted spice blends" data-fr="Nos mélanges d'épices artisanaux">Our handcrafted spice blends</p>
                     </div>
                 </div>
                 
                 <div class="gallery-item" data-category="spices">
                     <img src="./gs1.jpeg" alt="Fish Marinade Spice" class="gallery-img">
                     <div class="gallery-overlay">
-                        <h3 class="gallery-title">Fish Marinade Magic</h3>
-                        <p class="gallery-desc">Perfect for grilling salmon and other fish</p>
+                        <h3 class="gallery-title" data-en="Fish Marinade Magic" data-fr="Magie de Marinade pour Poisson">Fish Marinade Magic</h3>
+                        <p class="gallery-desc" data-en="Perfect for grilling salmon and other fish" data-fr="Parfait pour griller le saumon et autres poissons">Perfect for grilling salmon and other fish</p>
                     </div>
                 </div>
                 
                 <div class="gallery-item" data-category="spices">
                     <img src="./gs4.jpeg" alt="Ultimate Grill Master Kit" class="gallery-img">
                     <div class="gallery-overlay">
-                        <h3 class="gallery-title">Ultimate Grill Master Kit</h3>
-                        <p class="gallery-desc">Everything you need for the perfect barbecue</p>
+                        <h3 class="gallery-title" data-en="Ultimate Grill Master Kit" data-fr="Kit Ultime du Maître Grilleur">Ultimate Grill Master Kit</h3>
+                        <p class="gallery-desc" data-en="Everything you need for the perfect barbecue" data-fr="Tout ce dont vous avez besoin pour le barbecue parfait">Everything you need for the perfect barbecue</p>
                     </div>
                 </div>
                 
                 <div class="gallery-item" data-category="spices">
                     <img src="./gs3.jpeg" alt="Spice Display" class="gallery-img">
                     <div class="gallery-overlay">
-                        <h3 class="gallery-title">Spice Display</h3>
-                        <p class="gallery-desc">Our colorful array of signature spices</p>
+                        <h3 class="gallery-title" data-en="Spice Display" data-fr="Présentation d'Épices">Spice Display</h3>
+                        <p class="gallery-desc" data-en="Our colorful array of signature spices" data-fr="Notre gamme colorée d'épices signature">Our colorful array of signature spices</p>
                     </div>
                 </div>
                 
                 <div class="gallery-item" data-category="spices">
                     <img src="./gs5.jpeg" alt="Spice Blends" class="gallery-img">
                     <div class="gallery-overlay">
-                        <h3 class="gallery-title">Spice Blends</h3>
-                        <p class="gallery-desc">Custom blends for every grilling need</p>
+                        <h3 class="gallery-title" data-en="Spice Blends" data-fr="Mélanges d'Épices">Spice Blends</h3>
+                        <p class="gallery-desc" data-en="Custom blends for every grilling need" data-fr="Mélanges personnalisés pour tous les besoins de grillade">Custom blends for every grilling need</p>
                     </div>
                 </div>
                 
                 <div class="gallery-item" data-category="spices">
                     <img src="./g9.jpeg" alt="Spice Packaging" class="gallery-img">
                     <div class="gallery-overlay">
-                        <h3 class="gallery-title">Spice Packaging</h3>
-                        <p class="gallery-desc">Beautifully packaged spices ready for delivery</p>
+                        <h3 class="gallery-title" data-en="Spice Packaging" data-fr="Emballage d'Épices">Spice Packaging</h3>
+                        <p class="gallery-desc" data-en="Beautifully packaged spices ready for delivery" data-fr="Épices magnifiquement emballées prêtes pour la livraison">Beautifully packaged spices ready for delivery</p>
                     </div>
                 </div>
                 
@@ -729,48 +761,48 @@
                 <div class="gallery-item" data-category="events">
                     <img src="./gc3.jpeg" alt="Wedding Event" class="gallery-img">
                     <div class="gallery-overlay">
-                        <h3 class="gallery-title">Wedding Celebration</h3>
-                        <p class="gallery-desc">Grilling service for a beautiful wedding reception</p>
+                        <h3 class="gallery-title" data-en="Wedding Celebration" data-fr="Célébration de Mariage">Wedding Celebration</h3>
+                        <p class="gallery-desc" data-en="Grilling service for a beautiful wedding reception" data-fr="Service de grillade pour une belle réception de mariage">Grilling service for a beautiful wedding reception</p>
                     </div>
                 </div>
                 
                 <div class="gallery-item" data-category="events">
                     <img src="https://images.unsplash.com/photo-1544025162-d76694265947?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1169&q=80" alt="Corporate Event" class="gallery-img">
                     <div class="gallery-overlay">
-                        <h3 class="gallery-title">Corporate Event</h3>
-                        <p class="gallery-desc">Professional grilling for company celebrations</p>
+                        <h3 class="gallery-title" data-en="Corporate Event" data-fr="Événement d'Entreprise">Corporate Event</h3>
+                        <p class="gallery-desc" data-en="Professional grilling for company celebrations" data-fr="Grillade professionnelle pour les célébrations d'entreprise">Professional grilling for company celebrations</p>
                     </div>
                 </div>
                 
                 <div class="gallery-item" data-category="events">
                     <img src="./gc1.jpeg" alt="Birthday Party" class="gallery-img">
                     <div class="gallery-overlay">
-                        <h3 class="gallery-title">Birthday Party</h3>
-                        <p class="gallery-desc">Making special occasions even more memorable</p>
+                        <h3 class="gallery-title" data-en="Birthday Party" data-fr="Fête d'Anniversaire">Birthday Party</h3>
+                        <p class="gallery-desc" data-en="Making special occasions even more memorable" data-fr="Rendre les occasions spéciales encore plus mémorables">Making special occasions even more memorable</p>
                     </div>
                 </div>
                 
                 <div class="gallery-item" data-category="events">
                     <img src="https://images.unsplash.com/photo-1532634922-8fe0b757fb13?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1172&q=80" alt="Family Gathering" class="gallery-img">
                     <div class="gallery-overlay">
-                        <h3 class="gallery-title">Family Gathering</h3>
-                        <p class="gallery-desc">Creating memorable moments with loved ones</p>
+                        <h3 class="gallery-title" data-en="Family Gathering" data-fr="Réunion Familiale">Family Gathering</h3>
+                        <p class="gallery-desc" data-en="Creating memorable moments with loved ones" data-fr="Créer des moments mémorables avec les êtres chers">Creating memorable moments with loved ones</p>
                     </div>
                 </div>
                 
                 <div class="gallery-item" data-category="events">
                     <img src="./gc4.jpeg" alt="Festival Grilling" class="gallery-img">
                     <div class="gallery-overlay">
-                        <h3 class="gallery-title">Festival Grilling</h3>
-                        <p class="gallery-desc">Serving crowds at local festivals and events</p>
+                        <h3 class="gallery-title" data-en="Festival Grilling" data-fr="Grillade de Festival">Festival Grilling</h3>
+                        <p class="gallery-desc" data-en="Serving crowds at local festivals and events" data-fr="Servir les foules lors de festivals et événements locaux">Serving crowds at local festivals and events</p>
                     </div>
                 </div>
                 
                 <div class="gallery-item" data-category="events">
                     <img src="https://images.unsplash.com/photo-1467003909585-2f8a72700288?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80" alt="Catering Setup" class="gallery-img">
                     <div class="gallery-overlay">
-                        <h3 class="gallery-title">Catering Setup</h3>
-                        <p class="gallery-desc">Professional setup for any event size</p>
+                        <h3 class="gallery-title" data-en="Catering Setup" data-fr="Installation de Traiteur">Catering Setup</h3>
+                        <p class="gallery-desc" data-en="Professional setup for any event size" data-fr="Installation professionnelle pour tout type d'événement">Professional setup for any event size</p>
                     </div>
                 </div>
                 
@@ -778,92 +810,32 @@
                 <div class="gallery-item" data-category="grilling">
                     <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Grilling Process" class="gallery-img">
                     <div class="gallery-overlay">
-                        <h3 class="gallery-title">Grilling Process</h3>
-                        <p class="gallery-desc">Our expert grill masters at work</p>
-                    </div>
-                </div>
-                
-                <div class="gallery-item" data-category="grilling">
-                    <img src="https://images.unsplash.com/photo-1600891964092-4316c288032e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Grilling Setup" class="gallery-img">
-                    <div class="gallery-overlay">
-                        <h3 class="gallery-title">Professional Setup</h3>
-                        <p class="gallery-desc">Our mobile grilling station</p>
-                    </div>
-                </div>
-                
-                <div class="gallery-item" data-category="grilling">
-                    <img src="./g1.jpeg" alt="Backyard Grilling" class="gallery-img">
-                    <div class="gallery-overlay">
-                        <h3 class="gallery-title">Backyard Grilling</h3>
-                        <p class="gallery-desc">Bringing the restaurant experience to your home</p>
-                    </div>
-                </div>
-                
-                <!-- Spices Images -->
-                <div class="gallery-item" data-category="spices">
-                    <img src="./g12.jpeg" alt="Signature Spice Collection" class="gallery-img">
-                    <div class="gallery-overlay">
-                        <h3 class="gallery-title">Signature Spice Collection</h3>
-                        <p class="gallery-desc">Our handcrafted spice blends</p>
-                    </div>
-                </div>
-                
-               
-                <!-- Events Images -->
-                <div class="gallery-item" data-category="events">
-                    <img src="./gc7.jpeg" alt="Wedding Event" class="gallery-img">
-                    <div class="gallery-overlay">
-                        <h3 class="gallery-title">Wedding Celebration</h3>
-                        <p class="gallery-desc">Grilling service for a beautiful wedding reception</p>
-                    </div>
-                </div>
-                
-                <div class="gallery-item" data-category="events">
-                    <img src="./gc5.jpeg" alt="Corporate Event" class="gallery-img">
-                    <div class="gallery-overlay">
-                        <h3 class="gallery-title">Corporate Event</h3>
-                        <p class="gallery-desc">Professional grilling for company celebrations</p>
-                    </div>
-                </div>
-                
-                <div class="gallery-item" data-category="events">
-                    <img src="./gc9.jpeg" alt="Birthday Party" class="gallery-img">
-                    <div class="gallery-overlay">
-                        <h3 class="gallery-title">Birthday Party</h3>
-                        <p class="gallery-desc">Making special occasions even more memorable</p>
-                    </div>
-                </div>
-                
-                <!-- Grilling Images -->
-                <div class="gallery-item" data-category="grilling">
-                    <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" alt="Grilling Process" class="gallery-img">
-                    <div class="gallery-overlay">
-                        <h3 class="gallery-title">Grilling Process</h3>
-                        <p class="gallery-desc">Our expert grill masters at work</p>
+                        <h3 class="gallery-title" data-en="Grilling Process" data-fr="Processus de Grillade">Grilling Process</h3>
+                        <p class="gallery-desc" data-en="Our expert grill masters at work" data-fr="Nos maîtres grilleurs experts au travail">Our expert grill masters at work</p>
                     </div>
                 </div>
                 
                 <div class="gallery-item" data-category="grilling">
                     <img src="https://images.unsplash.com/photo-1600891964092-4316c288032e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" alt="Grilling Setup" class="gallery-img">
                     <div class="gallery-overlay">
-                        <h3 class="gallery-title">Professional Setup</h3>
-                        <p class="gallery-desc">Our mobile grilling station</p>
+                        <h3 class="gallery-title" data-en="Professional Setup" data-fr="Installation Professionnelle">Professional Setup</h3>
+                        <p class="gallery-desc" data-en="Our mobile grilling station" data-fr="Notre station de grillade mobile">Our mobile grilling station</p>
                     </div>
                 </div>
                 
                 <div class="gallery-item" data-category="grilling">
                     <img src="./g11.jpeg" alt="Backyard Grilling" class="gallery-img">
                     <div class="gallery-overlay">
-                        <h3 class="gallery-title">Backyard Grilling</h3>
-                        <p class="gallery-desc">Bringing the restaurant experience to your home</p>
+                        <h3 class="gallery-title" data-en="Backyard Grilling" data-fr="Grillade dans la Cour">Backyard Grilling</h3>
+                        <p class="gallery-desc" data-en="Bringing the restaurant experience to your home" data-fr="Apportant l'expérience restaurant à votre domicile">Bringing the restaurant experience to your home</p>
                     </div>
                 </div>
                 
                 <div class="gallery-item" data-category="soya">
                     <img src="https://images.unsplash.com/photo-1606755962773-d324e0a13086?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="Soya Platter" class="gallery-img">
                     <div class="gallery-overlay">
-                        <h3 class="gallery-title">Soya Platter</h3>
-                        <p class="gallery-desc">Perfect for sharing with family and friends</p>
+                         <h3 class="gallery-title" data-en="Soya Platter" data-fr="Plateau de Soya">Soya Platter</h3>
+                        <p class="gallery-desc" data-en="Perfect for sharing with family and friends" data-fr="Parfait pour partager avec la famille et les amis">Perfect for sharing with family and friends</p>
                     </div>
                 </div>
                 
@@ -872,8 +844,8 @@
                 <div class="gallery-item" data-category="events">
                     <img src="./g10.jpeg" alt="Family Gathering" class="gallery-img">
                     <div class="gallery-overlay">
-                        <h3 class="gallery-title">Family Gathering</h3>
-                        <p class="gallery-desc">Creating memorable moments with loved ones</p>
+                        <h3 class="gallery-title" data-en="Family Gathering" data-fr="Réunion Familiale">Family Gathering</h3>
+                        <p class="gallery-desc" data-en="Creating memorable moments with loved ones" data-fr="Créer des moments mémorables avec les êtres chers">Creating memorable moments with loved ones</p>
                     </div>
                 </div>
             </div>
@@ -890,11 +862,11 @@
     <!-- CTA Section -->
     <section class="cta-section">
         <div class="container">
-            <h2>Ready to Experience the Best?</h2>
-            <p>Place your order today or book our services for your next event. Taste the difference that quality ingredients and authentic recipes make.</p>
+            <h2 data-en="Ready to Experience the Best?" data-fr="Prêt à Vivre le Meilleur ?">Ready to Experience the Best?</h2>
+            <p data-en="Place your order today or book our services for your next event. Taste the difference that quality ingredients and authentic recipes make." data-fr="Passez votre commande aujourd'hui ou réservez nos services pour votre prochain événement. Goûtez la différence que font des ingrédients de qualité et des recettes authentiques.">Place your order today or book our services for your next event. Taste the difference that quality ingredients and authentic recipes make.</p>
             <div class="hero-buttons">
-                <a href="./contact.html#order-form" class="btn btn-primary">Order Now</a>
-                <a href="./services.html#booking" class="btn btn-secondary">Book for Event</a>
+                <a href="./contact.html#order-form" class="btn btn-primary" data-en="Order Now" data-fr="Commander">Order Now</a>
+                <a href="./services.html#booking" class="btn btn-secondary" data-en="Book for Event" data-fr="Réserver pour Événement">Book for Event</a>
             </div>
         </div>
     </section>
@@ -905,7 +877,7 @@
             <div class="footer-grid">
                 <div class="footer-column">
                     <h3>Grillardes Anna Soya</h3>
-                    <p>Montreal's premier grilling service and provider of premium roasted beef (soya) and authentic spices.</p>
+                    <p data-en="Montreal's premier grilling service and provider of premium roasted beef (soya) and authentic spices." data-fr="Le service de grillade premier de Montréal et fournisseur de bœuf rôti premium (soya) et d'épices authentiques.">Montreal's premier grilling service and provider of premium roasted beef (soya) and authentic spices.</p>
                     <div class="social-links">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
                         <a href="#"><i class="fab fa-instagram"></i></a>
@@ -914,36 +886,37 @@
                     </div>
                 </div>
                 <div class="footer-column">
-                    <h3>Quick Links</h3>
+                    <h3 data-en="Quick Links" data-fr="Liens Rapides">Quick Links</h3>
                     <ul class="footer-links">
-                        <li><a href="./index.html">Home</a></li>
-                        <li><a href="./about.html">About Us</a></li>
-                        <li><a href="./services.html">Services</a></li>
-                        <li><a href="./order.html#order-form">Order</a></li>
-                        <li><a href="./gallery.html">Gallery</a></li>
-                        <li><a href="./contact.html">Contact</a></li>
+                        <li><a href="./index.html" data-en="Home" data-fr="Accueil">Home</a></li>
+                        <li><a href="./about.html" data-en="About Us" data-fr="À Propos">About Us</a></li>
+                        <li><a href="./services.html" data-en="Services" data-fr="Services">Services</a></li>
+                        <li><a href="./contact.html#order-form" data-en="Order" data-fr="Commander">Order</a></li>
+                        <li><a href="gallery.html" data-en="Gallery" data-fr="Galerie">Gallery</a></li>
+						<li><a href="./services.html#booking" data-en="Event Booking" data-fr="Réservation Événement">Event Booking</a></li>
+                        <li><a href="./contact.html" data-en="Contact" data-fr="Contact">Contact</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
-                    <h3>Contact Us</h3>
+                    <h3 data-en="Contact Us" data-fr="Contactez-Nous">Contact Us</h3>
                     <ul class="footer-links">
                         <li><i class="fas fa-phone"></i> (514) 123-4567</li>
                         <li><i class="fas fa-envelope"></i> info@grillardesannasoya.com</li>
                         <li><i class="fas fa-map-marker-alt"></i> Montreal, Canada</li>
-                        <li><i class="fas fa-clock"></i> Mon-Sat: 10AM - 8PM</li>
+                        <li><i class="fas fa-clock"></i> <span data-en="Mon-Sat: 10AM - 8PM" data-fr="Lun-Sam: 10H - 20H">Mon-Sat: 10AM - 8PM</span></li>
                     </ul>
                 </div>
                 <div class="footer-column">
-                    <h3>Newsletter</h3>
-                    <p>Subscribe to get updates on our latest offers and events</p>
+                    <h3 data-en="Newsletter" data-fr="Infolettre">Newsletter</h3>
+                    <p data-en="Subscribe to get updates on our latest offers and events" data-fr="Abonnez-vous pour recevoir des mises à jour sur nos dernières offres et événements">Subscribe to get updates on our latest offers and events</p>
                     <form class="newsletter-form">
-                        <input type="email" placeholder="Your Email Address">
-                        <button type="submit" class="btn btn-secondary">Subscribe</button>
+                        <input type="email" placeholder="Your Email Address" data-en-placeholder="Your Email Address" data-fr-placeholder="Votre Adresse Email">
+                        <button type="submit" class="btn btn-secondary" data-en="Subscribe" data-fr="S'abonner">Subscribe</button>
                     </form>
                 </div>
             </div>
             <div class="copyright">
-                <p>&copy; 2023 Grillardes Anna Soya. All rights reserved.</p>
+                <p>&copy; 2025 Grillardes Anna Soya. <span data-en="All rights reserved." data-fr="Tous droits réservés.">All rights reserved.</span></p>
             </div>
         </div>
     </footer>
@@ -1068,6 +1041,79 @@
         window.addEventListener('scroll', animateOnScroll);
         // Initial check
         window.addEventListener('load', animateOnScroll);
+
+                // Language toggle functionality
+                const languageToggle = document.getElementById('languageToggle');
+        let currentLanguage = 'en'; // Default language
+        
+        // Function to toggle language
+        function toggleLanguage() {
+            currentLanguage = currentLanguage === 'en' ? 'fr' : 'en';
+            updateLanguage(currentLanguage);
+            languageToggle.textContent = currentLanguage === 'en' ? 'FR' : 'EN';
+            
+            // Save language preference to localStorage
+            localStorage.setItem('preferredLanguage', currentLanguage);
+        }
+        
+        // Function to update all text content based on selected language
+        function updateLanguage(lang) {
+            // Update all elements with data attributes for translation
+            document.querySelectorAll('[data-en], [data-fr]').forEach(element => {
+                if (element.hasAttribute(`data-${lang}`)) {
+                    if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+                        element.placeholder = element.getAttribute(`data-${lang}-placeholder`);
+                    } else {
+                        if (element.hasAttribute('data-en-inner')) {
+                            element.innerHTML = element.getAttribute(`data-${lang}`);
+                        } else {
+                            element.textContent = element.getAttribute(`data-${lang}`);
+                        }
+                    }
+                }
+            });
+            
+            // Update HTML lang attribute
+            document.documentElement.lang = lang;
+        }
+        
+        // Initialize language from localStorage or default to 'en'
+        const savedLanguage = localStorage.getItem('preferredLanguage');
+        if (savedLanguage) {
+            currentLanguage = savedLanguage;
+            languageToggle.textContent = currentLanguage === 'en' ? 'FR' : 'EN';
+        }
+        
+        // Update page with the current language
+        updateLanguage(currentLanguage);
+        
+        // Add event listener to the language toggle button
+        languageToggle.addEventListener('click', toggleLanguage);
+        
+        // Function to show code tabs
+        function showCode(language) {
+            // Hide all code content
+            document.querySelectorAll('.code-content').forEach(content => {
+                content.classList.remove('active');
+            });
+            
+            // Remove active class from all tabs
+            document.querySelectorAll('.code-tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            // Show selected code content
+            document.getElementById(`${language}-code`).classList.add('active');
+            
+            // Set active class to clicked tab
+            event.target.classList.add('active');
+        }
+        
+        // Function to resize window for demo purposes
+        function resizeWindow(width) {
+            window.resizeTo(width, 800);
+            window.focus();
+        }
     </script>
 </body>
 </html>

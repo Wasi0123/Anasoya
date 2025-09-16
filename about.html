@@ -11,7 +11,7 @@
         :root {
             --burgundy: #8B0000;
             --gold: #FFD700;
-            --charcoal: #1C1C1C;
+            --charcoal: #000000;
             --white: #FFFFFF;
             --light-bg: #f9f9f9;
         }
@@ -133,6 +133,7 @@
         .nav-menu {
             display: flex;
             list-style: none;
+            align-items: center;
         }
         
         .nav-menu li {
@@ -159,6 +160,26 @@
             background: none;
             border: none;
             cursor: pointer;
+        }
+        
+        /* Language Toggle Button */
+        .language-toggle {
+            background: none;
+            border: 2px solid var(--gold);
+            color: var(--white);
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            margin-left: 15px;
+        }
+        
+        .language-toggle:hover {
+            background-color: var(--gold);
+            color: var(--charcoal);
         }
         
         /* Page Header */
@@ -490,6 +511,8 @@
         
         .footer-links {
             list-style: none;
+            margin: 0;
+            padding: 0;
         }
         
         .footer-links li {
@@ -589,7 +612,7 @@
             }
         }
         
-        @media (max-width: 768px) {
+        @media (max-width: 868px) {
             h1 {
                 font-size: 2.2rem;
             }
@@ -609,6 +632,7 @@
                 transition: left 0.3s ease;
                 padding: 40px 20px;
                 z-index: 999;
+                overflow-y: auto;
             }
             
             .nav-menu.active {
@@ -617,6 +641,7 @@
             
             .nav-menu li {
                 margin: 15px 0;
+                margin-left: 0;
             }
             
             .mobile-menu-btn {
@@ -635,6 +660,13 @@
             .btn {
                 padding: 12px 25px;
                 font-size: 0.9rem;
+            }
+            
+            .language-toggle {
+                margin: 15px 0;
+                order: 3;
+                width: 100%;
+                text-align: center;
             }
         }
         
@@ -662,11 +694,14 @@
                 <i class="fas fa-bars"></i>
             </button>
             <ul class="nav-menu">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html" class="active">About Us</a></li>
-                <li><a href="services.html">Services</a></li>
-				<li><a href="order.html">Gallery</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="index.html" data-en="Home" data-fr="Accueil">Home</a></li>
+                <li><a href="about.html" class="active" data-en="About Us" data-fr="À Propos">About Us</a></li>
+                <li><a href="services.html" data-en="Services" data-fr="Services">Services</a></li>
+                <li><a href="gallery.html" data-en="Gallery" data-fr="Galerie">Gallery</a></li>
+                <li><a href="contact.html" data-en="Contact" data-fr="Contact">Contact</a></li>
+                <li>
+                    <button class="language-toggle" id="languageToggle">FR</button>
+                </li>
             </ul>
         </div>
     </header>
@@ -674,8 +709,7 @@
     <!-- Page Header -->
     <section class="page-header">
         <div class="container page-header-content">
-            <h1>Our <span>Story</span></h1>
-            
+            <h1 data-en="Our Story" data-fr="Notre Histoire">Our <span>Story</span></h1>
         </div>
     </section>
 
@@ -684,11 +718,11 @@
         <div class="container">
             <div class="story-container">
                 <div class="story-content">
-                    <h2>Welcome to Grillardes Anna Soya</h2>
-                    <p>Founded in the heart of Montreal, Grillardes Anna Soya began as a small family operation with a big passion for authentic grilling. Our journey started at local farmers' markets, where we introduced Montrealers to our signature soya - tender, flavorful roasted beef that quickly became a customer favorite.</p>
-                    <p>What began as a weekend hobby soon grew into a thriving business as word spread about our unique flavors and commitment to quality. Today, we're proud to serve both individual customers and event organizers across Montreal, bringing the authentic taste of perfectly grilled meats to every occasion.</p>
-                    <p>Our name "Anna Soya" pays homage to the family matriarch whose recipes and cooking techniques form the foundation of our offerings. Her traditional approach to marinating and slow-roasting meats has been passed down through generations, and we're proud to continue her legacy.</p>
-                    <a href="contact.html" class="btn btn-primary">Get in Touch</a>
+                    <h2 data-en="Welcome to Grillardes Anna Soya" data-fr="Bienvenue chez Grillardes Anna Soya">Welcome to Grillardes Anna Soya</h2>
+                    <p data-en="Founded in the heart of Montreal, Grillardes Anna Soya began as a small family operation with a big passion for authentic grilling. Our journey started at local farmers' markets, where we introduced Montrealers to our signature soya - tender, flavorful roasted beef that quickly became a customer favorite." data-fr="Fondée au cœur de Montréal, Grillardes Anna Soya a commencé comme une petite entreprise familiale avec une grande passion pour la grillade authentique. Notre voyage a commencé dans les marchés de producteurs locaux, où nous avons présenté aux Montréalais notre soya signature - un bœuf rôti tendre et savoureux qui est rapidement devenu le favori des clients.">Founded in the heart of Montreal, Grillardes Anna Soya began as a small family operation with a big passion for authentic grilling. Our journey started at local farmers' markets, where we introduced Montrealers to our signature soya - tender, flavorful roasted beef that quickly became a customer favorite.</p>
+                    <p data-en="What began as a weekend hobby soon grew into a thriving business as word spread about our unique flavors and commitment to quality. Today, we're proud to serve both individual customers and event organizers across Montreal, bringing the authentic taste of perfectly grilled meats to every occasion." data-fr="Ce qui a commencé comme un passe-temps du week-end s'est rapidement transformé en une entreprise florissante alors que la renommée de nos saveurs uniques et de notre engagement envers la qualité se répandait. Aujourd'hui, nous sommes fiers de servir à la fois des clients individuels et des organisateurs d'événements à travers Montréal, apportant le goût authentique des viandes parfaitement grillées à chaque occasion.">What began as a weekend hobby soon grew into a thriving business as word spread about our unique flavors and commitment to quality. Today, we're proud to serve both individual customers and event organizers across Montreal, bringing the authentic taste of perfectly grilled meats to every occasion.</p>
+                    <p data-en="Our name 'Anna Soya' pays homage to the family matriarch whose recipes and cooking techniques form the foundation of our offerings. Her traditional approach to marinating and slow-roasting meats has been passed down through generations, and we're proud to continue her legacy." data-fr="Notre nom 'Anna Soya' rend hommage à la matriarche de la famille dont les recettes et techniques de cuisine constituent la base de nos offres. Son approche traditionnelle de la marinade et du rôtissage lent des viandes a été transmise de génération en génération, et nous sommes fiers de perpétuer son héritage.">Our name "Anna Soya" pays homage to the family matriarch whose recipes and cooking techniques form the foundation of our offerings. Her traditional approach to marinating and slow-roasting meats has been passed down through generations, and we're proud to continue her legacy.</p>
+                    <a href="contact.html" class="btn btn-primary" data-en="Get in Touch" data-fr="Contactez-Nous">Get in Touch</a>
                 </div>
                 <div class="story-image">
                     <img src="./spice2.jpeg" alt="Our Story">
@@ -700,30 +734,29 @@
     <!-- Mission & Values -->
     <section class="mission-values">
         <div class="container">
-            <h2>Our Mission & Values</h2>
+            <h2 data-en="Our Mission & Values" data-fr="Notre Mission et Valeurs">Our Mission & Values</h2>
             <div class="values-grid">
                 <div class="value-card">
                     <div class="value-icon">
                         <i class="fas fa-star"></i>
                     </div>
-                    <h3>Quality</h3>
-                    <p>We source only the finest ingredients and prepare them with meticulous attention to detail, ensuring every bite exceeds expectations.</p>
+                    <h3 data-en="Quality" data-fr="Qualité">Quality</h3>
+                    <p data-en="We source only the finest ingredients and prepare them with meticulous attention to detail, ensuring every bite exceeds expectations." data-fr="Nous nous approvisionnons uniquement en ingrédients de la plus haute qualité et les préparons avec une attention méticuleuse aux détails, garantissant que chaque bouchée dépasse les attentes.">We source only the finest ingredients and prepare them with meticulous attention to detail, ensuring every bite exceeds expectations.</p>
                 </div>
                 <div class="value-card">
                     <div class="value-icon">
                         <i class="fas fa-heart"></i>
                     </div>
-                    <h3>Passion</h3>
-                    <p>Grilling isn't just our business—it's our passion. We pour our hearts into every dish we create and every event we cater.</p>
+                    <h3 data-en="Passion" data-fr="Passion">Passion</h3>
+                    <p data-en="Grilling isn't just our business—it's our passion. We pour our hearts into every dish we create and every event we cater." data-fr="La grillade n'est pas seulement notre métier - c'est notre passion. Nous mettons tout notre cœur dans chaque plat que nous créons et chaque événement que nous caterons.">Grilling isn't just our business—it's our passion. We pour our hearts into every dish we create and every event we cater.</p>
                 </div>
                 <div class="value-card">
                     <div class="value-icon">
                         <i class="fas fa-users"></i>
                     </div>
-                    <h3>Community</h3>
-                    <p>We're proud to be part of the Montreal community and believe in supporting local suppliers and producers whenever possible.</p>
+                    <h3 data-en="Community" data-fr="Communauté">Community</h3>
+                    <p data-en="We're proud to be part of the Montreal community and believe in supporting local suppliers and producers whenever possible." data-fr="Nous sommes fiers de faire partie de la communauté montréalaise et croyons en l'importance de soutenir les fournisseurs et producteurs locaux chaque fois que possible.">We're proud to be part of the Montreal community and believe in supporting local suppliers and producers whenever possible.</p>
                 </div>
-                
             </div>
         </div>
     </section>
@@ -731,7 +764,7 @@
     <!-- Team Section -->
     <section class="our-team">
         <div class="container">
-            <h2>Meet Our Team</h2>
+            <h2 data-en="Meet Our Team" data-fr="Rencontrez Notre Équipe">Meet Our Team</h2>
             <div class="team-grid">
                 <div class="team-member">
                     <div class="member-image">
@@ -739,8 +772,8 @@
                     </div>
                     <div class="member-info">
                         <h3>Marco Giovanni</h3>
-                        <span class="member-role">Head Grill Master</span>
-                        <p class="member-desc">With over 15 years of experience, Marco brings expertise and creativity to every grill session. His secret spice blends are legendary.</p>
+                        <span class="member-role" data-en="Head Grill Master" data-fr="Maître Grilleur en Chef">Head Grill Master</span>
+                        <p class="member-desc" data-en="With over 15 years of experience, Marco brings expertise and creativity to every grill session. His secret spice blends are legendary." data-fr="Avec plus de 15 ans d'expérience, Marco apporte expertise et créativité à chaque session de grillade. Ses mélanges d'épices secrets sont légendaires.">With over 15 years of experience, Marco brings expertise and creativity to every grill session. His secret spice blends are legendary.</p>
                         <div class="member-social">
                             <a href="#"><i class="fab fa-facebook-f"></i></a>
                             <a href="#"><i class="fab fa-instagram"></i></a>
@@ -754,8 +787,8 @@
                     </div>
                     <div class="member-info">
                         <h3>Sophie Tremblay</h3>
-                        <span class="member-role">Spice Specialist</span>
-                        <p class="member-desc">Sophie's knowledge of spices and flavor profiles is unmatched. She develops all our custom blends and marinades.</p>
+                        <span class="member-role" data-en="Spice Specialist" data-fr="Spécialiste des Épices">Spice Specialist</span>
+                        <p class="member-desc" data-en="Sophie's knowledge of spices and flavor profiles is unmatched. She develops all our custom blends and marinades." data-fr="La connaissance des épices et des profils de saveurs de Sophie est inégalée. Elle développe tous nos mélanges et marinades personnalisés.">Sophie's knowledge of spices and flavor profiles is unmatched. She develops all our custom blends and marinades.</p>
                         <div class="member-social">
                             <a href="#"><i class="fab fa-facebook-f"></i></a>
                             <a href="#"><i class="fab fa-instagram"></i></a>
@@ -769,8 +802,8 @@
                     </div>
                     <div class="member-info">
                         <h3>David Chen</h3>
-                        <span class="member-role">Event Coordinator</span>
-                        <p class="member-desc">David ensures every event runs smoothly, from intimate gatherings to large corporate functions. He's your main point of contact.</p>
+                        <span class="member-role" data-en="Event Coordinator" data-fr="Coordinateur d'Événements">Event Coordinator</span>
+                        <p class="member-desc" data-en="David ensures every event runs smoothly, from intimate gatherings to large corporate functions. He's your main point of contact." data-fr="David veille à ce que chaque événement se déroule sans accroc, des rassemblements intimes aux grandes fonctions corporatives. Il est votre principal point de contact.">David ensures every event runs smoothly, from intimate gatherings to large corporate functions. He's your main point of contact.</p>
                         <div class="member-social">
                             <a href="#"><i class="fab fa-facebook-f"></i></a>
                             <a href="#"><i class="fab fa-instagram"></i></a>
@@ -785,15 +818,15 @@
     <!-- Why Choose Us -->
     <section class="why-choose">
         <div class="container">
-            <h2>Why Choose Grillardes Anna Soya</h2>
+            <h2 data-en="Why Choose Grillardes Anna Soya" data-fr="Pourquoi Choisir Grillardes Anna Soya">Why Choose Grillardes Anna Soya</h2>
             <div class="features-grid">
                 <div class="feature-item">
                     <div class="feature-icon">
                         <i class="fas fa-award"></i>
                     </div>
                     <div class="feature-content">
-                        <h3>Authentic Recipes</h3>
-                        <p>Our time-honored recipes have been perfected over generations, delivering authentic flavors you won't find anywhere else.</p>
+                        <h3 data-en="Authentic Recipes" data-fr="Recettes Authentiques">Authentic Recipes</h3>
+                        <p data-en="Our time-honored recipes have been perfected over generations, delivering authentic flavors you won't find anywhere else." data-fr="Nos recettes ancestrales ont été perfectionnées au fil des générations, offrant des saveurs authentiques que vous ne trouverez nulle part ailleurs.">Our time-honored recipes have been perfected over generations, delivering authentic flavors you won't find anywhere else.</p>
                     </div>
                 </div>
                 <div class="feature-item">
@@ -801,8 +834,8 @@
                         <i class="fas fa-leaf"></i>
                     </div>
                     <div class="feature-content">
-                        <h3>Quality Ingredients</h3>
-                        <p>We use only the highest quality, locally-sourced meats and freshest spices in all our products.</p>
+                        <h3 data-en="Quality Ingredients" data-fr="Ingrédients de Qualité">Quality Ingredients</h3>
+                        <p data-en="We use only the highest quality, locally-sourced meats and freshest spices in all our products." data-fr="Nous n'utilisons que des viandes de la plus haute qualité, d'origine locale, et les épices les plus fraîches dans tous nos produits.">We use only the highest quality, locally-sourced meats and freshest spices in all our products.</p>
                     </div>
                 </div>
                 <div class="feature-item">
@@ -810,8 +843,8 @@
                         <i class="fas fa-truck"></i>
                     </div>
                     <div class="feature-content">
-                        <h3>Reliable Service</h3>
-                        <p>Whether you're ordering for delivery or booking us for an event, you can count on punctuality and professionalism.</p>
+                        <h3 data-en="Reliable Service" data-fr="Service Fiable">Reliable Service</h3>
+                        <p data-en="Whether you're ordering for delivery or booking us for an event, you can count on punctuality and professionalism." data-fr="Que vous commandiez pour la livraison ou que vous nous réserviez pour un événement, vous pouvez compter sur la ponctualité et le professionnalisme.">Whether you're ordering for delivery or booking us for an event, you can count on punctuality and professionalism.</p>
                     </div>
                 </div>
                 <div class="feature-item">
@@ -819,8 +852,8 @@
                         <i class="fas fa-users"></i>
                     </div>
                     <div class="feature-content">
-                        <h3>Expert Team</h3>
-                        <p>Our skilled grill masters and service staff are trained to deliver exceptional experiences at every event.</p>
+                        <h3 data-en="Expert Team" data-fr="Équipe d'Experts">Expert Team</h3>
+                        <p data-en="Our skilled grill masters and service staff are trained to deliver exceptional experiences at every event." data-fr="Nos maîtres grilleurs qualifiés et notre personnel de service sont formés pour offrir des expériences exceptionnelles à chaque événement.">Our skilled grill masters and service staff are trained to deliver exceptional experiences at every event.</p>
                     </div>
                 </div>
                 <div class="feature-item">
@@ -828,8 +861,8 @@
                         <i class="fas fa-medal"></i>
                     </div>
                     <div class="feature-content">
-                        <h3>Commitment to Excellence</h3>
-                        <p>We're never satisfied with "good enough" - we constantly strive to exceed our customers' expectations.</p>
+                        <h3 data-en="Commitment to Excellence" data-fr="Engagement envers l'Excellence">Commitment to Excellence</h3>
+                        <p data-en="We're never satisfied with 'good enough' - we constantly strive to exceed our customers' expectations." data-fr="Nous ne sommes jamais satisfaits d'«assez bien» - nous nous efforçons constamment de dépasser les attentes de nos clients.">We're never satisfied with "good enough" - we constantly strive to exceed our customers' expectations.</p>
                     </div>
                 </div>
                 <div class="feature-item">
@@ -837,22 +870,21 @@
                         <i class="fas fa-heart"></i>
                     </div>
                     <div class="feature-content">
-                        <h3>Passion for Grilling</h3>
-                        <p>Our love for grilling shows in every dish we prepare. We don't just cook food - we create experiences.</p>
+                        <h3 data-en="Passion for Grilling" data-fr="Passion pour la Grillade">Passion for Grilling</h3>
+                        <p data-en="Our love for grilling shows in every dish we prepare. We don't just cook food - we create experiences." data-fr="Notre amour pour la grillade se voit dans chaque plat que nous préparons. Nous ne faisons pas que cuisiner de la nourriture - nous créons des expériences.">Our love for grilling shows in every dish we prepare. We don't just cook food - we create experiences.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CTA Section -->
     <section class="cta-section">
         <div class="container">
-            <h2>Experience the Anna Soya Difference</h2>
-            <p>Whether you're planning an event or simply want to enjoy our delicious soya at home, we're here to make it memorable.</p>
+            <h2 data-en="Ready to Experience the Best?" data-fr="Prêt à Vivre le Meilleur ?">Ready to Experience the Best?</h2>
+            <p data-en="Place your order today or book our services for your next event. Taste the difference that quality ingredients and authentic recipes make." data-fr="Passez votre commande aujourd'hui ou réservez nos services pour votre prochain événement. Goûtez la différence que font des ingrédients de qualité et des recettes authentiques.">Place your order today or book our services for your next event. Taste the difference that quality ingredients and authentic recipes make.</p>
             <div class="hero-buttons">
-                <a href="services.html" class="btn btn-primary">View Services</a>
-                <a href="./services.html#booking" class="btn btn-secondary">Book an Event</a>
+                <a href="./contact.html#order-form" class="btn btn-primary" data-en="Order Now" data-fr="Commander">Order Now</a>
+                <a href="./services.html#booking" class="btn btn-secondary" data-en="Book for Event" data-fr="Réserver pour Événement">Book for Event</a>
             </div>
         </div>
     </section>
@@ -863,7 +895,7 @@
             <div class="footer-grid">
                 <div class="footer-column">
                     <h3>Grillardes Anna Soya</h3>
-                    <p>Montreal's premier grilling service and provider of premium roasted beef (soya) and authentic spices.</p>
+                    <p data-en="Montreal's premier grilling service and provider of premium roasted beef (soya) and authentic spices." data-fr="Le service de grillade premier de Montréal et fournisseur de bœuf rôti premium (soya) et d'épices authentiques.">Montreal's premier grilling service and provider of premium roasted beef (soya) and authentic spices.</p>
                     <div class="social-links">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
                         <a href="#"><i class="fab fa-instagram"></i></a>
@@ -872,41 +904,40 @@
                     </div>
                 </div>
                 <div class="footer-column">
-                    <h3>Quick Links</h3>
+                    <h3 data-en="Quick Links" data-fr="Liens Rapides">Quick Links</h3>
                     <ul class="footer-links">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="services.html">Services</a></li>
-                        <li><a href="contact.html#order-form">Order</a></li>
-						<li><a href="gallery.html">Gallery</a></li>
-						<li><a href="services.html#booking">Event Booking</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="./index.html" data-en="Home" data-fr="Accueil">Home</a></li>
+                        <li><a href="./about.html" data-en="About Us" data-fr="À Propos">About Us</a></li>
+                        <li><a href="./services.html" data-en="Services" data-fr="Services">Services</a></li>
+                        <li><a href="./contact.html#order-form" data-en="Order" data-fr="Commander">Order</a></li>
+                        <li><a href="gallery.html" data-en="Gallery" data-fr="Galerie">Gallery</a></li>
+						<li><a href="./services.html#booking" data-en="Event Booking" data-fr="Réservation Événement">Event Booking</a></li>
+                        <li><a href="./contact.html" data-en="Contact" data-fr="Contact">Contact</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
-                    <h3>Contact Us</h3>
+                    <h3 data-en="Contact Us" data-fr="Contactez-Nous">Contact Us</h3>
                     <ul class="footer-links">
                         <li><i class="fas fa-phone"></i> (514) 123-4567</li>
                         <li><i class="fas fa-envelope"></i> info@grillardesannasoya.com</li>
                         <li><i class="fas fa-map-marker-alt"></i> Montreal, Canada</li>
-                        <li><i class="fas fa-clock"></i> Mon-Sat: 10AM - 8PM</li>
+                        <li><i class="fas fa-clock"></i> <span data-en="Mon-Sat: 10AM - 8PM" data-fr="Lun-Sam: 10H - 20H">Mon-Sat: 10AM - 8PM</span></li>
                     </ul>
                 </div>
                 <div class="footer-column">
-                    <h3>Newsletter</h3>
-                    <p>Subscribe to get updates on our latest offers and events</p>
+                    <h3 data-en="Newsletter" data-fr="Infolettre">Newsletter</h3>
+                    <p data-en="Subscribe to get updates on our latest offers and events" data-fr="Abonnez-vous pour recevoir des mises à jour sur nos dernières offres et événements">Subscribe to get updates on our latest offers and events</p>
                     <form class="newsletter-form">
-                        <input type="email" placeholder="Your Email Address">
-                        <button type="submit" class="btn btn-secondary">Subscribe</button>
+                        <input type="email" placeholder="Your Email Address" data-en-placeholder="Your Email Address" data-fr-placeholder="Votre Adresse Email">
+                        <button type="submit" class="btn btn-secondary" data-en="Subscribe" data-fr="S'abonner">Subscribe</button>
                     </form>
                 </div>
             </div>
             <div class="copyright">
-                <p>&copy; 2023 Grillardes Anna Soya. All rights reserved.</p>
+                <p>&copy; 2025 Grillardes Anna Soya. <span data-en="All rights reserved." data-fr="Tous droits réservés.">All rights reserved.</span></p>
             </div>
         </div>
     </footer>
-
     <script>
 // Mobile menu toggle functionality
 const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
@@ -947,6 +978,80 @@ const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
                 icon.classList.add('fa-bars');
             }
         });
+        
+        // Function to show code tabs
+        function showCode(language) {
+            // Hide all code content
+            document.querySelectorAll('.code-content').forEach(content => {
+                content.classList.remove('active');
+            });
+            
+            // Remove active class from all tabs
+            document.querySelectorAll('.code-tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            // Show selected code content
+            document.getElementById(`${language}-code`).classList.add('active');
+            
+            // Set active class to clicked tab
+            event.target.classList.add('active');
+        }
+        
+        // Function to resize window for demo purposes
+        function resizeWindow(width) {
+            window.resizeTo(width, 800);
+            window.focus();
+        }
+
+
+                // Language toggle functionality
+                const languageToggle = document.getElementById('languageToggle');
+        let currentLanguage = 'en'; // Default language
+        
+        // Function to toggle language
+        function toggleLanguage() {
+            currentLanguage = currentLanguage === 'en' ? 'fr' : 'en';
+            updateLanguage(currentLanguage);
+            languageToggle.textContent = currentLanguage === 'en' ? 'FR' : 'EN';
+            
+            // Save language preference to localStorage
+            localStorage.setItem('preferredLanguage', currentLanguage);
+        }
+        
+        // Function to update all text content based on selected language
+        function updateLanguage(lang) {
+            // Update all elements with data attributes for translation
+            document.querySelectorAll('[data-en], [data-fr]').forEach(element => {
+                if (element.hasAttribute(`data-${lang}`)) {
+                    if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+                        element.placeholder = element.getAttribute(`data-${lang}-placeholder`);
+                    } else {
+                        if (element.hasAttribute('data-en-inner')) {
+                            element.innerHTML = element.getAttribute(`data-${lang}`);
+                        } else {
+                            element.textContent = element.getAttribute(`data-${lang}`);
+                        }
+                    }
+                }
+            });
+            
+            // Update HTML lang attribute
+            document.documentElement.lang = lang;
+        }
+        
+        // Initialize language from localStorage or default to 'en'
+        const savedLanguage = localStorage.getItem('preferredLanguage');
+        if (savedLanguage) {
+            currentLanguage = savedLanguage;
+            languageToggle.textContent = currentLanguage === 'en' ? 'FR' : 'EN';
+        }
+        
+        // Update page with the current language
+        updateLanguage(currentLanguage);
+        
+        // Add event listener to the language toggle button
+        languageToggle.addEventListener('click', toggleLanguage);
         
         // Function to show code tabs
         function showCode(language) {

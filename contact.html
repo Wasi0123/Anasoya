@@ -135,6 +135,7 @@
         .nav-menu {
             display: flex;
             list-style: none;
+            align-items: center;
         }
         
         .nav-menu li {
@@ -161,6 +162,26 @@
             background: none;
             border: none;
             cursor: pointer;
+        }
+        
+        /* Language Toggle Button */
+        .language-toggle {
+            background: none;
+            border: 2px solid var(--gold);
+            color: var(--white);
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            margin-left: 15px;
+        }
+        
+        .language-toggle:hover {
+            background-color: var(--gold);
+            color: var(--charcoal);
         }
         
         /* Page Header */
@@ -423,6 +444,7 @@
         
         .accordion {
             margin-top: 40px;
+            margin-bottom: 40px;
         }
         
         .accordion-item {
@@ -496,6 +518,8 @@
         
         .footer-links {
             list-style: none;
+            margin: 0;
+            padding: 0;
         }
         
         .footer-links li {
@@ -595,7 +619,7 @@
             }
         }
         
-        @media (max-width: 768px) {
+        @media (max-width: 868px) {
             h1 {
                 font-size: 2.2rem;
             }
@@ -615,6 +639,7 @@
                 transition: left 0.3s ease;
                 padding: 40px 20px;
                 z-index: 999;
+                overflow-y: auto;
             }
             
             .nav-menu.active {
@@ -666,6 +691,13 @@
             .form-tab.active::after {
                 display: none;
             }
+            
+            .language-toggle {
+                margin: 15px 0;
+                order: 3;
+                width: 100%;
+                text-align: center;
+            }
         }
         
         @media (max-width: 576px) {
@@ -696,12 +728,14 @@
                 <i class="fas fa-bars"></i>
             </button>
             <ul class="nav-menu">
-                <li><a href="./index.html">Home</a></li>
-                <li><a href="./about.html">About Us</a></li>
-                <li><a href="./services.html">Services</a></li>
-                <li><a href="./gallery.html">Gallery</a></li>
-                <li><a href="./contact.html">Contact</a></li>
-
+                <li><a href="./index.html" data-en="Home" data-fr="Accueil">Home</a></li>
+                <li><a href="./about.html" data-en="About Us" data-fr="À Propos">About Us</a></li>
+                <li><a href="./services.html" data-en="Services" data-fr="Services">Services</a></li>
+                <li><a href="./gallery.html" data-en="Gallery" data-fr="Galerie">Gallery</a></li>
+                <li><a href="./contact.html" data-en="Contact" data-fr="Contact">Contact</a></li>
+                <li>
+                    <button class="language-toggle" id="languageToggle">FR</button>
+                </li>
             </ul>
         </div>
     </header>
@@ -709,8 +743,8 @@
     <!-- Page Header -->
     <section class="page-header">
         <div class="container">
-            <h1>Contact <span>Us</span></h1>
-            <p>Get in touch with us for orders, complaints, or to share your experience. We're here to serve you!</p>
+            <h1 data-en="Contact Us" data-fr="Contactez-Nous">Contact <span>Us</span></h1>
+            <p data-en="Get in touch with us for orders, complaints, or to share your experience. We're here to serve you!" data-fr="Contactez-nous pour des commandes, des plaintes ou pour partager votre expérience. Nous sommes là pour vous servir !">Get in touch with us for orders, complaints, or to share your experience. We're here to serve you!</p>
         </div>
     </section>
 
@@ -718,46 +752,46 @@
     <section class="contact-section">
         <div class="container">
             <div class="section-title">
-                <h2>Get In Touch</h2>
-                <p>Choose how you'd like to contact us and we'll respond as quickly as possible</p>
+                <h2 data-en="Get In Touch" data-fr="Entrez en Contact">Get In Touch</h2>
+                <p data-en="Choose how you'd like to contact us and we'll respond as quickly as possible" data-fr="Choisissez comment vous souhaitez nous contacter et nous répondrons dès que possible">Choose how you'd like to contact us and we'll respond as quickly as possible</p>
             </div>
             
             <div class="contact-container">
                 <div class="contact-info">
-                    <h3>Contact Information</h3>
+                    <h3 data-en="Contact Information" data-fr="Informations de Contact">Contact Information</h3>
                     <ul class="contact-details">
                         <li>
                             <i class="fas fa-phone"></i>
                             <div>
-                                <strong>Phone</strong><br>
+                                <strong data-en="Phone" data-fr="Téléphone">Phone</strong><br>
                                 (514) 123-4567
                             </div>
                         </li>
                         <li>
                             <i class="fas fa-envelope"></i>
                             <div>
-                                <strong>Email</strong><br>
+                                <strong data-en="Email" data-fr="Email">Email</strong><br>
                                 info@grillardesannasoya.com
                             </div>
                         </li>
                         <li>
                             <i class="fas fa-map-marker-alt"></i>
                             <div>
-                                <strong>Address</strong><br>
-                                Montreal, Canada
+                                <strong data-en="Address" data-fr="Adresse">Address</strong><br>
+                                <span data-en="Montreal, Canada" data-fr="Montréal, Canada">Montreal, Canada</span>
                             </div>
                         </li>
                         <li>
                             <i class="fas fa-clock"></i>
                             <div>
-                                <strong>Business Hours</strong><br>
-                                Mon-Sat: 10AM - 8PM<br>
-                                Sun: Closed
+                                <strong data-en="Business Hours" data-fr="Heures d'Ouverture">Business Hours</strong><br>
+                                <span data-en="Mon-Sat: 10AM - 8PM" data-fr="Lun-Sam: 10H - 20H">Mon-Sat: 10AM - 8PM</span><br>
+                                <span data-en="Sun: Closed" data-fr="Dim: Fermé">Sun: Closed</span>
                             </div>
                         </li>
                     </ul>
                     
-                    <h3>Follow Us</h3>
+                    <h3 data-en="Follow Us" data-fr="Suivez-Nous">Follow Us</h3>
                     <div class="social-links">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
                         <a href="#"><i class="fab fa-instagram"></i></a>
@@ -767,12 +801,12 @@
                 </div>
                 
                 <div class="contact-form">
-                    <h3 class="form-title">Send Us a Message</h3>
+                    <h3 class="form-title" data-en="Send Us a Message" data-fr="Envoyez-nous un Message">Send Us a Message</h3>
                     
                     <div class="form-tabs">
-                        <button class="form-tab active" data-tab="order">Place Order</button>
-                        <button class="form-tab" data-tab="complaint">Complaint</button>
-                        <button class="form-tab" data-tab="testimonial">Testimonial</button>
+                        <button class="form-tab active" data-tab="order" data-en="Place Order" data-fr="Passer Commande">Place Order</button>
+                        <button class="form-tab" data-tab="complaint" data-en="Complaint" data-fr="Plainte">Complaint</button>
+                        <button class="form-tab" data-tab="testimonial" data-en="Testimonial" data-fr="Témoignage">Testimonial</button>
                     </div>
                     
                     <form id="contactForm">
@@ -780,147 +814,147 @@
                         <div class="form-content active" id="order-form">
                             <div class="form-row">
                                 <div class="form-group">
-                                    <label for="order-name">Full Name *</label>
+                                    <label for="order-name" data-en="Full Name *" data-fr="Nom Complet *">Full Name *</label>
                                     <input type="text" id="order-name" name="order-name" required>
                                 </div>
                                 <div class="form-group">
-                                    <label for="order-phone">Phone Number *</label>
+                                    <label for="order-phone" data-en="Phone Number *" data-fr="Numéro de Téléphone *">Phone Number *</label>
                                     <input type="tel" id="order-phone" name="order-phone" required>
                                 </div>
                             </div>
                             
                             <div class="form-group">
-                                <label for="order-email">Email Address *</label>
+                                <label for="order-email" data-en="Email Address *" data-fr="Adresse Email *">Email Address *</label>
                                 <input type="email" id="order-email" name="order-email" required>
                             </div>
                             
                             <div class="form-group">
-                                <label for="order-type">What would you like to order? *</label>
+                                <label for="order-type" data-en="What would you like to order? *" data-fr="Que souhaitez-vous commander ? *">What would you like to order? *</label>
                                 <select id="order-type" name="order-type" required>
-                                    <option value="">Select an option</option>
-                                    <option value="soya-tray">Premium Soya Tray</option>
-                                    <option value="soya-plate">Gourmet Soya Plate</option>
-                                    <option value="soya-cup">Soya Snack Cup</option>
-                                    <option value="spices">Signature Spices</option>
-                                    <option value="fish-spice">Fish Marinade Magic</option>
-                                    <option value="grill-kit">Ultimate Grill Master Kit</option>
-                                    <option value="other">Other (specify in message)</option>
+                                    <option value="" data-en="Select an option" data-fr="Sélectionnez une option">Select an option</option>
+                                    <option value="soya-tray" data-en="Premium Soya Tray" data-fr="Plateau de Soya Premium">Premium Soya Tray</option>
+                                    <option value="soya-plate" data-en="Gourmet Soya Plate" data-fr="Assiette Gourmet Soya">Gourmet Soya Plate</option>
+                                    <option value="soya-cup" data-en="Soya Snack Cup" data-fr="Coupe-Collation Soya">Soya Snack Cup</option>
+                                    <option value="spices" data-en="Signature Spices" data-fr="Épices Signature">Signature Spices</option>
+                                    <option value="fish-spice" data-en="Fish Marinade Magic" data-fr="Magie de Marinade pour Poisson">Fish Marinade Magic</option>
+                                    <option value="grill-kit" data-en="Ultimate Grill Master Kit" data-fr="Kit Ultime du Maître Grilleur">Ultimate Grill Master Kit</option>
+                                    <option value="other" data-en="Other (specify in message)" data-fr="Autre (précisez dans le message)">Other (specify in message)</option>
                                 </select>
                             </div>
                             
                             <div class="form-row">
                                 <div class="form-group">
-                                    <label for="order-quantity">Quantity *</label>
+                                    <label for="order-quantity" data-en="Quantity *" data-fr="Quantité *">Quantity *</label>
                                     <input type="number" id="order-quantity" name="order-quantity" min="1" required>
                                 </div>
                                 <div class="form-group">
-                                    <label for="order-date">Preferred Delivery/Pickup Date</label>
+                                    <label for="order-date" data-en="Preferred Delivery/Pickup Date" data-fr="Date de Livraison/Ramassage Préférée">Preferred Delivery/Pickup Date</label>
                                     <input type="date" id="order-date" name="order-date">
                                 </div>
                             </div>
                             
                             <div class="form-group">
-                                <label for="order-message">Special Instructions</label>
-                                <textarea id="order-message" name="order-message" placeholder="Any special requests or dietary restrictions?"></textarea>
+                                <label for="order-message" data-en="Special Instructions" data-fr="Instructions Spéciales">Special Instructions</label>
+                                <textarea id="order-message" name="order-message" data-en-placeholder="Any special requests or dietary restrictions?" data-fr-placeholder="Des demandes spéciales ou des restrictions alimentaires ?"></textarea>
                             </div>
                             
                             <div class="form-checkbox">
                                 <input type="checkbox" id="order-callback" name="order-callback">
-                                <label for="order-callback">Please call me to confirm my order</label>
+                                <label for="order-callback" data-en="Please call me to confirm my order" data-fr="Veuillez m'appeler pour confirmer ma commande">Please call me to confirm my order</label>
                             </div>
                             
-                            <button type="submit" class="btn btn-primary">Place Order</button>
+                            <button type="submit" class="btn btn-primary" data-en="Place Order" data-fr="Passer Commande">Place Order</button>
                         </div>
                         
                         <!-- Complaint Form -->
                         <div class="form-content" id="complaint-form">
                             <div class="form-row">
                                 <div class="form-group">
-                                    <label for="complaint-name">Full Name *</label>
+                                    <label for="complaint-name" data-en="Full Name *" data-fr="Nom Complet *">Full Name *</label>
                                     <input type="text" id="complaint-name" name="complaint-name" required>
                                 </div>
                                 <div class="form-group">
-                                    <label for="complaint-email">Email Address *</label>
+                                    <label for="complaint-email" data-en="Email Address *" data-fr="Adresse Email *">Email Address *</label>
                                     <input type="email" id="complaint-email" name="complaint-email" required>
                                 </div>
                             </div>
                             
                             <div class="form-group">
-                                <label for="complaint-type">Nature of Complaint *</label>
+                                <label for="complaint-type" data-en="Nature of Complaint *" data-fr="Nature de la Plainte *">Nature of Complaint *</label>
                                 <select id="complaint-type" name="complaint-type" required>
-                                    <option value="">Select an option</option>
-                                    <option value="quality">Product Quality</option>
-                                    <option value="service">Service Issue</option>
-                                    <option value="delivery">Delivery Problem</option>
-                                    <option value="order">Order Error</option>
-                                    <option value="other">Other</option>
+                                    <option value="" data-en="Select an option" data-fr="Sélectionnez une option">Select an option</option>
+                                    <option value="quality" data-en="Product Quality" data-fr="Qualité du Produit">Product Quality</option>
+                                    <option value="service" data-en="Service Issue" data-fr="Problème de Service">Service Issue</option>
+                                    <option value="delivery" data-en="Delivery Problem" data-fr="Problème de Livraison">Delivery Problem</option>
+                                    <option value="order" data-en="Order Error" data-fr="Erreur de Commande">Order Error</option>
+                                    <option value="other" data-en="Other" data-fr="Autre">Other</option>
                                 </select>
                             </div>
                             
                             <div class="form-group">
-                                <label for="complaint-order">Order Number (if applicable)</label>
+                                <label for="complaint-order" data-en="Order Number (if applicable)" data-fr="Numéro de Commande (le cas échéant)">Order Number (if applicable)</label>
                                 <input type="text" id="complaint-order" name="complaint-order">
                             </div>
                             
                             <div class="form-group">
-                                <label for="complaint-message">Please describe the issue *</label>
-                                <textarea id="complaint-message" name="complaint-message" placeholder="Please provide as much detail as possible" required></textarea>
+                                <label for="complaint-message" data-en="Please describe the issue *" data-fr="Veuillez décrire le problème *">Please describe the issue *</label>
+                                <textarea id="complaint-message" name="complaint-message" data-en-placeholder="Please provide as much detail as possible" data-fr-placeholder="Veuillez fournir autant de détails que possible" required></textarea>
                             </div>
                             
                             <div class="form-group">
-                                <label for="complaint-resolution">Desired Resolution</label>
-                                <textarea id="complaint-resolution" name="complaint-resolution" placeholder="How can we make this right?"></textarea>
+                                <label for="complaint-resolution" data-en="Desired Resolution" data-fr="Résolution Souhaitée">Desired Resolution</label>
+                                <textarea id="complaint-resolution" name="complaint-resolution" data-en-placeholder="How can we make this right?" data-fr-placeholder="Comment pouvons-nous arranger cela ?"></textarea>
                             </div>
                             
-                            <button type="submit" class="btn btn-primary">Submit Complaint</button>
+                            <button type="submit" class="btn btn-primary" data-en="Submit Complaint" data-fr="Soumettre la Plainte">Submit Complaint</button>
                         </div>
                         
                         <!-- Testimonial Form -->
                         <div class="form-content" id="testimonial-form">
                             <div class="form-row">
                                 <div class="form-group">
-                                    <label for="testimonial-name">Full Name *</label>
+                                    <label for="testimonial-name" data-en="Full Name *" data-fr="Nom Complet *">Full Name *</label>
                                     <input type="text" id="testimonial-name" name="testimonial-name" required>
                                 </div>
                                 <div class="form-group">
-                                    <label for="testimonial-location">Location (City)</label>
+                                    <label for="testimonial-location" data-en="Location (City)" data-fr="Localisation (Ville)">Location (City)</label>
                                     <input type="text" id="testimonial-location" name="testimonial-location">
                                 </div>
                             </div>
                             
                             <div class="form-group">
-                                <label for="testimonial-email">Email Address</label>
+                                <label for="testimonial-email" data-en="Email Address" data-fr="Adresse Email">Email Address</label>
                                 <input type="email" id="testimonial-email" name="testimonial-email">
                             </div>
                             
                             <div class="form-group">
-                                <label for="testimonial-service">What did you enjoy? *</label>
+                                <label for="testimonial-service" data-en="What did you enjoy? *" data-fr="Qu'avez-vous apprécié ? *">What did you enjoy? *</label>
                                 <select id="testimonial-service" name="testimonial-service" required>
-                                    <option value="">Select an option</option>
-                                    <option value="soya">Our Soya Products</option>
-                                    <option value="spices">Our Spices</option>
-                                    <option value="event">Event Grilling Service</option>
-                                    <option value="delivery">Delivery Service</option>
-                                    <option value="other">Other</option>
+                                    <option value="" data-en="Select an option" data-fr="Sélectionnez une option">Select an option</option>
+                                    <option value="soya" data-en="Our Soya Products" data-fr="Nos Produits Soya">Our Soya Products</option>
+                                    <option value="spices" data-en="Our Spices" data-fr="Nos Épices">Our Spices</option>
+                                    <option value="event" data-en="Event Grilling Service" data-fr="Service de Grillade d'Événement">Event Grilling Service</option>
+                                    <option value="delivery" data-en="Delivery Service" data-fr="Service de Livraison">Delivery Service</option>
+                                    <option value="other" data-en="Other" data-fr="Autre">Other</option>
                                 </select>
                             </div>
                             
                             <div class="form-group">
-                                <label for="testimonial-message">Your Testimonial *</label>
-                                <textarea id="testimonial-message" name="testimonial-message" placeholder="Share your experience with us" required></textarea>
+                                <label for="testimonial-message" data-en="Your Testimonial *" data-fr="Votre Témoignage *">Your Testimonial *</label>
+                                <textarea id="testimonial-message" name="testimonial-message" data-en-placeholder="Share your experience with us" data-fr-placeholder="Partagez votre expérience avec nous" required></textarea>
                             </div>
                             
                             <div class="form-checkbox">
                                 <input type="checkbox" id="testimonial-permission" name="testimonial-permission">
-                                <label for="testimonial-permission">I give permission to use this testimonial on your website and marketing materials</label>
+                                <label for="testimonial-permission" data-en="I give permission to use this testimonial on your website and marketing materials" data-fr="J'autorise l'utilisation de ce témoignage sur votre site web et dans vos documents marketing">I give permission to use this testimonial on your website and marketing materials</label>
                             </div>
                             
                             <div class="testimonial-preview">
-                                <h4>Testimonial Preview</h4>
-                                <p id="testimonial-preview-text">Your testimonial will appear here as you type...</p>
+                                <h4 data-en="Testimonial Preview" data-fr="Aperçu du Témoignage">Testimonial Preview</h4>
+                                <p id="testimonial-preview-text" data-en="Your testimonial will appear here as you type..." data-fr="Votre témoignage apparaîtra ici au fur et à mesure que vous tapez...">Your testimonial will appear here as you type...</p>
                             </div>
                             
-                            <button type="submit" class="btn btn-primary">Submit Testimonial</button>
+                            <button type="submit" class="btn btn-primary" data-en="Submit Testimonial" data-fr="Soumettre le Témoignage">Submit Testimonial</button>
                         </div>
                     </form>
                 </div>
@@ -932,15 +966,15 @@
     <section class="map-section">
         <div class="container">
             <div class="section-title">
-                <h2>Our Location</h2>
-                <p>We serve the Greater Montreal area with delivery and pickup options</p>
+                <h2 data-en="Our Location" data-fr="Notre Emplacement">Our Location</h2>
+                <p data-en="We serve the Greater Montreal area with delivery and pickup options" data-fr="Nous desservons la région du Grand Montréal avec des options de livraison et de ramassage">We serve the Greater Montreal area with delivery and pickup options</p>
             </div>
             
             <div class="map-container">
                 <div class="map-placeholder">
                     <i class="fas fa-map-marked-alt"></i>
-                    <p>Interactive map would be integrated here</p>
-                    <p>Montreal, Canada</p>
+                    <p data-en="Interactive map would be integrated here" data-fr="Une carte interactive serait intégrée ici">Interactive map would be integrated here</p>
+                    <p data-en="Montreal, Canada" data-fr="Montréal, Canada">Montreal, Canada</p>
                 </div>
             </div>
         </div>
@@ -950,58 +984,58 @@
     <section class="faq-section">
         <div class="container">
             <div class="section-title">
-                <h2>Frequently Asked Questions</h2>
-                <p>Quick answers to common questions about ordering and our services</p>
+                <h2 data-en="Frequently Asked Questions" data-fr="Foire Aux Questions">Frequently Asked Questions</h2>
+                <p data-en="Quick answers to common questions about ordering and our services" data-fr="Réponses rapides aux questions courantes sur la commande et nos services">Quick answers to common questions about ordering and our services</p>
             </div>
             
             <div class="accordion">
                 <div class="accordion-item">
                     <div class="accordion-header">
-                        <span>How long does delivery take?</span>
+                        <span data-en="How long does delivery take?" data-fr="Combien de temps prend la livraison ?">How long does delivery take?</span>
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="accordion-content">
-                        <p>Delivery times vary based on your location in Montreal. Generally, orders placed before 2 PM will be delivered the same day. Orders after 2 PM will be delivered the next day. You'll receive a confirmation message with an estimated delivery time after placing your order.</p>
+                        <p data-en="Delivery times vary based on your location in Montreal. Generally, orders placed before 2 PM will be delivered the same day. Orders after 2 PM will be delivered the next day. You'll receive a confirmation message with an estimated delivery time after placing your order." data-fr="Les délais de livraison varient selon votre emplacement à Montréal. Généralement, les commandes passées avant 14h seront livrées le même jour. Les commandes après 14h seront livrées le lendemain. Vous recevrez un message de confirmation avec un délai de livraison estimé après avoir passé votre commande.">Delivery times vary based on your location in Montreal. Generally, orders placed before 2 PM will be delivered the same day. Orders after 2 PM will be delivered the next day. You'll receive a confirmation message with an estimated delivery time after placing your order.</p>
                     </div>
                 </div>
                 
                 <div class="accordion-item">
                     <div class="accordion-header">
-                        <span>What payment methods do you accept?</span>
+                        <span data-en="What payment methods do you accept?" data-fr="Quels modes de paiement acceptez-vous ?">What payment methods do you accept?</span>
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="accordion-content">
-                        <p>We accept cash on delivery, credit/debit cards, Interac e-Transfer, and PayPal. For larger orders or event services, we require a 25% deposit to secure your booking.</p>
+                        <p data-en="We accept cash on delivery, credit/debit cards, Interac e-Transfer, and PayPal. For larger orders or event services, we require a 25% deposit to secure your booking." data-fr="Nous acceptons les paiements en espèces à la livraison, les cartes de crédit/débit, les transferts Interac et PayPal. Pour les commandes plus importantes ou les services d'événements, nous demandons un acompte de 25% pour confirmer votre réservation.">We accept cash on delivery, credit/debit cards, Interac e-Transfer, and PayPal. For larger orders or event services, we require a 25% deposit to secure your booking.</p>
                     </div>
                 </div>
                 
                 <div class="accordion-item">
                     <div class="accordion-header">
-                        <span>Can I modify or cancel my order?</span>
+                        <span data-en="Can I modify or cancel my order?" data-fr="Puis-je modifier ou annuler ma commande ?">Can I modify or cancel my order?</span>
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="accordion-content">
-                        <p>You can modify or cancel your order up to 2 hours before your scheduled delivery or pickup time. Please call us directly at (514) 123-4567 for any changes to your order.</p>
+                        <p data-en="You can modify or cancel your order up to 2 hours before your scheduled delivery or pickup time. Please call us directly at (514) 123-4567 for any changes to your order." data-fr="Vous pouvez modifier ou annuler votre commande jusqu'à 2 heures avant l'heure de livraison ou de ramassage prévue. Veuillez nous appeler directement au (514) 123-4567 pour toute modification de votre commande.">You can modify or cancel your order up to 2 hours before your scheduled delivery or pickup time. Please call us directly at (514) 123-4567 for any changes to your order.</p>
                     </div>
                 </div>
                 
                 <div class="accordion-item">
                     <div class="accordion-header">
-                        <span>Do you accommodate dietary restrictions?</span>
+                        <span data-en="Do you accommodate dietary restrictions?" data-fr="Accommodez-vous les restrictions alimentaires ?">Do you accommodate dietary restrictions?</span>
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="accordion-content">
-                        <p>Yes, we can accommodate various dietary restrictions including gluten-free, dairy-free, and certain allergies. Please specify your requirements in the "Special Instructions" section when placing your order.</p>
+                        <p data-en="Yes, we can accommodate various dietary restrictions including gluten-free, dairy-free, and certain allergies. Please specify your requirements in the 'Special Instructions' section when placing your order." data-fr="Oui, nous pouvons accommoder diverses restrictions alimentaires, y compris sans gluten, sans produits laitiers et certaines allergies. Veuillez préciser vos exigences dans la section 'Instructions Spéciales' lors de votre commande.">Yes, we can accommodate various dietary restrictions including gluten-free, dairy-free, and certain allergies. Please specify your requirements in the 'Special Instructions' section when placing your order.</p>
                     </div>
                 </div>
                 
                 <div class="accordion-item">
                     <div class="accordion-header">
-                        <span>How far in advance should I book for events?</span>
+                        <span data-en="How far in advance should I book for events?" data-fr="Combien de temps à l'avance dois-je réserver pour les événements ?">How far in advance should I book for events?</span>
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="accordion-content">
-                        <p>We recommend booking at least 2-3 weeks in advance for smaller events and 4-6 weeks for larger events like weddings. However, we understand that sometimes events come together quickly, so please contact us even for last-minute requests.</p>
+                        <p data-en="We recommend booking at least 2-3 weeks in advance for smaller events and 4-6 weeks for larger events like weddings. However, we understand that sometimes events come together quickly, so please contact us even for last-minute requests." data-fr="Nous recommandons de réserver au moins 2-3 semaines à l'avance pour les petits événements et 4-6 semaines pour les grands événements comme les mariages. Cependant, nous comprenons que parfois les événements se organisent rapidement, alors n'hésitez pas à nous contacter même pour des demandes de dernière minute.">We recommend booking at least 2-3 weeks in advance for smaller events and 4-6 weeks for larger events like weddings. However, we understand that sometimes events come together quickly, so please contact us even for last-minute requests.</p>
                     </div>
                 </div>
             </div>
@@ -1014,7 +1048,7 @@
             <div class="footer-grid">
                 <div class="footer-column">
                     <h3>Grillardes Anna Soya</h3>
-                    <p>Montreal's premier grilling service and provider of premium roasted beef (soya) and authentic spices.</p>
+                    <p data-en="Montreal's premier grilling service and provider of premium roasted beef (soya) and authentic spices." data-fr="Le service de grillade premier de Montréal et fournisseur de bœuf rôti premium (soya) et d'épices authentiques.">Montreal's premier grilling service and provider of premium roasted beef (soya) and authentic spices.</p>
                     <div class="footer-social-links">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
                         <a href="#"><i class="fab fa-instagram"></i></a>
@@ -1023,36 +1057,36 @@
                     </div>
                 </div>
                 <div class="footer-column">
-                    <h3>Quick Links</h3>
+                    <h3 data-en="Quick Links" data-fr="Liens Rapides">Quick Links</h3>
                     <ul class="footer-links">
-                        <li><a href="./index.html">Home</a></li>
-                        <li><a href="./about.html">About Us</a></li>
-                        <li><a href="./services.html">Services</a></li>
-                        <li><a href="./contact.html#order-form">Order</a></li>
-                        <li><a href="./gallery.html">Gallery</a></li>
-                        <li><a href="./contact.html">Contact</a></li>
+                        <li><a href="./index.html" data-en="Home" data-fr="Accueil">Home</a></li>
+                        <li><a href="./about.html" data-en="About Us" data-fr="À Propos">About Us</a></li>
+                        <li><a href="./services.html" data-en="Services" data-fr="Services">Services</a></li>
+                        <li><a href="./contact.html#order-form" data-en="Order" data-fr="Commander">Order</a></li>
+                        <li><a href="./gallery.html" data-en="Gallery" data-fr="Galerie">Gallery</a></li>
+                        <li><a href="./contact.html" data-en="Contact" data-fr="Contact">Contact</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
-                    <h3>Contact Us</h3>
+                    <h3 data-en="Contact Us" data-fr="Contactez-Nous">Contact Us</h3>
                     <ul class="footer-links">
                         <li><i class="fas fa-phone"></i> (514) 123-4567</li>
                         <li><i class="fas fa-envelope"></i> info@grillardesannasoya.com</li>
-                        <li><i class="fas fa-map-marker-alt"></i> Montreal, Canada</li>
-                        <li><i class="fas fa-clock"></i> Mon-Sat: 10AM - 8PM</li>
+                        <li><i class="fas fa-map-marker-alt"></i> <span data-en="Montreal, Canada" data-fr="Montréal, Canada">Montreal, Canada</span></li>
+                        <li><i class="fas fa-clock"></i> <span data-en="Mon-Sat: 10AM - 8PM" data-fr="Lun-Sam: 10H - 20H">Mon-Sat: 10AM - 8PM</span></li>
                     </ul>
                 </div>
                 <div class="footer-column">
-                    <h3>Newsletter</h3>
-                    <p>Subscribe to get updates on our latest offers and events</p>
+                    <h3 data-en="Newsletter" data-fr="Infolettre">Newsletter</h3>
+                    <p data-en="Subscribe to get updates on our latest offers and events" data-fr="Abonnez-vous pour recevoir des mises à jour sur nos dernières offres et événements">Subscribe to get updates on our latest offers and events</p>
                     <form class="newsletter-form">
-                        <input type="email" placeholder="Your Email Address">
-                        <button type="submit" class="btn btn-secondary">Subscribe</button>
+                        <input type="email" data-en-placeholder="Your Email Address" data-fr-placeholder="Votre Adresse Email">
+                        <button type="submit" class="btn btn-secondary" data-en="Subscribe" data-fr="S'abonner">Subscribe</button>
                     </form>
                 </div>
             </div>
             <div class="copyright">
-                <p>&copy; 2023 Grillardes Anna Soya. All rights reserved.</p>
+                <p>&copy; 2023 Grillardes Anna Soya. <span data-en="All rights reserved." data-fr="Tous droits réservés.">All rights reserved.</span></p>
             </div>
         </div>
     </footer>
@@ -1098,6 +1132,54 @@
             }
         });
 
+        // Language toggle functionality
+        const languageToggle = document.getElementById('languageToggle');
+        let currentLanguage = 'en'; // Default language
+        
+        // Function to toggle language
+        function toggleLanguage() {
+            currentLanguage = currentLanguage === 'en' ? 'fr' : 'en';
+            updateLanguage(currentLanguage);
+            languageToggle.textContent = currentLanguage === 'en' ? 'FR' : 'EN';
+            
+            // Save language preference to localStorage
+            localStorage.setItem('preferredLanguage', currentLanguage);
+        }
+        
+        // Function to update all text content based on selected language
+        function updateLanguage(lang) {
+            // Update all elements with data attributes for translation
+            document.querySelectorAll('[data-en], [data-fr]').forEach(element => {
+                if (element.hasAttribute(`data-${lang}`)) {
+                    if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+                        if (element.hasAttribute(`data-${lang}-placeholder`)) {
+                            element.placeholder = element.getAttribute(`data-${lang}-placeholder`);
+                        }
+                    } else if (element.tagName === 'OPTION') {
+                        element.textContent = element.getAttribute(`data-${lang}`);
+                    } else {
+                        element.textContent = element.getAttribute(`data-${lang}`);
+                    }
+                }
+            });
+            
+            // Update HTML lang attribute
+            document.documentElement.lang = lang;
+        }
+        
+        // Initialize language from localStorage or default to 'en'
+        const savedLanguage = localStorage.getItem('preferredLanguage');
+        if (savedLanguage) {
+            currentLanguage = savedLanguage;
+            languageToggle.textContent = currentLanguage === 'en' ? 'FR' : 'EN';
+        }
+        
+        // Update page with the current language
+        updateLanguage(currentLanguage);
+        
+        // Add event listener to the language toggle button
+        languageToggle.addEventListener('click', toggleLanguage);
+
         // Form tabs functionality
         const formTabs = document.querySelectorAll('.form-tab');
         const formContents = document.querySelectorAll('.form-content');
@@ -1123,7 +1205,7 @@
         
         if (testimonialMessage && testimonialPreview) {
             testimonialMessage.addEventListener('input', () => {
-                testimonialPreview.textContent = testimonialMessage.value || 'Your testimonial will appear here as you type...';
+                testimonialPreview.textContent = testimonialMessage.value || testimonialPreview.getAttribute(`data-${currentLanguage}`);
             });
         }
 
@@ -1168,15 +1250,21 @@
                 
                 if (isValid) {
                     // In a real application, you would send the form data to a server here
-                    alert(`Thank you for your ${formType}! We will contact you shortly.`);
+                    const message = currentLanguage === 'en' 
+                        ? `Thank you for your ${formType}! We will contact you shortly.`
+                        : `Merci pour votre ${formType === 'order' ? 'commande' : formType === 'complaint' ? 'plainte' : 'témoignage'} ! Nous vous contacterons sous peu.`;
+                    alert(message);
                     contactForm.reset();
                     
                     // Reset testimonial preview
                     if (testimonialPreview) {
-                        testimonialPreview.textContent = 'Your testimonial will appear here as you type...';
+                        testimonialPreview.textContent = testimonialPreview.getAttribute(`data-${currentLanguage}`);
                     }
                 } else {
-                    alert('Please fill in all required fields.');
+                    const message = currentLanguage === 'en' 
+                        ? 'Please fill in all required fields.'
+                        : 'Veuillez remplir tous les champs obligatoires.';
+                    alert(message);
                 }
             });
         }
