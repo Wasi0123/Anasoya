@@ -1,0 +1,1472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Past Events - Grillardes Anna Soya</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Color Variables */
+        :root {
+            --burgundy: #8B0000;
+            --gold: #ffe600e0;
+            --charcoal: #000000;
+            --white: #FFFFFF;
+            --light-bg: #f9f9f9;
+        }
+        
+        /* Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: var(--charcoal);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        
+        h1 {
+            font-size: 2.8rem;
+            text-transform: uppercase;
+        }
+        
+        h2 {
+            font-size: 2.2rem;
+            color: var(--burgundy);
+            text-transform: uppercase;
+        }
+        
+        h3 {
+            font-size: 1.8rem;
+            color: var(--gold);
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 14px 32px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            margin: 10px 10px 10px 0;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem;
+        }
+        
+        .btn-primary {
+            background-color: var(--burgundy);
+            color: var(--white);
+            border: 2px solid var(--burgundy);
+        }
+        
+        .btn-primary:hover {
+            background-color: transparent;
+            color: var(--burgundy);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(139, 0, 0, 0.2);
+        }
+        
+        .btn-secondary {
+            background-color: var(--gold);
+            color: var(--charcoal);
+            border: 2px solid var(--gold);
+        }
+        
+        .btn-secondary:hover {
+            background-color: transparent;
+            color: var(--charcoal);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(255, 215, 0, 0.2);
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: var(--charcoal);
+            padding: 15px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            color: var(--gold);
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 800;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo span {
+            color: var(--burgundy);
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            align-items: center;
+        }
+        
+        .nav-menu li {
+            margin-left: 25px;
+        }
+        
+        .nav-menu a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+            font-size: 1rem;
+            text-transform: uppercase;
+        }
+        
+        .nav-menu a:hover {
+            color: var(--gold);
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            color: var(--white);
+            font-size: 1.5rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+        
+        /* Language Toggle Button */
+        .language-toggle {
+            background: none;
+            border: 2px solid var(--gold);
+            color: var(--white);
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            margin-left: 15px;
+        }
+        
+        .language-toggle:hover {
+            background-color: var(--gold);
+            color: var(--charcoal);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1544025162-d76694265947?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1469&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: var(--white);
+            padding-top: 80px;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            animation: fadeIn 1.5s ease;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--white);
+            line-height: 1.2;
+        }
+        
+        .hero h1 span {
+            color: var(--gold);
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2.5rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* Section Styles */
+        .section {
+            padding: 100px 0;
+        }
+        
+        .section-light {
+            background-color: var(--light-bg);
+        }
+        
+        .section-dark {
+            background-color: var(--charcoal);
+            color: var(--white);
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .section-title p {
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        /* Event Types */
+        .event-types {
+            padding: 100px 0;
+        }
+        
+        .event-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .event-card {
+            background-color: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .event-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .event-img {
+            height: 220px;
+            width: 100%;
+            object-fit: cover;
+        }
+        
+        .event-content {
+            padding: 25px;
+        }
+        
+        .event-title {
+            font-size: 1.4rem;
+            color: var(--burgundy);
+            margin-bottom: 10px;
+        }
+        
+        .event-desc {
+            color: #666;
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+        }
+        
+        /* Gallery Section */
+        .gallery-section {
+            padding: 100px 0;
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+        
+        .gallery-item {
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            height: 250px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery-item:hover {
+            transform: scale(1.03);
+        }
+        
+        .gallery-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .gallery-item:hover .gallery-img {
+            transform: scale(1.1);
+        }
+        
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+            padding: 20px;
+            color: white;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+        
+        .gallery-caption {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+        
+        .gallery-desc {
+            font-size: 0.9rem;
+        }
+        
+        /* Testimonials */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .testimonial-card {
+            background-color: var(--white);
+            padding: 35px 30px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            position: relative;
+        }
+        
+        .testimonial-card::before {
+            content: '"';
+            font-size: 5rem;
+            color: rgba(139, 0, 0, 0.1);
+            position: absolute;
+            top: 10px;
+            left: 15px;
+            font-family: serif;
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 25px;
+            position: relative;
+            z-index: 1;
+			color: #000000;
+        }
+
+        
+        .testimonial-author {
+            font-weight: 700;
+            color: var(--burgundy);
+            display: flex;
+            align-items: center;
+        }
+        
+        .testimonial-author::before {
+            content: '';
+            width: 30px;
+            height: 2px;
+            background-color: var(--gold);
+            margin-right: 10px;
+        }
+        
+        /* Process Section */
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .process-step {
+            text-align: center;
+            padding: 30px 20px;
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 215, 0, 0.1);
+        }
+        
+        .process-step h3 {
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+        
+        .step-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background-color: var(--gold);
+            color: var(--charcoal);
+            border-radius: 50%;
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+        
+        /* Booking Form */
+        .booking-form {
+            background-color: var(--white);
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--charcoal);
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 1rem;
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: var(--burgundy);
+            box-shadow: 0 0 0 2px rgba(139, 0, 0, 0.2);
+        }
+        
+        textarea.form-control {
+            min-height: 120px;
+            resize: vertical;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            padding: 100px 0;
+            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('https://images.unsplash.com/photo-1600891964092-4316c288032e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: var(--white);
+            text-align: center;
+        }
+        
+        .cta-section h2 {
+            color: var(--gold);
+            margin-bottom: 20px;
+        }
+        
+        .cta-section p {
+            max-width: 700px;
+            margin: 0 auto 40px;
+            font-size: 1.1rem;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--charcoal);
+            color: var(--white);
+            padding: 80px 0 30px;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column h3 {
+            color: var(--gold);
+            margin-bottom: 25px;
+            font-size: 1.4rem;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background-color: var(--burgundy);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .footer-links li i {
+            margin-right: 10px;
+            color: var(--gold);
+            width: 20px;
+        }
+        
+        .footer-links a {
+            color: var(--white);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--gold);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 25px;
+        }
+        
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 42px;
+            height: 42px;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: var(--white);
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            font-size: 1.1rem;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--gold);
+            color: var(--charcoal);
+            transform: translateY(-3px);
+        }
+        
+        .newsletter-form {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .newsletter-form input {
+            padding: 12px 15px;
+            margin-bottom: 15px;
+            border: none;
+            border-radius: 4px;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: var(--white);
+        }
+        
+        .newsletter-form input::placeholder {
+            color: #ccc;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+        
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            h2 {
+                font-size: 2rem;
+            }
+            
+            .hero h1 {
+                font-size: 3rem;
+            }
+            
+            .event-grid,
+            .testimonials-grid,
+            .process-steps,
+            .footer-grid,
+            .gallery-grid {
+                gap: 20px;
+            }
+        }
+        
+        @media (max-width: 868px) {
+            .nav-menu {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                flex-direction: column;
+                background-color: var(--charcoal);
+                width: 100%;
+                height: calc(100vh - 70px);
+                transition: left 0.3s ease;
+                padding: 40px 20px;
+                z-index: 999;
+                overflow-y: auto;
+            }
+            
+            .nav-menu.active {
+                left: 0;
+            }
+            
+            .nav-menu li {
+                margin: 15px 0;
+                margin-left: 0;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero {
+                height: auto;
+                min-height: 50vh;
+                padding: 120px 0 80px;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .btn {
+                padding: 12px 25px;
+                font-size: 0.9rem;
+                margin: 8px 8px 8px 0;
+            }
+            
+            .section {
+                padding: 80px 0;
+            }
+            
+            .event-content,
+            .booking-form {
+                padding: 20px;
+            }
+            
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .language-toggle {
+                margin: 15px 0;
+                order: 3;
+                width: 100%;
+                text-align: center;
+            }
+            
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+        }
+        
+        @media (max-width: 668px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            h3 {
+                font-size: 1.5rem;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .event-grid,
+            .testimonials-grid,
+            .process-steps {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .event-img {
+                height: 200px;
+            }
+            
+            .hero-buttons {
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .hero-buttons .btn {
+                width: 100%;
+                margin: 5px 0;
+                text-align: center;
+            }
+            
+            .booking-form {
+                padding: 20px;
+            }
+            
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .gallery-item {
+                height: 220px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            h2 {
+                font-size: 1.6rem;
+            }
+            
+            h3 {
+                font-size: 1.3rem;
+            }
+            
+            .logo {
+                font-size: 1.5rem;
+            }
+            
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .hero p {
+                font-size: 0.9rem;
+            }
+            
+            .section-title p {
+                font-size: 1rem;
+            }
+            
+            .event-title {
+                font-size: 1.2rem;
+            }
+            
+            .btn {
+                padding: 10px 20px;
+                font-size: 0.8rem;
+            }
+            
+            .section {
+                padding: 60px 0;
+            }
+            
+            .event-content,
+            .booking-form {
+                padding: 15px;
+            }
+            
+            .social-links a {
+                width: 38px;
+                height: 38px;
+                font-size: 1rem;
+            }
+            
+            .gallery-item {
+                height: 200px;
+            }
+        }
+		 /* Events We Have Covered Section Styles */
+		 .event-filters {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px;
+        margin-bottom: 40px;
+    }
+    
+    .filter-btn {
+        padding: 10px 20px;
+        background-color: var(--white);
+        border: 2px solid var(--burgundy);
+        color: var(--burgundy);
+        border-radius: 30px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-family: 'Montserrat', sans-serif;
+        text-transform: uppercase;
+        font-size: 0.9rem;
+    }
+    
+    .filter-btn:hover, .filter-btn.active {
+        background-color: var(--burgundy);
+        color: var(--white);
+        transform: translateY(-2px);
+    }
+    
+    .events-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+        gap: 30px;
+    }
+    
+    .event-item {
+        background-color: var(--white);
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .event-item:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    }
+    
+    .event-image {
+        position: relative;
+        height: 250px;
+        overflow: hidden;
+    }
+    
+    .event-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+    }
+    
+    .event-item:hover .event-image img {
+        transform: scale(1.05);
+    }
+    
+    .event-overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+        padding: 20px;
+        color: white;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+    
+    .event-item:hover .event-overlay {
+        opacity: 1;
+    }
+    
+    .event-category {
+        display: inline-block;
+        background-color: var(--gold);
+        color: var(--charcoal);
+        padding: 5px 10px;
+        border-radius: 4px;
+        font-size: 0.8rem;
+        font-weight: 600;
+        margin-bottom: 10px;
+        text-transform: uppercase;
+    }
+    
+    .event-overlay .event-title {
+        font-size: 1.2rem;
+        margin-bottom: 5px;
+        color: var(--white);
+    }
+    
+    .event-overlay .event-date {
+        font-size: 0.9rem;
+        opacity: 0.9;
+    }
+    
+    .event-content {
+        padding: 25px;
+    }
+    
+    .event-content h3 {
+        font-size: 1.3rem;
+        color: var(--burgundy);
+        margin-bottom: 10px;
+    }
+    
+    .event-content p {
+        color: #666;
+        line-height: 1.6;
+    }
+    
+    /* Responsive Styles */
+    @media (max-width: 992px) {
+        .events-grid {
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+    }
+    
+    @media (max-width: 768px) {
+        .event-filters {
+            gap: 10px;
+        }
+        
+        .filter-btn {
+            padding: 8px 15px;
+            font-size: 0.8rem;
+        }
+        
+        .events-grid {
+            grid-template-columns: 1fr;
+        }
+        
+        .event-image {
+            height: 220px;
+        }
+    }
+    
+    @media (max-width: 480px) {
+        .event-filters {
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .filter-btn {
+            width: 200px;
+            text-align: center;
+        }
+        
+        .event-content {
+            padding: 20px;
+        }
+        
+        .event-content h3 {
+            font-size: 1.2rem;
+        }
+    }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="./index.html" class="logo">Grillardes <span>Anna Soya</span></a>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="./index.html" data-en="Home" data-fr="Accueil">Home</a></li>
+                <li><a href="./about.html" data-en="About Us" data-fr="À Propos">About Us</a></li>
+                <li><a href="./event.html" data-en="Event" data-fr="Événements">Event</a></li>
+                <li><a href="./services.html" data-en="Services" data-fr="Services">Services</a></li>
+                <li><a href="#" data-en="Events" data-fr="Événements">Events</a></li>
+                <li><a href="gallery.html" data-en="Gallery" data-fr="Galerie">Gallery</a></li>
+                <li><a href="./contact.html" data-en="Contact" data-fr="Contact">Contact</a></li>
+                <li>
+                    <button class="language-toggle" id="languageToggle">FR</button>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-content">
+            <h1 data-en="Our Event Experiences" data-fr="Nos Expériences d'Événements">Our <span>Event Experiences</span></h1>
+            <p data-en="See how we've brought the authentic taste of Anna Soya to events across Montreal" data-fr="Découvrez comment nous avons apporté le goût authentique d'Anna Soya à des événements à travers Montréal">See how we've brought the authentic taste of Anna Soya to events across Montreal</p>
+            <div class="hero-buttons">
+                <a href="#gallery" class="btn btn-primary" data-en="View Gallery" data-fr="Voir la Galerie">View Gallery</a>
+                <a href="./services.html#booking" class="btn btn-secondary" data-en="Book Your Event" data-fr="Réserver Votre Événement">Book Your Event</a>
+            </div>
+        </div>
+    </section>
+
+<!-- Events We Have Covered Section -->
+<section class="section section-light" id="events-covered">
+    <div class="container">
+        <div class="section-title">
+            <h2 data-en="Events We Have Covered" data-fr="Événements Que Nous Avons Couverts">Events We Have Covered</h2>
+            <p data-en="From intimate gatherings to grand celebrations, we've brought our authentic grilling experience to diverse occasions across Montreal" data-fr="Des rassemblements intimes aux grandes célébrations, nous avons apporté notre expérience de grillade authentique à diverses occasions à travers Montréal">From intimate gatherings to grand celebrations, we've brought our authentic grilling experience to diverse occasions across Montreal</p>
+        </div>
+        
+        <!-- Events Grid -->
+        <div class="events-grid">
+            <!-- Wedding Events -->
+            <div class="event-item" data-category="wedding">
+                <div class="event-image">
+                    <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1469&q=80" alt="Elegant Wedding Reception" loading="lazy">
+                    <div class="event-overlay">
+                        <span class="event-category">Wedding</span>
+                        <h3 class="event-title">Sophie & Mark's Wedding</h3>
+                        <p class="event-date">June 2023 • 80 Guests</p>
+                    </div>
+                </div>
+                <div class="event-content">
+                    <h3 data-en="Elegant Wedding Reception" data-fr="Réception de Mariage Élégante">Elegant Wedding Reception</h3>
+                    <p data-en="Creating unforgettable moments with our premium grilled soya and professional service for this beautiful outdoor wedding." data-fr="Créer des moments inoubliables avec notre soya grillé premium et notre service professionnel pour ce beau mariage en plein air.">Creating unforgettable moments with our premium grilled soya and professional service for this beautiful outdoor wedding.</p>
+                </div>
+            </div>
+            
+            <!-- Corporate Events -->
+            <div class="event-item" data-category="corporate">
+                <div class="event-image">
+                    <img src="https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" alt="Corporate Summer Party" loading="lazy">
+                    <div class="event-overlay">
+                        <span class="event-category">Corporate Event</span>
+                        <h3 class="event-title">Tech Company Summer Party</h3>
+                        <p class="event-date">July 2023 • 120 Guests</p>
+                    </div>
+                </div>
+                <div class="event-content">
+                    <h3 data-en="Corporate Summer Celebration" data-fr="Célébration d'Été d'Entreprise">Corporate Summer Celebration</h3>
+                    <p data-en="Impress clients and employees with our professional grilling services at this vibrant corporate gathering." data-fr="Impressionnez les clients et les employés avec nos services de grillade professionnels lors de ce rassemblement d'entreprise vibrant.">Impress clients and employees with our professional grilling services at this vibrant corporate gathering.</p>
+                </div>
+            </div>
+            
+            <!-- Birthday Parties -->
+            <div class="event-item" data-category="birthday">
+                <div class="event-image">
+                    <img src="./bday.jpeg" alt="50th Birthday Celebration" loading="lazy">
+                    <div class="event-overlay">
+                        <span class="event-category">Birthday Party</span>
+                        <h3 class="event-title">50th Birthday Celebration</h3>
+                        <p class="event-date">May 2023 • 40 Guests</p>
+                    </div>
+                </div>
+                <div class="event-content">
+                    <h3 data-en="Milestone Birthday Party" data-fr="Fête d'Anniversaire d'Étape">Milestone Birthday Party</h3>
+                    <p data-en="Celebrating special moments with delicious grilled soya that had guests talking for weeks." data-fr="Célébrer des moments spéciaux avec un délicieux soya grillé qui a fait parler les invités pendant des semaines.">Celebrating special moments with delicious grilled soya that had guests talking for weeks.</p>
+                </div>
+            </div>
+            
+            <!-- Baby Showers -->
+            <div class="event-item" data-category="baby-shower">
+                <div class="event-image">
+                    <img src="./baby.jpeg" alt="Baby Shower Celebration" loading="lazy">
+                    <div class="event-overlay">
+                        <span class="event-category">Baby Shower</span>
+                        <h3 class="event-title">Welcome Baby Celebration</h3>
+                        <p class="event-date">April 2023 • 30 Guests</p>
+                    </div>
+                </div>
+                <div class="event-content">
+                    <h3 data-en="Joyful Baby Shower" data-fr="Réjouissance de Baby Shower">Joyful Baby Shower</h3>
+                    <p data-en="Adding flavor to this special occasion with our carefully prepared grilled specialties." data-fr="Ajouter de la saveur à cette occasion spéciale avec nos spécialités grillées soigneusement préparées.">Adding flavor to this special occasion with our carefully prepared grilled specialties.</p>
+                </div>
+            </div>
+            
+            <!-- Burials -->
+            <div class="event-item" data-category="burial">
+                <div class="event-image">
+                    <img src="./memorial.jpeg" alt="Memorial Gathering" loading="lazy">
+                    <div class="event-overlay">
+                        <span class="event-category">Burial</span>
+                        <h3 class="event-title">Memorial Gathering</h3>
+                        <p class="event-date">March 2023 • 50 Guests</p>
+                    </div>
+                </div>
+                <div class="event-content">
+                    <h3 data-en="Respectful Memorial Service" data-fr="Service Commémoratif Respectueux">Respectful Memorial Service</h3>
+                    <p data-en="Providing comforting meals during difficult times with our tasteful and respectful catering service." data-fr="Fournir des repas réconfortants pendant les moments difficiles avec notre service de traiteur de bon goût et respectueux.">Providing comforting meals during difficult times with our tasteful and respectful catering service.</p>
+                </div>
+            </div>
+            
+            <!-- Hangouts -->
+            <div class="event-item" data-category="hangout">
+                <div class="event-image">
+                    <img src="./family.jpeg" alt="Family Reunion" loading="lazy">
+                    <div class="event-overlay">
+                        <span class="event-category">Hangout</span>
+                        <h3 class="event-title">Annual Family Reunion</h3>
+                        <p class="event-date">August 2023 • 60 Guests</p>
+                    </div>
+                </div>
+                <div class="event-content">
+                    <h3 data-en="Family Reunion Gathering" data-fr="Rassemblement de Réunion Familiale">Family Reunion Gathering</h3>
+                    <p data-en="Bringing families together with our delicious grilled specialties that everyone enjoys." data-fr="Rassembler les familles avec nos délicieuses spécialités grillées que tout le monde apprécie.">Bringing families together with our delicious grilled specialties that everyone enjoys.</p>
+                </div>
+            </div>
+            
+            <!-- Anniversaries -->
+            <div class="event-item" data-category="anniversary">
+                <div class="event-image">
+                    <img src="./silver.jpeg" alt="Anniversary Celebration" loading="lazy">
+                    <div class="event-overlay">
+                        <span class="event-category">Anniversary</span>
+                        <h3 class="event-title">25th Anniversary Party</h3>
+                        <p class="event-date">February 2023 • 45 Guests</p>
+                    </div>
+                </div>
+                <div class="event-content">
+                    <h3 data-en="Silver Anniversary Celebration" data-fr="Célébration d'Anniversaire d'Argent">Silver Anniversary Celebration</h3>
+                    <p data-en="Marking 25 years of love with our specially prepared grilled dishes that added to the celebration." data-fr="Marquer 25 ans d'amour avec nos plats grillés spécialement préparés qui ont ajouté à la célébration.">Marking 25 years of love with our specially prepared grilled dishes that added to the celebration.</p>
+                </div>
+            </div>
+            
+            <!-- Graduations -->
+            <div class="event-item" data-category="graduation">
+                <div class="event-image">
+                    <img src="./gradua.jpeg" alt="Graduation Party" loading="lazy">
+                    <div class="event-overlay">
+                        <span class="event-category">Graduation</span>
+                        <h3 class="event-title">University Graduation Party</h3>
+                        <p class="event-date">June 2023 • 70 Guests</p>
+                    </div>
+                </div>
+                <div class="event-content">
+                    <h3 data-en="Graduation Achievement Party" data-fr="Fête de Réussite de Diplômation">Graduation Achievement Party</h3>
+                    <p data-en="Celebrating academic achievements with our flavorful grilled specialties that made the occasion even more special." data-fr="Célébrer les réussites académiques avec nos spécialités grillées savoureuses qui ont rendu l'occasion encore plus spéciale.">Celebrating academic achievements with our flavorful grilled specialties that made the occasion even more special.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Gallery Section -->
+    <section class="section" id="gallery">
+        <div class="container">
+            <div class="section-title">
+                <h2 data-en="Our Event Gallery" data-fr="Notre Galerie d'Événements">Our Event Gallery</h2>
+                <p data-en="A visual journey through our memorable event experiences" data-fr="Un voyage visuel à travers nos expériences d'événements mémorables">A visual journey through our memorable event experiences</p>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="./b6.jpeg" alt="Corporate Event Grilling" class="gallery-img" loading="lazy">
+                    <div class="gallery-overlay">
+                        <div class="gallery-caption" data-en="Corporate Summer Party" data-fr="Fête d'Été d'Entreprise">Corporate Summer Party</div>
+                        <div class="gallery-desc" data-en="July 2023 • 120 guests" data-fr="Juillet 2023 • 120 invités">July 2023 • 120 guests</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="./b1.jpeg" alt="Wedding Reception" class="gallery-img" loading="lazy">
+                    <div class="gallery-overlay">
+                        <div class="gallery-caption" data-en="Sophie & Mark's Wedding" data-fr="Mariage de Sophie et Mark">Sophie & Mark's Wedding</div>
+                        <div class="gallery-desc" data-en="June 2023 • 80 guests" data-fr="Juin 2023 • 80 invités">June 2023 • 80 guests</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="./b2.jpeg" alt="Birthday Celebration" class="gallery-img" loading="lazy">
+                    <div class="gallery-overlay">
+                        <div class="gallery-caption" data-en="50th Birthday Celebration" data-fr="Célébration du 50ème Anniversaire">50th Birthday Celebration</div>
+                        <div class="gallery-desc" data-en="May 2023 • 40 guests" data-fr="Mai 2023 • 40 invités">May 2023 • 40 guests</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="./b4.jpeg" alt="Family Reunion" class="gallery-img" loading="lazy">
+                    <div class="gallery-overlay">
+                        <div class="gallery-caption" data-en="Annual Family Reunion" data-fr="Réunion Familiale Annuelle">Annual Family Reunion</div>
+                        <div class="gallery-desc" data-en="August 2023 • 60 guests" data-fr="Août 2023 • 60 invités">August 2023 • 60 guests</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="./b3.jpeg" alt="Company Picnic" class="gallery-img" loading="lazy">
+                    <div class="gallery-overlay">
+                        <div class="gallery-caption" data-en="Tech Company Picnic" data-fr="Pique-nique d'Entreprise Technologique">Tech Company Picnic</div>
+                        <div class="gallery-desc" data-en="September 2023 • 150 guests" data-fr="Septembre 2023 • 150 invités">September 2023 • 150 guests</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="./b5.jpeg" alt="Charity Event" class="gallery-img" loading="lazy">
+                    <div class="gallery-overlay">
+                        <div class="gallery-caption" data-en="Charity Fundraiser Gala" data-fr="Gala de Collecte de Fonds de Bienfaisance">Charity Fundraiser Gala</div>
+                        <div class="gallery-desc" data-en="October 2023 • 200 guests" data-fr="Octobre 2023 • 200 invités">October 2023 • 200 guests</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="section section-dark">
+        <div class="container">
+            <div class="section-title">
+                <h2 data-en="Client Testimonials" data-fr="Témoignages de Clients">Client Testimonials</h2>
+                <p data-en="Hear what our clients have to say about our event services" data-fr="Découvrez ce que nos clients disent de nos services d'événement">Hear what our clients have to say about our event services</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <p class="testimonial-text" data-en="&quot;We hired Anna Soya for our corporate event and everyone was blown away. Professional service and amazing food! Will definitely book again.&quot;" data-fr="&quot;Nous avons engagé Anna Soya pour notre événement d'entreprise et tout le monde a été époustouflé. Service professionnel et nourriture incroyable ! Je réserverai certainement à nouveau.&quot;">"We hired Anna Soya for our corporate event and everyone was blown away. Professional service and amazing food! Will definitely book again."</p>
+                    <p class="testimonial-author">- Jonathan T., Event Planner</p>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text" data-en="&quot;Anna Soya made our wedding reception unforgettable. The soya was perfectly grilled and our guests are still talking about it months later!&quot;" data-fr="&quot;Anna Soya a rendu notre réception de mariage inoubliable. Le soya était parfaitement grillé et nos invités en parlent encore des mois plus tard !&quot;">"Anna Soya made our wedding reception unforgettable. The soya was perfectly grilled and our guests are still talking about it months later!"</p>
+                    <p class="testimonial-author">- Marie & Pierre, Newlyweds</p>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text" data-en="&quot;The team was punctual, professional, and the food was exceptional. I highly recommend Grillardes Anna Soya for any event.&quot;" data-fr="&quot;L'équipe était ponctuelle, professionnelle et la nourriture était exceptionnelle. Je recommande vivement Grillardes Anna Soya pour tout événement.&quot;">"The team was punctual, professional, and the food was exceptional. I highly recommend Grillardes Anna Soya for any event."</p>
+                    <p class="testimonial-author">- Sophie G., Birthday Party Host</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Process Section -->
+    <section class="section section-light">
+        <div class="container">
+            <div class="section-title">
+                <h2 data-en="How to Book Our Services" data-fr="Comment Réserver Nos Services">How to Book Our Services</h2>
+                <p data-en="Our simple process ensures your event grilling experience is seamless from start to finish" data-fr="Notre processus simple garantit que votre expérience de grillade d'événement est transparente du début à la fin">Our simple process ensures your event grilling experience is seamless from start to finish</p>
+            </div>
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h3 data-en="Inquire" data-fr="Renseignez-vous">Inquire</h3>
+                    <p data-en="Contact us with your event details and we'll provide a customized plan" data-fr="Contactez-nous avec les détails de votre événement et nous vous fournirons un plan personnalisé">Contact us with your event details and we'll provide a customized plan</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h3 data-en="Confirm" data-fr="Confirmer">Confirm</h3>
+                    <p data-en="Review and confirm your booking to secure your date" data-fr="Examinez et confirmez votre réservation pour sécuriser votre date">Review and confirm your booking to secure your date</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h3 data-en="Enjoy" data-fr="Profiter">Enjoy</h3>
+                    <p data-en="Relax and enjoy your event while our team handles all the grilling" data-fr="Détendez-vous et profitez de votre événement pendant que notre équipe s'occupe de tout le grillage">Relax and enjoy your event while our team handles all the grilling</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2 data-en="Ready to Elevate Your Event?" data-fr="Prêt à Élever Votre Événement ?">Ready to Elevate Your Event?</h2>
+            <p data-en="Book our professional grilling services today and make your next event unforgettable with the authentic taste of Anna Soya" data-fr="Réservez nos services de grillade professionnels dès aujourd'hui et rendez votre prochain événement inoubliable avec le goût authentique d'Anna Soya">Book our professional grilling services today and make your next event unforgettable with the authentic taste of Anna Soya</p>
+            <div class="hero-buttons">
+                <a href="./services.html#booking" class="btn btn-primary" data-en="Book Now" data-fr="Réserver">Book Now</a>
+                <a href="./contact.html" class="btn btn-secondary" data-en="Contact Us" data-fr="Nous Contacter">Contact Us</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3>Grillardes Anna Soya</h3>
+                    <p data-en="Montreal's premier grilling service and provider of premium roasted beef (soya) and authentic spices." data-fr="Le service de grillade premier de Montréal et fournisseur de bœuf rôti premium (soya) et d'épices authentiques.">Montreal's premier grilling service and provider of premium roasted beef (soya) and authentic spices.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3 data-en="Quick Links" data-fr="Liens Rapides">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="./index.html" data-en="Home" data-fr="Accueil">Home</a></li>
+                        <li><a href="./about.html" data-en="About Us" data-fr="À Propos">About Us</a></li>
+                        <li><a href="./services.html" data-en="Services" data-fr="Services">Services</a></li>
+                        <li><a href="./contact.html#order-form" data-en="Order" data-fr="Commander">Order</a></li>
+                        <li><a href="gallery.html" data-en="Gallery" data-fr="Galerie">Gallery</a></li>
+						<li><a href="./event.html" data-en="Events" data-fr=" Événements">Events</a></li>
+                        <li><a href="#booking" data-en="Event Booking" data-fr="Réservation Événement">Event Booking</a></li>
+                        <li><a href="./contact.html" data-en="Contact" data-fr="Contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3 data-en="Contact Us" data-fr="Contactez-Nous">Contact Us</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-phone"></i> (514) 123-4567</li>
+                        <li><i class="fas fa-envelope"></i> info@grillardesannasoya.com</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Montreal, Canada</li>
+                        <li><i class="fas fa-clock"></i> <span data-en="Mon-Sat: 10AM - 8PM" data-fr="Lun-Sam: 10H - 20H">Mon-Sat: 10AM - 8PM</span></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3 data-en="Newsletter" data-fr="Infolettre">Newsletter</h3>
+                    <p data-en="Subscribe to get updates on our latest offers and events" data-fr="Abonnez-vous pour recevoir des mises à jour sur nos dernières offres et événements">Subscribe to get updates on our latest offers and events</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your Email Address" data-en-placeholder="Your Email Address" data-fr-placeholder="Votre Adresse Email">
+                        <button type="submit" class="btn btn-secondary" data-en="Subscribe" data-fr="S'abonner">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Grillardes Anna Soya. <span data-en="All rights reserved." data-fr="Tous droits réservés.">All rights reserved.</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle functionality
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navMenu = document.querySelector('.nav-menu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            
+            // Change icon based on menu state
+            const icon = mobileMenuBtn.querySelector('i');
+            if (navMenu.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+        
+        // Close menu when clicking on a link
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                const icon = mobileMenuBtn.querySelector('i');
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            });
+        });
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!navMenu.contains(e.target) && 
+                !mobileMenuBtn.contains(e.target) && 
+                navMenu.classList.contains('active')) {
+                navMenu.classList.remove('active');
+                const icon = mobileMenuBtn.querySelector('i');
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+        
+        // Language toggle functionality
+        const languageToggle = document.getElementById('languageToggle');
+        let currentLanguage = 'en'; // Default language
+        
+        // Function to toggle language
+        function toggleLanguage() {
+            currentLanguage = currentLanguage === 'en' ? 'fr' : 'en';
+            updateLanguage(currentLanguage);
+            languageToggle.textContent = currentLanguage === 'en' ? 'FR' : 'EN';
+            
+            // Save language preference to localStorage
+            localStorage.setItem('preferredLanguage', currentLanguage);
+        }
+        
+        // Function to update all text content based on selected language
+        function updateLanguage(lang) {
+            // Update all elements with data attributes for translation
+            document.querySelectorAll('[data-en], [data-fr]').forEach(element => {
+                if (element.hasAttribute(`data-${lang}`)) {
+                    if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+                        element.placeholder = element.getAttribute(`data-${lang}-placeholder`);
+                    } else {
+                        if (element.hasAttribute('data-en-inner')) {
+                            element.innerHTML = element.getAttribute(`data-${lang}`);
+                        } else {
+                            element.textContent = element.getAttribute(`data-${lang}`);
+                        }
+                    }
+                }
+            });
+            
+            // Update HTML lang attribute
+            document.documentElement.lang = lang;
+        }
+        
+        // Initialize language from localStorage or default to 'en'
+        const savedLanguage = localStorage.getItem('preferredLanguage');
+        if (savedLanguage) {
+            currentLanguage = savedLanguage;
+            languageToggle.textContent = currentLanguage === 'en' ? 'FR' : 'EN';
+        }
+        
+        // Update page with the current language
+        updateLanguage(currentLanguage);
+        
+        // Add event listener to the language toggle button
+        languageToggle.addEventListener('click', toggleLanguage);
+        
+        // Form submission handling
+        document.getElementById('eventBookingForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your booking request! We will contact you within 24 hours to confirm details.');
+            this.reset();
+        });
+
+
+    // Event Filter Functionality
+    document.addEventListener('DOMContentLoaded', function() {
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const eventItems = document.querySelectorAll('.event-item');
+        
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                
+                // Add active class to clicked button
+                button.classList.add('active');
+                
+                const filterValue = button.getAttribute('data-filter');
+                
+                // Filter events
+                eventItems.forEach(item => {
+                    if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+                        item.style.display = 'block';
+                        setTimeout(() => {
+                            item.style.opacity = '1';
+                            item.style.transform = 'translateY(0)';
+                        }, 100);
+                    } else {
+                        item.style.opacity = '0';
+                        item.style.transform = 'translateY(20px)';
+                        setTimeout(() => {
+                            item.style.display = 'none';
+                        }, 300);
+                    }
+                });
+            });
+        });
+    });
+    </script>
+</body>
+</html>

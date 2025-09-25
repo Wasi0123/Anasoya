@@ -1,0 +1,1301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Grillardes Anna Soya</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Color Variables */
+        :root {
+            --burgundy: #8B0000;
+            --gold: #FFD700;
+            --charcoal: #000000;
+            --white: #FFFFFF;
+            --light-bg: #f9f9f9;
+        }
+        
+        /* Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: var(--charcoal);
+            line-height: 1.6;
+            overflow-x: hidden;
+            background-color: var(--light-bg);
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        
+        h1 {
+            font-size: 2.8rem;
+            text-transform: uppercase;
+        }
+        
+        h2 {
+            font-size: 2.2rem;
+            color: var(--burgundy);
+            text-transform: uppercase;
+        }
+        
+        h3 {
+            font-size: 1.8rem;
+            color: var(--gold);
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 14px 32px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            margin: 10px 10px 10px 0;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem;
+            cursor: pointer;
+            border: none;
+        }
+        
+        .btn-primary {
+            background-color: var(--burgundy);
+            color: var(--white);
+            border: 2px solid var(--burgundy);
+        }
+        
+        .btn-primary:hover {
+            background-color: transparent;
+            color: var(--burgundy);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(139, 0, 0, 0.2);
+        }
+        
+        .btn-secondary {
+            background-color: var(--gold);
+            color: var(--charcoal);
+            border: 2px solid var(--gold);
+        }
+        
+        .btn-secondary:hover {
+            background-color: transparent;
+            color: var(--charcoal);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(255, 215, 0, 0.2);
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: var(--charcoal);
+            padding: 15px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            color: var(--gold);
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 800;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo span {
+            color: var(--burgundy);
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            align-items: center;
+        }
+        
+        .nav-menu li {
+            margin-left: 25px;
+        }
+        
+        .nav-menu a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+            font-size: 1rem;
+            text-transform: uppercase;
+        }
+        
+        .nav-menu a:hover {
+            color: var(--gold);
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            color: var(--white);
+            font-size: 1.5rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+        
+        /* Language Toggle Button */
+        .language-toggle {
+            background: none;
+            border: 2px solid var(--gold);
+            color: var(--white);
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            margin-left: 15px;
+        }
+        
+        .language-toggle:hover {
+            background-color: var(--gold);
+            color: var(--charcoal);
+        }
+        
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('./g0.jpeg');
+            background-size: cover;
+            background-position: center;
+            padding: 150px 0 80px;
+            text-align: center;
+            color: var(--white);
+            margin-top: 70px;
+        }
+        
+        .page-header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            color: var(--white);
+            line-height: 1.2;
+        }
+        
+        .page-header h1 span {
+            color: var(--gold);
+        }
+        
+        .page-header p {
+            font-size: 1.2rem;
+            margin-bottom: 2.5rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* Contact Section */
+        .contact-section {
+            padding: 100px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .section-title p {
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+        }
+        
+        .contact-info {
+            padding: 20px;
+        }
+        
+        .contact-info h3 {
+            margin-bottom: 20px;
+            color: var(--burgundy);
+        }
+        
+        .contact-details {
+            list-style: none;
+            margin-bottom: 30px;
+        }
+        
+        .contact-details li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .contact-details li i {
+            color: var(--burgundy);
+            margin-right: 15px;
+            font-size: 1.2rem;
+            width: 25px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 25px;
+        }
+        
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background-color: var(--burgundy);
+            color: var(--white);
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            font-size: 1.2rem;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--gold);
+            color: var(--charcoal);
+            transform: translateY(-5px);
+        }
+        
+        /* Form Styles */
+        .contact-form {
+            background-color: var(--white);
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .form-title {
+            margin-bottom: 25px;
+            color: var(--burgundy);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--charcoal);
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: var(--burgundy);
+            outline: none;
+        }
+        
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+        
+        .form-checkbox {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .form-checkbox input {
+            width: auto;
+            margin-right: 10px;
+        }
+        
+        /* Form Tabs */
+        .form-tabs {
+            display: flex;
+            margin-bottom: 25px;
+            border-bottom: 2px solid #eee;
+        }
+        
+        .form-tab {
+            padding: 12px 25px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+            color: #777;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .form-tab.active {
+            color: var(--burgundy);
+        }
+        
+        .form-tab.active::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: var(--burgundy);
+        }
+        
+        .form-content {
+            display: none;
+        }
+        
+        .form-content.active {
+            display: block;
+        }
+        
+        /* Testimonials Preview */
+        .testimonial-preview {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+            border-left: 4px solid var(--gold);
+        }
+        
+        .testimonial-preview h4 {
+            color: var(--burgundy);
+            margin-bottom: 10px;
+        }
+        
+        /* Map Section */
+        .map-section {
+            padding: 80px 0;
+            background-color: var(--charcoal);
+            color: var(--white);
+        }
+        
+        .map-container {
+            height: 400px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .map-placeholder {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #2c3e50;
+            flex-direction: column;
+        }
+        
+        .map-placeholder i {
+            font-size: 3rem;
+            color: var(--gold);
+            margin-bottom: 20px;
+        }
+        
+        /* FAQ Section */
+        .faq-section {
+            padding: 100px 0;
+            background-color: var(--light-bg);
+        }
+        
+        .accordion {
+            margin-top: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .accordion-item {
+            background-color: var(--white);
+            border-radius: 8px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+        }
+        
+        .accordion-header {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+        }
+        
+        .accordion-header i {
+            transition: transform 0.3s ease;
+        }
+        
+        .accordion-content {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+        
+        .accordion-item.active .accordion-content {
+            max-height: 500px;
+            padding: 0 20px 20px;
+        }
+        
+        .accordion-item.active .accordion-header i {
+            transform: rotate(180deg);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--charcoal);
+            color: var(--white);
+            padding: 80px 0 30px;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column h3 {
+            color: var(--gold);
+            margin-bottom: 25px;
+            font-size: 1.4rem;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background-color: var(--burgundy);
+        }
+        
+        .footer-links {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .footer-links li i {
+            margin-right: 10px;
+            color: var(--gold);
+            width: 20px;
+        }
+        
+        .footer-links a {
+            color: var(--white);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--gold);
+        }
+        
+        .footer-social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 25px;
+        }
+        
+        .footer-social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 42px;
+            height: 42px;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: var(--white);
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            font-size: 1.1rem;
+        }
+        
+        .footer-social-links a:hover {
+            background-color: var(--gold);
+            color: var(--charcoal);
+            transform: translateY(-3px);
+        }
+        
+        .newsletter-form {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .newsletter-form input {
+            padding: 12px 15px;
+            margin-bottom: 15px;
+            border: none;
+            border-radius: 4px;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: var(--white);
+        }
+        
+        .newsletter-form input::placeholder {
+            color: #ccc;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            h2 {
+                font-size: 2rem;
+            }
+            
+            .page-header h1 {
+                font-size: 3rem;
+            }
+            
+            .contact-container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 868px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            .nav-menu {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                flex-direction: column;
+                background-color: var(--charcoal);
+                width: 100%;
+                height: calc(100vh - 70px);
+                transition: left 0.3s ease;
+                padding: 40px 20px;
+                z-index: 999;
+                overflow-y: auto;
+            }
+            
+            .nav-menu.active {
+                left: 0;
+            }
+            
+            .nav-menu li {
+                margin: 15px 0;
+                margin-left: 0;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .page-header {
+                padding: 130px 0 60px;
+                margin-top: 60px;
+            }
+            
+            .page-header h1 {
+                font-size: 2.5rem;
+            }
+            
+            .contact-section,
+            .map-section,
+            .faq-section {
+                padding: 80px 0;
+            }
+            
+            .btn {
+                padding: 12px 25px;
+                font-size: 0.9rem;
+            }
+            
+            .contact-form {
+                padding: 30px;
+            }
+            
+            .form-tabs {
+                flex-direction: column;
+            }
+            
+            .form-tab {
+                text-align: left;
+                border-bottom: 1px solid #eee;
+            }
+            
+            .form-tab.active::after {
+                display: none;
+            }
+            
+            .language-toggle {
+                margin: 15px 0;
+                order: 3;
+                width: 100%;
+                text-align: center;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .page-header h1 {
+                font-size: 2rem;
+            }
+            
+            .page-header p {
+                font-size: 1rem;
+            }
+            
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-form {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="./index.html" class="logo">Grillardes <span>Anna Soya</span></a>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="./index.html" data-en="Home" data-fr="Accueil">Home</a></li>
+                <li><a href="./about.html" data-en="About Us" data-fr="À Propos">About Us</a></li>
+                <li><a href="./event.html" data-en="Event" data-fr="Événements">Event</a></li>
+                <li><a href="./services.html" data-en="Services" data-fr="Services">Services</a></li>
+                <li><a href="./gallery.html" data-en="Gallery" data-fr="Galerie">Gallery</a></li>
+                <li><a href="./contact.html" data-en="Contact" data-fr="Contact">Contact</a></li>
+                <li>
+                    <button class="language-toggle" id="languageToggle">FR</button>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1 data-en="Contact Us" data-fr="Contactez-Nous">Contact <span>Us</span></h1>
+            <p data-en="Get in touch with us for orders, complaints, or to share your experience. We're here to serve you!" data-fr="Contactez-nous pour des commandes, des plaintes ou pour partager votre expérience. Nous sommes là pour vous servir !">Get in touch with us for orders, complaints, or to share your experience. We're here to serve you!</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="section-title">
+                <h2 data-en="Get In Touch" data-fr="Entrez en Contact">Get In Touch</h2>
+                <p data-en="Choose how you'd like to contact us and we'll respond as quickly as possible" data-fr="Choisissez comment vous souhaitez nous contacter et nous répondrons dès que possible">Choose how you'd like to contact us and we'll respond as quickly as possible</p>
+            </div>
+            
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3 data-en="Contact Information" data-fr="Informations de Contact">Contact Information</h3>
+                    <ul class="contact-details">
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <strong data-en="Phone" data-fr="Téléphone">Phone</strong><br>
+                                (514) 812-9142
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <strong data-en="Email" data-fr="Email">Email</strong><br>
+                                info@grillardesannasoya.com
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <strong data-en="Address" data-fr="Adresse">Address</strong><br>
+                                <span data-en="Montreal, Canada" data-fr="Montréal, Canada">Montreal, Canada</span>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <strong data-en="Business Hours" data-fr="Heures d'Ouverture">Business Hours</strong><br>
+                                <span data-en="Mon-Sat: 10AM - 8PM" data-fr="Lun-Sam: 10H - 20H">Mon-Sat: 10AM - 8PM</span><br>
+                                <span data-en="Sun: Closed" data-fr="Dim: Fermé">Sun: Closed</span>
+                            </div>
+                        </li>
+                    </ul>
+                    
+                    <h3 data-en="Follow Us" data-fr="Suivez-Nous">Follow Us</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <h3 class="form-title" data-en="Send Us a Message" data-fr="Envoyez-nous un Message">Send Us a Message</h3>
+                    
+                    <div class="form-tabs">
+                        <button class="form-tab active" data-tab="order" data-en="Place Order" data-fr="Passer Commande">Place Order</button>
+                        <button class="form-tab" data-tab="complaint" data-en="Complaint" data-fr="Plainte">Complaint</button>
+                        <button class="form-tab" data-tab="testimonial" data-en="Testimonial" data-fr="Témoignage">Testimonial</button>
+                    </div>
+                    
+                    <form id="contactForm">
+                        <!-- Order Form -->
+                        <div class="form-content active" id="order-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="order-name" data-en="Full Name *" data-fr="Nom Complet *">Full Name *</label>
+                                    <input type="text" id="order-name" name="order-name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="order-phone" data-en="Phone Number *" data-fr="Numéro de Téléphone *">Phone Number *</label>
+                                    <input type="tel" id="order-phone" name="order-phone" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="order-email" data-en="Email Address *" data-fr="Adresse Email *">Email Address *</label>
+                                <input type="email" id="order-email" name="order-email" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="order-type" data-en="What would you like to order? *" data-fr="Que souhaitez-vous commander ? *">What would you like to order? *</label>
+                                <select id="order-type" name="order-type" required>
+                                    <option value="" data-en="Select an option" data-fr="Sélectionnez une option">Select an option</option>
+                                    <option value="soya-tray" data-en="Premium Soya Tray" data-fr="Plateau de Soya Premium">Premium Soya Tray</option>
+                                    <option value="soya-plate" data-en="Gourmet Soya Plate" data-fr="Assiette Gourmet Soya">Gourmet Soya Plate</option>
+                                    <option value="soya-cup" data-en="Soya Snack Cup" data-fr="Coupe-Collation Soya">Soya Snack Cup</option>
+                                    <option value="spices" data-en="Signature Spices" data-fr="Épices Signature">Signature Spices</option>
+                                    <option value="fish-spice" data-en="Fish Marinade Magic" data-fr="Magie de Marinade pour Poisson">Fish Marinade Magic</option>
+                                    <option value="grill-kit" data-en="Ultimate Grill Master Kit" data-fr="Kit Ultime du Maître Grilleur">Ultimate Grill Master Kit</option>
+                                    <option value="other" data-en="Other (specify in message)" data-fr="Autre (précisez dans le message)">Other (specify in message)</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="order-quantity" data-en="Quantity *" data-fr="Quantité *">Quantity *</label>
+                                    <input type="number" id="order-quantity" name="order-quantity" min="1" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="order-date" data-en="Preferred Delivery/Pickup Date" data-fr="Date de Livraison/Ramassage Préférée">Preferred Delivery/Pickup Date</label>
+                                    <input type="date" id="order-date" name="order-date">
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="order-message" data-en="Special Instructions" data-fr="Instructions Spéciales">Special Instructions</label>
+                                <textarea id="order-message" name="order-message" data-en-placeholder="Any special requests or dietary restrictions?" data-fr-placeholder="Des demandes spéciales ou des restrictions alimentaires ?"></textarea>
+                            </div>
+                            
+                            <div class="form-checkbox">
+                                <input type="checkbox" id="order-callback" name="order-callback">
+                                <label for="order-callback" data-en="Please call me to confirm my order" data-fr="Veuillez m'appeler pour confirmer ma commande">Please call me to confirm my order</label>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary" data-en="Place Order" data-fr="Passer Commande">Place Order</button>
+                        </div>
+                        
+                        <!-- Complaint Form -->
+                        <div class="form-content" id="complaint-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="complaint-name" data-en="Full Name *" data-fr="Nom Complet *">Full Name *</label>
+                                    <input type="text" id="complaint-name" name="complaint-name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="complaint-email" data-en="Email Address *" data-fr="Adresse Email *">Email Address *</label>
+                                    <input type="email" id="complaint-email" name="complaint-email" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="complaint-type" data-en="Nature of Complaint *" data-fr="Nature de la Plainte *">Nature of Complaint *</label>
+                                <select id="complaint-type" name="complaint-type" required>
+                                    <option value="" data-en="Select an option" data-fr="Sélectionnez une option">Select an option</option>
+                                    <option value="quality" data-en="Product Quality" data-fr="Qualité du Produit">Product Quality</option>
+                                    <option value="service" data-en="Service Issue" data-fr="Problème de Service">Service Issue</option>
+                                    <option value="delivery" data-en="Delivery Problem" data-fr="Problème de Livraison">Delivery Problem</option>
+                                    <option value="order" data-en="Order Error" data-fr="Erreur de Commande">Order Error</option>
+                                    <option value="other" data-en="Other" data-fr="Autre">Other</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="complaint-order" data-en="Order Number (if applicable)" data-fr="Numéro de Commande (le cas échéant)">Order Number (if applicable)</label>
+                                <input type="text" id="complaint-order" name="complaint-order">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="complaint-message" data-en="Please describe the issue *" data-fr="Veuillez décrire le problème *">Please describe the issue *</label>
+                                <textarea id="complaint-message" name="complaint-message" data-en-placeholder="Please provide as much detail as possible" data-fr-placeholder="Veuillez fournir autant de détails que possible" required></textarea>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="complaint-resolution" data-en="Desired Resolution" data-fr="Résolution Souhaitée">Desired Resolution</label>
+                                <textarea id="complaint-resolution" name="complaint-resolution" data-en-placeholder="How can we make this right?" data-fr-placeholder="Comment pouvons-nous arranger cela ?"></textarea>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary" data-en="Submit Complaint" data-fr="Soumettre la Plainte">Submit Complaint</button>
+                        </div>
+                        
+                        <!-- Testimonial Form -->
+                        <div class="form-content" id="testimonial-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="testimonial-name" data-en="Full Name *" data-fr="Nom Complet *">Full Name *</label>
+                                    <input type="text" id="testimonial-name" name="testimonial-name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="testimonial-location" data-en="Location (City)" data-fr="Localisation (Ville)">Location (City)</label>
+                                    <input type="text" id="testimonial-location" name="testimonial-location">
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="testimonial-email" data-en="Email Address" data-fr="Adresse Email">Email Address</label>
+                                <input type="email" id="testimonial-email" name="testimonial-email">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="testimonial-service" data-en="What did you enjoy? *" data-fr="Qu'avez-vous apprécié ? *">What did you enjoy? *</label>
+                                <select id="testimonial-service" name="testimonial-service" required>
+                                    <option value="" data-en="Select an option" data-fr="Sélectionnez une option">Select an option</option>
+                                    <option value="soya" data-en="Our Soya Products" data-fr="Nos Produits Soya">Our Soya Products</option>
+                                    <option value="spices" data-en="Our Spices" data-fr="Nos Épices">Our Spices</option>
+                                    <option value="event" data-en="Event Grilling Service" data-fr="Service de Grillade d'Événement">Event Grilling Service</option>
+                                    <option value="delivery" data-en="Delivery Service" data-fr="Service de Livraison">Delivery Service</option>
+                                    <option value="other" data-en="Other" data-fr="Autre">Other</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="testimonial-message" data-en="Your Testimonial *" data-fr="Votre Témoignage *">Your Testimonial *</label>
+                                <textarea id="testimonial-message" name="testimonial-message" data-en-placeholder="Share your experience with us" data-fr-placeholder="Partagez votre expérience avec nous" required></textarea>
+                            </div>
+                            
+                            <div class="form-checkbox">
+                                <input type="checkbox" id="testimonial-permission" name="testimonial-permission">
+                                <label for="testimonial-permission" data-en="I give permission to use this testimonial on your website and marketing materials" data-fr="J'autorise l'utilisation de ce témoignage sur votre site web et dans vos documents marketing">I give permission to use this testimonial on your website and marketing materials</label>
+                            </div>
+                            
+                            <div class="testimonial-preview">
+                                <h4 data-en="Testimonial Preview" data-fr="Aperçu du Témoignage">Testimonial Preview</h4>
+                                <p id="testimonial-preview-text" data-en="Your testimonial will appear here as you type..." data-fr="Votre témoignage apparaîtra ici au fur et à mesure que vous tapez...">Your testimonial will appear here as you type...</p>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary" data-en="Submit Testimonial" data-fr="Soumettre le Témoignage">Submit Testimonial</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map-section">
+        <div class="container">
+            <div class="section-title">
+                <h2 data-en="Our Location" data-fr="Notre Emplacement">Our Location</h2>
+                <p data-en="We serve the Greater Montreal area with delivery and pickup options" data-fr="Nous desservons la région du Grand Montréal avec des options de livraison et de ramassage">We serve the Greater Montreal area with delivery and pickup options</p>
+            </div>
+            
+            <div class="map-container">
+                <div class="map-placeholder">
+                    <i class="fas fa-map-marked-alt"></i>
+                    <p data-en="Interactive map would be integrated here" data-fr="Une carte interactive serait intégrée ici">Interactive map would be integrated here</p>
+                    <p data-en="Montreal, Canada" data-fr="Montréal, Canada">Montreal, Canada</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="section-title">
+                <h2 data-en="Frequently Asked Questions" data-fr="Foire Aux Questions">Frequently Asked Questions</h2>
+                <p data-en="Quick answers to common questions about ordering and our services" data-fr="Réponses rapides aux questions courantes sur la commande et nos services">Quick answers to common questions about ordering and our services</p>
+            </div>
+            
+            <div class="accordion">
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <span data-en="How long does delivery take?" data-fr="Combien de temps prend la livraison ?">How long does delivery take?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <p data-en="Delivery times vary based on your location in Montreal. Generally, orders placed before 2 PM will be delivered the same day. Orders after 2 PM will be delivered the next day. You'll receive a confirmation message with an estimated delivery time after placing your order." data-fr="Les délais de livraison varient selon votre emplacement à Montréal. Généralement, les commandes passées avant 14h seront livrées le même jour. Les commandes après 14h seront livrées le lendemain. Vous recevrez un message de confirmation avec un délai de livraison estimé après avoir passé votre commande.">Delivery times vary based on your location in Montreal. Generally, orders placed before 2 PM will be delivered the same day. Orders after 2 PM will be delivered the next day. You'll receive a confirmation message with an estimated delivery time after placing your order.</p>
+                    </div>
+                </div>
+                
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <span data-en="What payment methods do you accept?" data-fr="Quels modes de paiement acceptez-vous ?">What payment methods do you accept?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <p data-en="We accept cash on delivery, credit/debit cards, Interac e-Transfer, and PayPal. For larger orders or event services, we require a 25% deposit to secure your booking." data-fr="Nous acceptons les paiements en espèces à la livraison, les cartes de crédit/débit, les transferts Interac et PayPal. Pour les commandes plus importantes ou les services d'événements, nous demandons un acompte de 25% pour confirmer votre réservation.">We accept cash on delivery, credit/debit cards, Interac e-Transfer, and PayPal. For larger orders or event services, we require a 25% deposit to secure your booking.</p>
+                    </div>
+                </div>
+                
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <span data-en="Can I modify or cancel my order?" data-fr="Puis-je modifier ou annuler ma commande ?">Can I modify or cancel my order?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <p data-en="You can modify or cancel your order up to 2 hours before your scheduled delivery or pickup time. Please call us directly at (514) 123-4567 for any changes to your order." data-fr="Vous pouvez modifier ou annuler votre commande jusqu'à 2 heures avant l'heure de livraison ou de ramassage prévue. Veuillez nous appeler directement au (514) 123-4567 pour toute modification de votre commande.">You can modify or cancel your order up to 2 hours before your scheduled delivery or pickup time. Please call us directly at (514) 123-4567 for any changes to your order.</p>
+                    </div>
+                </div>
+                
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <span data-en="Do you accommodate dietary restrictions?" data-fr="Accommodez-vous les restrictions alimentaires ?">Do you accommodate dietary restrictions?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <p data-en="Yes, we can accommodate various dietary restrictions including gluten-free, dairy-free, and certain allergies. Please specify your requirements in the 'Special Instructions' section when placing your order." data-fr="Oui, nous pouvons accommoder diverses restrictions alimentaires, y compris sans gluten, sans produits laitiers et certaines allergies. Veuillez préciser vos exigences dans la section 'Instructions Spéciales' lors de votre commande.">Yes, we can accommodate various dietary restrictions including gluten-free, dairy-free, and certain allergies. Please specify your requirements in the 'Special Instructions' section when placing your order.</p>
+                    </div>
+                </div>
+                
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <span data-en="How far in advance should I book for events?" data-fr="Combien de temps à l'avance dois-je réserver pour les événements ?">How far in advance should I book for events?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <p data-en="We recommend booking at least 2-3 weeks in advance for smaller events and 4-6 weeks for larger events like weddings. However, we understand that sometimes events come together quickly, so please contact us even for last-minute requests." data-fr="Nous recommandons de réserver au moins 2-3 semaines à l'avance pour les petits événements et 4-6 semaines pour les grands événements comme les mariages. Cependant, nous comprenons que parfois les événements se organisent rapidement, alors n'hésitez pas à nous contacter même pour des demandes de dernière minute.">We recommend booking at least 2-3 weeks in advance for smaller events and 4-6 weeks for larger events like weddings. However, we understand that sometimes events come together quickly, so please contact us even for last-minute requests.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3>Grillardes Anna Soya</h3>
+                    <p data-en="Montreal's premier grilling service and provider of premium roasted beef (soya) and authentic spices." data-fr="Le service de grillade premier de Montréal et fournisseur de bœuf rôti premium (soya) et d'épices authentiques.">Montreal's premier grilling service and provider of premium roasted beef (soya) and authentic spices.</p>
+                    <div class="footer-social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3 data-en="Quick Links" data-fr="Liens Rapides">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="./index.html" data-en="Home" data-fr="Accueil">Home</a></li>
+                        <li><a href="./about.html" data-en="About Us" data-fr="À Propos">About Us</a></li>
+                        <li><a href="./services.html" data-en="Services" data-fr="Services">Services</a></li>
+                        <li><a href="./contact.html#order-form" data-en="Order" data-fr="Commander">Order</a></li>
+                        <li><a href="./gallery.html" data-en="Gallery" data-fr="Galerie">Gallery</a></li>
+                        <li><a href="./contact.html" data-en="Contact" data-fr="Contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3 data-en="Contact Us" data-fr="Contactez-Nous">Contact Us</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-phone"></i> (514) 812-9142</li>
+                        <li><i class="fas fa-envelope"></i> info@grillardesannasoya.com</li>
+                        <li><i class="fas fa-map-marker-alt"></i> <span data-en="Montreal, Canada" data-fr="Montréal, Canada">Montreal, Canada</span></li>
+                        <li><i class="fas fa-clock"></i> <span data-en="Mon-Sat: 10AM - 8PM" data-fr="Lun-Sam: 10H - 20H">Mon-Sat: 10AM - 8PM</span></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3 data-en="Newsletter" data-fr="Infolettre">Newsletter</h3>
+                    <p data-en="Subscribe to get updates on our latest offers and events" data-fr="Abonnez-vous pour recevoir des mises à jour sur nos dernières offres et événements">Subscribe to get updates on our latest offers and events</p>
+                    <form class="newsletter-form">
+                        <input type="email" data-en-placeholder="Your Email Address" data-fr-placeholder="Votre Adresse Email">
+                        <button type="submit" class="btn btn-secondary" data-en="Subscribe" data-fr="S'abonner">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Grillardes Anna Soya. <span data-en="All rights reserved." data-fr="Tous droits réservés.">All rights reserved.</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle functionality
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navMenu = document.querySelector('.nav-menu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            
+            // Change icon based on menu state
+            const icon = mobileMenuBtn.querySelector('i');
+            if (navMenu.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+        
+        // Close menu when clicking on a link
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                const icon = mobileMenuBtn.querySelector('i');
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            });
+        });
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!navMenu.contains(e.target) && 
+                !mobileMenuBtn.contains(e.target) && 
+                navMenu.classList.contains('active')) {
+                navMenu.classList.remove('active');
+                const icon = mobileMenuBtn.querySelector('i');
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+
+        // Language toggle functionality
+        const languageToggle = document.getElementById('languageToggle');
+        let currentLanguage = 'en'; // Default language
+        
+        // Function to toggle language
+        function toggleLanguage() {
+            currentLanguage = currentLanguage === 'en' ? 'fr' : 'en';
+            updateLanguage(currentLanguage);
+            languageToggle.textContent = currentLanguage === 'en' ? 'FR' : 'EN';
+            
+            // Save language preference to localStorage
+            localStorage.setItem('preferredLanguage', currentLanguage);
+        }
+        
+        // Function to update all text content based on selected language
+        function updateLanguage(lang) {
+            // Update all elements with data attributes for translation
+            document.querySelectorAll('[data-en], [data-fr]').forEach(element => {
+                if (element.hasAttribute(`data-${lang}`)) {
+                    if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+                        if (element.hasAttribute(`data-${lang}-placeholder`)) {
+                            element.placeholder = element.getAttribute(`data-${lang}-placeholder`);
+                        }
+                    } else if (element.tagName === 'OPTION') {
+                        element.textContent = element.getAttribute(`data-${lang}`);
+                    } else {
+                        element.textContent = element.getAttribute(`data-${lang}`);
+                    }
+                }
+            });
+            
+            // Update HTML lang attribute
+            document.documentElement.lang = lang;
+        }
+        
+        // Initialize language from localStorage or default to 'en'
+        const savedLanguage = localStorage.getItem('preferredLanguage');
+        if (savedLanguage) {
+            currentLanguage = savedLanguage;
+            languageToggle.textContent = currentLanguage === 'en' ? 'FR' : 'EN';
+        }
+        
+        // Update page with the current language
+        updateLanguage(currentLanguage);
+        
+        // Add event listener to the language toggle button
+        languageToggle.addEventListener('click', toggleLanguage);
+
+        // Form tabs functionality
+        const formTabs = document.querySelectorAll('.form-tab');
+        const formContents = document.querySelectorAll('.form-content');
+        
+        formTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                // Remove active class from all tabs and contents
+                formTabs.forEach(t => t.classList.remove('active'));
+                formContents.forEach(c => c.classList.remove('active'));
+                
+                // Add active class to clicked tab
+                tab.classList.add('active');
+                
+                // Show corresponding content
+                const tabId = tab.getAttribute('data-tab');
+                document.getElementById(`${tabId}-form`).classList.add('active');
+            });
+        });
+
+        // Testimonial preview functionality
+        const testimonialMessage = document.getElementById('testimonial-message');
+        const testimonialPreview = document.getElementById('testimonial-preview-text');
+        
+        if (testimonialMessage && testimonialPreview) {
+            testimonialMessage.addEventListener('input', () => {
+                testimonialPreview.textContent = testimonialMessage.value || testimonialPreview.getAttribute(`data-${currentLanguage}`);
+            });
+        }
+
+        // FAQ accordion functionality
+        const accordionHeaders = document.querySelectorAll('.accordion-header');
+        
+        accordionHeaders.forEach(header => {
+            header.addEventListener('click', () => {
+                const item = header.parentElement;
+                item.classList.toggle('active');
+            });
+        });
+
+        // Form submission
+        const contactForm = document.getElementById('contactForm');
+        
+        if (contactForm) {
+            contactForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                
+                // Get active form type
+                let formType = 'order';
+                formTabs.forEach(tab => {
+                    if (tab.classList.contains('active')) {
+                        formType = tab.getAttribute('data-tab');
+                    }
+                });
+                
+                // Simple form validation
+                let isValid = true;
+                const activeForm = document.querySelector('.form-content.active');
+                const requiredFields = activeForm.querySelectorAll('[required]');
+                
+                requiredFields.forEach(field => {
+                    if (!field.value.trim()) {
+                        isValid = false;
+                        field.style.borderColor = 'red';
+                    } else {
+                        field.style.borderColor = '#ddd';
+                    }
+                });
+                
+                if (isValid) {
+                    // In a real application, you would send the form data to a server here
+                    const message = currentLanguage === 'en' 
+                        ? `Thank you for your ${formType}! We will contact you shortly.`
+                        : `Merci pour votre ${formType === 'order' ? 'commande' : formType === 'complaint' ? 'plainte' : 'témoignage'} ! Nous vous contacterons sous peu.`;
+                    alert(message);
+                    contactForm.reset();
+                    
+                    // Reset testimonial preview
+                    if (testimonialPreview) {
+                        testimonialPreview.textContent = testimonialPreview.getAttribute(`data-${currentLanguage}`);
+                    }
+                } else {
+                    const message = currentLanguage === 'en' 
+                        ? 'Please fill in all required fields.'
+                        : 'Veuillez remplir tous les champs obligatoires.';
+                    alert(message);
+                }
+            });
+        }
+
+        // Animation on scroll
+        const animateOnScroll = () => {
+            const elements = document.querySelectorAll('.accordion-item, .contact-form, .contact-info');
+            
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.3;
+                
+                if (elementPosition < screenPosition) {
+                    element.style.opacity = 1;
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        };
+
+        // Initialize elements for animation
+        document.querySelectorAll('.accordion-item, .contact-form, .contact-info').forEach(element => {
+            element.style.opacity = 0;
+            element.style.transform = 'translateY(20px)';
+            element.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+        });
+
+        // Listen for scroll events
+        window.addEventListener('scroll', animateOnScroll);
+        // Initial check
+        window.addEventListener('load', animateOnScroll);
+    </script>
+</body>
+</html>

@@ -1,0 +1,1414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grillardes Anna Soya - Montreal's Finest Grilling Experience</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Color Variables */
+        :root {
+            --burgundy: #8B0000;
+            --gold: #ffe600e0;
+            --charcoal: #000000;
+            --white: #FFFFFF;
+            --light-bg: #f9f9f9;
+        }
+        
+        /* Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: var(--charcoal);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        
+        h1 {
+            font-size: 2.8rem;
+            text-transform: uppercase;
+        }
+        
+        h2 {
+            font-size: 2.2rem;
+            color: var(--burgundy);
+            text-transform: uppercase;
+        }
+        
+        h3 {
+            font-size: 1.8rem;
+            color: var(--gold);
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 14px 32px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            margin: 10px 10px 10px 0;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem;
+        }
+        
+        .btn-primary {
+            background-color: var(--burgundy);
+            color: var(--white);
+            border: 2px solid var(--burgundy);
+        }
+        
+        .btn-primary:hover {
+            background-color: transparent;
+            color: var(--burgundy);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(139, 0, 0, 0.2);
+        }
+        
+        .btn-secondary {
+            background-color: var(--gold);
+            color: var(--charcoal);
+            border: 2px solid var(--gold);
+        }
+        
+        .btn-secondary:hover {
+            background-color: transparent;
+            color: var(--charcoal);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(255, 215, 0, 0.2);
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: var(--charcoal);
+            padding: 15px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            color: var(--gold);
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 800;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo span {
+            color: var(--burgundy);
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            align-items: center;
+        }
+        
+        .nav-menu li {
+            margin-left: 25px;
+        }
+        
+        .nav-menu a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+            font-size: 1rem;
+            text-transform: uppercase;
+        }
+        
+        .nav-menu a:hover {
+            color: var(--gold);
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            color: var(--white);
+            font-size: 1.5rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+        
+        /* Language Toggle Button */
+        .language-toggle {
+            background: none;
+            border: 2px solid var(--gold);
+            color: var(--white);
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            margin-left: 15px;
+        }
+        
+        .language-toggle:hover {
+            background-color: var(--gold);
+            color: var(--charcoal);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1555939594-58d7cb561ad1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: var(--white);
+            padding-top: 80px;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            animation: fadeIn 1.5s ease;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--white);
+            line-height: 1.2;
+        }
+        
+        .hero h1 span {
+            color: var(--gold);
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2.5rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* Featured Products */
+        .featured-products {
+            padding: 100px 0;
+            background-color: var(--light-bg);
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .section-title p {
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        
+        .product-card {
+            background-color: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .product-img {
+            height: 220px;
+            width: 100%;
+            object-fit: cover;
+        }
+        
+        .product-content {
+            padding: 25px;
+        }
+        
+        .product-title {
+            font-size: 1.4rem;
+            color: var(--burgundy);
+            margin-bottom: 10px;
+        }
+        
+        .product-desc {
+            color: #666;
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+        }
+        
+        .product-price {
+            color: var(--charcoal);
+            font-weight: 700;
+            margin: 15px 0;
+            font-size: 1.2rem;
+        }
+        
+        /* Services Section */
+        .services {
+            padding: 100px 0;
+            background-color: var(--charcoal);
+            color: var(--white);
+            position: relative;
+        }
+        
+        .services::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1600891964092-4316c288032e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.15;
+        }
+        
+        .services h2 {
+            color: var(--gold);
+            position: relative;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+            position: relative;
+        }
+        
+        .service-card {
+            background-color: rgba(255, 255, 255, 0.05);
+            padding: 35px 30px;
+            border-radius: 8px;
+            text-align: center;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 215, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            background-color: rgba(255, 255, 255, 0.08);
+        }
+        
+        .service-icon {
+            font-size: 2.8rem;
+            color: var(--gold);
+            margin-bottom: 20px;
+        }
+        
+        .service-card h3 {
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+        
+        .service-card p {
+            color: #ddd;
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            padding: 100px 0;
+            background-color: var(--light-bg);
+        }
+        
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .testimonial-card {
+            background-color: var(--white);
+            padding: 35px 30px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            position: relative;
+        }
+        
+        .testimonial-card::before {
+            content: '"';
+            font-size: 5rem;
+            color: rgba(139, 0, 0, 0.1);
+            position: absolute;
+            top: 10px;
+            left: 15px;
+            font-family: serif;
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 25px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .testimonial-author {
+            font-weight: 700;
+            color: var(--burgundy);
+            display: flex;
+            align-items: center;
+        }
+        
+        .testimonial-author::before {
+            content: '';
+            width: 30px;
+            height: 2px;
+            background-color: var(--gold);
+            margin-right: 10px;
+        }
+        
+        /* Spice Collection */
+        .spice-collection {
+            padding: 100px 0;
+            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('https://images.unsplash.com/photo-1533089860892-a7c6f0a88666?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: var(--white);
+        }
+        
+        .spice-collection h2 {
+            color: var(--gold);
+        }
+        
+        .spices-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+        
+        .spice-item {
+            text-align: center;
+            padding: 25px 20px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 215, 0, 0.2);
+        }
+        
+        .spice-icon {
+            font-size: 2.5rem;
+            color: var(--gold);
+            margin-bottom: 15px;
+        }
+        
+        .spice-item h3 {
+            margin-bottom: 10px;
+            font-size: 1.4rem;
+        }
+        
+        /* Event Packages */
+        .event-packages {
+            padding: 100px 0;
+        }
+        
+        .packages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .package-card {
+            background-color: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            text-align: center;
+        }
+        
+        .package-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .package-header {
+            background-color: var(--burgundy);
+            color: var(--white);
+            padding: 25px 20px;
+        }
+        
+        .package-header h3 {
+            color: var(--white);
+            margin-bottom: 10px;
+        }
+        
+        .package-price {
+            font-size: 2rem;
+            font-weight: 700;
+        }
+        
+        .package-details {
+            padding: 25px;
+        }
+        
+        .package-features {
+            list-style: none;
+            margin: 20px 0;
+        }
+        
+        .package-features li {
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .package-features li:last-child {
+            border-bottom: none;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            padding: 100px 0;
+            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('https://images.unsplash.com/photo-1600891964092-4316c288032e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: var(--white);
+            text-align: center;
+        }
+        
+        .cta-section h2 {
+            color: var(--gold);
+            margin-bottom: 20px;
+        }
+        
+        .cta-section p {
+            max-width: 700px;
+            margin: 0 auto 40px;
+            font-size: 1.1rem;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--charcoal);
+            color: var(--white);
+            padding: 80px 0 30px;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column h3 {
+            color: var(--gold);
+            margin-bottom: 25px;
+            font-size: 1.4rem;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background-color: var(--burgundy);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .footer-links li i {
+            margin-right: 10px;
+            color: var(--gold);
+            width: 20px;
+        }
+        
+        .footer-links a {
+            color: var(--white);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--gold);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 25px;
+        }
+        
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 42px;
+            height: 42px;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: var(--white);
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            font-size: 1.1rem;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--gold);
+            color: var(--charcoal);
+            transform: translateY(-3px);
+        }
+        
+        .newsletter-form {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .newsletter-form input {
+            padding: 12px 15px;
+            margin-bottom: 15px;
+            border: none;
+            border-radius: 4px;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: var(--white);
+        }
+        
+        .newsletter-form input::placeholder {
+            color: #ccc;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+        
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* Responsive Styles - IMPROVED */
+        @media (max-width: 1200px) {
+            .container {
+                padding: 0 15px;
+            }
+        }
+        
+        @media (max-width: 992px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            h2 {
+                font-size: 2rem;
+            }
+            
+            .hero h1 {
+                font-size: 3rem;
+            }
+            
+            .products-grid,
+            .services-grid,
+            .testimonials-grid,
+            .spices-grid,
+            .packages-grid,
+            .footer-grid {
+                gap: 20px;
+            }
+        }
+        
+        @media (max-width: 868px) {
+            .nav-menu {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                flex-direction: column;
+                background-color: var(--charcoal);
+                width: 100%;
+                height: calc(100vh - 70px);
+                transition: left 0.3s ease;
+                padding: 40px 20px;
+                z-index: 999;
+                overflow-y: auto;
+            }
+            
+            .nav-menu.active {
+                left: 0;
+            }
+            
+            .nav-menu li {
+                margin: 15px 0;
+                margin-left: 0;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero {
+                height: auto;
+                min-height: 100vh;
+                padding: 120px 0 80px;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .btn {
+                padding: 12px 25px;
+                font-size: 0.9rem;
+                margin: 8px 8px 8px 0;
+            }
+            
+            .featured-products,
+            .services,
+            .testimonials,
+            .spice-collection,
+            .event-packages,
+            .cta-section {
+                padding: 80px 0;
+            }
+            
+            .product-content,
+            .service-card,
+            .testimonial-card,
+            .package-details {
+                padding: 20px;
+            }
+            
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .language-toggle {
+                margin: 15px 0;
+                order: 3;
+                width: 100%;
+                text-align: center;
+            }
+        }
+        
+        @media (max-width: 668px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            h3 {
+                font-size: 1.5rem;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .products-grid,
+            .services-grid,
+            .testimonials-grid,
+            .spices-grid,
+            .packages-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .product-img {
+                height: 200px;
+            }
+            
+            .hero-buttons {
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .hero-buttons .btn {
+                width: 100%;
+                margin: 5px 0;
+                text-align: center;
+            }
+            
+            .service-icon,
+            .spice-icon {
+                font-size: 2rem;
+            }
+            
+            .package-header {
+                padding: 20px 15px;
+            }
+            
+            .package-price {
+                font-size: 1.8rem;
+            }
+            
+            .newsletter-form {
+                flex-direction: column;
+            }
+            
+            .newsletter-form input {
+                margin-bottom: 10px;
+            }
+            
+            footer {
+                padding: 60px 0 20px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            h2 {
+                font-size: 1.6rem;
+            }
+            
+            h3 {
+                font-size: 1.3rem;
+            }
+            
+            .logo {
+                font-size: 1.5rem;
+            }
+            
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .hero p {
+                font-size: 0.9rem;
+            }
+            
+            .section-title p {
+                font-size: 1rem;
+            }
+            
+            .product-title {
+                font-size: 1.2rem;
+            }
+            
+            .product-price {
+                font-size: 1.1rem;
+            }
+            
+            .btn {
+                padding: 10px 20px;
+                font-size: 0.8rem;
+            }
+            
+            .featured-products,
+            .services,
+            .testimonials,
+            .spice-collection,
+            .event-packages,
+            .cta-section {
+                padding: 60px 0;
+            }
+            
+            .product-content,
+            .service-card,
+            .testimonial-card,
+            .package-details {
+                padding: 15px;
+            }
+            
+            .social-links a {
+                width: 38px;
+                height: 38px;
+                font-size: 1rem;
+            }
+        }
+        
+        @media (max-width: 360px) {
+            .container {
+                padding: 0 10px;
+            }
+            
+            h1 {
+                font-size: 1.6rem;
+            }
+            
+            h2 {
+                font-size: 1.4rem;
+            }
+            
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+            
+            .product-img {
+                height: 180px;
+            }
+            
+            .btn {
+                padding: 8px 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="#" class="logo">Grillardes <span>Anna Soya</span></a>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="./index.html" data-en="Home" data-fr="Accueil">Home</a></li>
+                <li><a href="./about.html" data-en="About Us" data-fr="À Propos">About Us</a></li>
+                <li><a href="./event.html" data-en="Event" data-fr="Événements">Event</a></li>
+                <li><a href="./services.html" data-en="Services" data-fr="Services">Services</a></li>
+                <li><a href="gallery.html" data-en="Gallery" data-fr="Galerie">Gallery</a></li>
+                <li><a href="./contact.html" data-en="Contact" data-fr="Contact">Contact</a></li>
+                <li>
+                    <button class="language-toggle" id="languageToggle">FR</button>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-content">
+            <h1 data-en="Montreal's Finest  Grilling Experience" data-fr="La Meilleure Expérience de Grillade à Montréal">Montreal's Finest <span>Grilling Experience</span></h1>
+            <p data-en="Premium roasted beef (soya), authentic spices, and professional grilling services for your special events" data-fr="Bœuf rôti premium (soya), épices authentiques et services de grillade professionnels pour vos événements spéciaux">Premium roasted beef (soya), authentic spices, and professional grilling services for your special events</p>
+            <div class="hero-buttons">
+                <a href="./contact.html#order-form" class="btn btn-primary" data-en="Order Now" data-fr="Commander">Order Now</a>
+                <a href="./services.html#booking" class="btn btn-secondary" data-en="Book for Event" data-fr="Réserver pour Événement">Book for Event</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products -->
+	<section class="featured-products">
+		<div class="container">
+			<div class="section-title">
+				<h2 data-en="Our Premium Products" data-fr="Nos Producks Premium">Our Premium Products</h2>
+				<p data-en="Indulge in our mouth-watering selection of grilled specialties and signature spices" data-fr="Dégustez notre sélection alléchante de spécialités grillées et d'épices signature">Indulge in our mouth-watering selection of grilled specialties and signature spices</p>
+			</div>
+			<div class="products-grid">
+				<!-- Premium Soya Tray -->
+				<div class="product-card">
+					<div class="product-badge"></div>
+					<img src="./g12.jpeg" alt="Premium Soya Tray" class="product-img">
+					<div class="product-content">
+						<h3 class="product-title" data-en="Premium Soya Feast Tray" data-fr="Plateau Festin Soya Premium">Premium Soya Feast Tray</h3>
+						<p class="product-desc" data-en="Succulent slow-roasted beef soya, marinated for 24 hours in our secret blend of spices. Serves 4-6 people with two side dishes of your choice." data-fr="Soya de bœuf succulent rôti lentement, mariné pendant 24 heures dans notre mélange secret d'épices. Pour 4-6 personnes avec deux accompagnements de votre choix.">Succulent slow-roasted beef soya, marinated for 24 hours in our secret blend of spices. Serves 4-6 people with two side dishes of your choice.</p>
+						<div class="product-rating">
+							<i class="fas fa-star"></i>
+							<i class="fas fa-star"></i>
+							<i class="fas fa-star"></i>
+							<i class="fas fa-star"></i>
+							<i class="fas fa-star-half-alt"></i>
+							<span data-en="(128 reviews)" data-fr="(128 avis)">(128 reviews)</span>
+						</div>
+						<p class="product-price">$49.99 </p>
+						<a href="./contact.html#order-form" class="btn btn-primary" data-en="Order Now" data-fr="Commander">Order Now</a>
+					</div>
+				</div>
+				
+				<!-- Signature Spice Collection -->
+				<div class="product-card">
+					<div class="product-badge"></div>
+					<img src="./g4.jpeg" alt="Signature Spice Collection" class="product-img">
+					<div class="product-content">
+						<h3 class="product-title" data-en="Signature Spice Collection" data-fr="Collection d'Épices Signature">Signature Spice Collection</h3>
+						<p class="product-desc" data-en="Elevate your grilling game with our handcrafted spice blends. Includes Fish Marinade, Soya Magic Rub, Pork Perfection, and Chicken Charmer." data-fr="Élevez votre jeu de grillade avec nos mélanges d'épices artisanaux. Comprend Marinade pour Poisson, Mélange Magique Soya, Perfection Porc et Charme Poulet.">Elevate your grilling game with our handcrafted spice blends. Includes Fish Marinade, Soya Magic Rub, Pork Perfection, and Chicken Charmer.</p>
+						<div class="product-rating">
+							<i class="fas fa-star"></i>
+							<i class="fas fa-star"></i>
+							<i class="fas fa-star"></i>
+							<i class="fas fa-star"></i>
+							<i class="fas fa-star"></i>
+							<span data-en="(96 reviews)" data-fr="(96 avis)">(96 reviews)</span>
+						</div>
+						<p class="product-price">$24.99 </p>
+						<a href="./contact.html#order-form" class="btn btn-primary" data-en="Order Now" data-fr="Commander">Order Now</a>
+					</div>
+				</div>
+				
+				<!-- Gourmet Soya Plate -->
+				<div class="product-card">
+					<img src="./g8.jpeg" alt="Gourmet Soya Plate" class="product-img">
+					<div class="product-content">
+						<h3 class="product-title" data-en="Gourmet Soya Plate" data-fr="Assiette Gourmet Soya">Gourmet Soya Plate</h3>
+						<p class="product-desc" data-en="Tender soya slices served with roasted vegetables, garlic mashed potatoes, and our signature gravy. A complete meal that satisfies every time." data-fr="Tranches de soya tendres servies avec légumes rôtis, purée de pommes de terre à l'ail et notre sauce signature. Un repas complet qui satisfait à chaque fois.">Tender soya slices served with roasted vegetables, garlic mashed potatoes, and our signature gravy. A complete meal that satisfies every time.</p>
+						<div class="product-rating">
+							<i class="fas fa-star"></i>
+							<i class="fas fa-star"></i>
+							<i class="fas fa-star"></i>
+							<i class="fas fa-star"></i>
+							<i class="fas fa-star"></i>
+							<span data-en="(204 reviews)" data-fr="(204 avis)">(204 reviews)</span>
+						</div>
+						<p class="product-price">$17.99</p>
+						<a href="./contact.html#order-form" class="btn btn-primary" data-en="Order Now" data-fr="Commander">Order Now</a>
+					</div>
+				</div>
+				
+				<!-- Soya Snack Cup -->
+				<div class="product-card">
+					<img src="./g9.jpeg" alt="Soya Snack Cup" class="product-img">
+					<div class="product-content">
+						<h3 class="product-title" data-en="Soya Snack Cup" data-fr="Coupe-Collation Soya">Soya Snack Cup</h3>
+						<p class="product-desc" data-en="Perfect for on-the-go enjoyment. Our flavorful soya bites in a convenient cup, ideal for quick snacks or light lunches." data-fr="Parfait pour une dégustation sur le pouce. Nos bouchées de soya savoureuses dans une coupe pratique, idéales pour des collations rapides ou des déjeuners légers.">Perfect for on-the-go enjoyment. Our flavorful soya bites in a convenient cup, ideal for quick snacks or light lunches.</p>
+						<div class="product-rating">
+							<i class="fas fa-star"></i>
+							<i class="fas fa-star"></i>
+							<i class="fas fa-star"></i>
+							<i class="fas fa-star"></i>
+							<i class="far fa-star"></i>
+							<span data-en="(87 reviews)" data-fr="(87 avis)">(87 reviews)</span>
+						</div>
+						<p class="product-price">$9.99</p>
+						<a href="./contact.html#order-form" class="btn btn-primary" data-en="Order Now" data-fr="Commander">Order Now</a>
+					</div>
+				</div>
+				
+				<!-- Fish Marinade Spice -->
+				<div class="product-card">
+					<div class="product-badge"></div>
+					<img src="./g11.jpeg" alt="Fish Marinade Spice" class="product-img">
+					<div class="product-content">
+						<h3 class="product-title" data-en="Soya Marinade Magic" data-fr="Magie de Marinade Soya">Soya Marinade Magic</h3>
+						<p class="product-desc" data-en="Transform ordinary fish into extraordinary meals with our special blend of herbs and spices. Perfect for grilling, baking, or pan-searing." data-fr="Transformez le poisson ordinaire en repas extraordinaires avec notre mélange spécial d'herbes et d'épices. Parfait pour griller, cuire au four ou saisir à la poêle.">Transform ordinary fish into extraordinary meals with our special blend of herbs and spices. Perfect for grilling, baking, or pan-searing.</p>
+						<div class="product-rating">
+							<i class="fas fa-star"></i>
+							<i class="fas fa-star"></i>
+							<i class="fas fa-star"></i>
+							<i class="fas fa-star"></i>
+							<i class="fas fa-star-half-alt"></i>
+							<span data-en="(142 reviews)" data-fr="(142 avis)">(142 reviews)</span>
+						</div>
+						<p class="product-price">$14.99</p>
+						<a href="./contact.html#order-form" class="btn btn-primary" data-en="Order Now" data-fr="Commander">Order Now</a>
+					</div>
+				</div>
+				
+				<!-- Ultimate Grill Master Kit -->
+				<div class="product-card">
+					<div class="product-badge"></div>
+					<img src="./gc8.jpeg" alt="Ultimate Grill Master Kit" class="product-img">
+					<div class="product-content">
+						<h3 class="product-title" data-en="Ultimate Grill Master Kit" data-fr="Kit Ultime du Maître Grilleur">Ultimate Grill Master Kit</h3>
+						<p class="product-desc" data-en="Everything you need for the perfect barbecue: all five signature spice blends, marinade injections, and our special grilling guide." data-fr="Tout ce dont vous avez besoin pour le barbecue parfait : les cinq mélanges d'épices signature, les injections de marinade et notre guide de grillade spécial.">Everything you need for the perfect barbecue: all five signature spice blends, marinade injections, and our special grilling guide.</p>
+						<div class="product-rating">
+							<i class="fas fa-star"></i>
+							<i class="fas fa-star"></i>
+							<i class="fas fa-star"></i>
+							<i class="fas fa-star"></i>
+							<i class="fas fa-star"></i>
+							<span data-en="(56 reviews)" data-fr="(56 avis)">(56 reviews)</span>
+						</div>
+						<p class="product-price">$59.99 </p>
+						<a href="./contact.html#order-form" class="btn btn-primary" data-en="Order Now" data-fr="Commander">Order Now</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	
+
+    <!-- Services Section -->
+    <section class="services">
+        <div class="container">
+            <div class="section-title">
+                <h2 data-en="Our Services" data-fr="Nos Services">Our Services</h2>
+                <p data-en="Bringing the authentic grilling experience to you" data-fr="Apportant l'expérience de grillade authentique chez vous">Bringing the authentic grilling experience to you</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <h3 data-en="Event Grilling" data-fr="Grillade d'Événement">Event Grilling</h3>
+                    <p data-en="Hire our professional team for your next event - weddings, corporate events, birthdays, and more. We bring the grill to you!" data-fr="Engagez notre équipe professionnelle pour votre prochain événement - mariages, événements d'entreprise, anniversaires et plus. Nous apportons le grill chez vous !">Hire our professional team for your next event - weddings, corporate events, birthdays, and more. We bring the grill to you!</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-truck"></i>
+                    </div>
+                    <h3 data-en="Delivery & Pickup" data-fr="Livraison & Ramassage">Delivery & Pickup</h3>
+                    <p data-en="Enjoy our delicious soya and spices with convenient delivery or pickup options throughout Montreal and surrounding areas." data-fr="Profitez de notre délicieux soya et épices avec des options de livraison ou de ramassage pratiques dans tout Montréal et les environs.">Enjoy our delicious soya and spices with convenient delivery or pickup options throughout Montreal and surrounding areas.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-mortar-pestle"></i>
+                    </div>
+                    <h3 data-en="Custom Spices" data-fr="Épices Sur Mesure">Custom Spices</h3>
+                    <p data-en="We create custom spice blends tailored to your specific tastes and preferences. Perfect for home grilling enthusiasts." data-fr="Nous créons des mélanges d'épices sur mesure adaptés à vos goûts et préférences spécifiques. Parfait pour les passionnés de grillade à domicile.">We create custom spice blends tailored to your specific tastes and preferences. Perfect for home grilling enthusiasts.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Spice Collection -->
+    <section class="spice-collection">
+        <div class="container">
+            <div class="section-title">
+                <h2 data-en="Our Signature Spices" data-fr="Nos Épices Signature">Our Signature Spices</h2>
+                <p data-en="Elevate your grilling with our authentic spice blends" data-fr="Élevez votre grillade avec nos mélanges d'épices authentiques">Elevate your grilling with our authentic spice blends</p>
+            </div>
+            <div class="spices-grid">
+                <div class="spice-item">
+                    <div class="spice-icon">
+                        <i class="fas fa-fish"></i>
+                    </div>
+                    <h3 data-en="Fish Marinade" data-fr="Marinade Poisson">Fish Marinade</h3>
+                    <p data-en="Perfect for grilling salmon, trout, and other fish" data-fr="Parfait pour griller le saumon, la truite et autres poissons">Perfect for grilling salmon, trout, and other fish</p>
+                </div>
+                <div class="spice-item">
+                    <div class="spice-icon">
+                        <i class="fas fa-drumstick-bite"></i>
+                    </div>
+                    <h3 data-en="Chicken Spice" data-fr="Épice Poulet">Chicken Spice</h3>
+                    <p data-en="Our special blend for juicy, flavorful chicken" data-fr="Notre mélange spécial pour un poulet juteux et savoureux">Our special blend for juicy, flavorful chicken</p>
+                </div>
+                <div class="spice-item">
+                    <div class="spice-icon">
+                        <i class="fas fa-hamburger"></i>
+                    </div>
+                    <h3 data-en="Beef Spice" data-fr="Épice Bœuf">Beef Spice</h3>
+                    <p data-en="Enhance the natural flavors of beef" data-fr="Améliore les saveurs naturelles du bœuf">Enhance the natural flavors of beef</p>
+                </div>
+                <div class="spice-item">
+                    <div class="spice-icon">
+                        <i class="fas fa-bacon"></i>
+                    </div>
+                    <h3 data-en="Pork Seasoning" data-fr="Assaisonnement Porc">Pork Seasoning</h3>
+                    <p data-en="Perfect for ribs, chops, and pulled pork" data-fr="Parfait pour les côtes, les côtelettes et le porc effiloché">Perfect for ribs, chops, and pulled pork</p>
+                </div>
+               
+            </div>
+        </div>
+    </section>
+
+    <!-- Event Packages -->
+    <section class="event-packages">
+        <div class="container">
+            <div class="section-title">
+                <h2 data-en="Event Grilling Packages" data-fr="Forfaits Grillade d'Événement">Event Grilling Packages</h2>
+                <p data-en="Make your event memorable with our professional grilling services" data-fr="Rendez votre événement mémorable avec nos services de grillade professionnels">Make your event memorable with our professional grilling services</p>
+            </div>
+            <div class="packages-grid">
+                <div class="package-card">
+                    <div class="package-header">
+                        <h3 data-en="Basic Package" data-fr="Forfait de Base">Basic Package</h3>
+                        <div class="package-price">$299</div>
+                        <p data-en="Perfect for small gatherings" data-fr="Parfait pour les petits rassemblements">Perfect for small gatherings</p>
+                    </div>
+                    <div class="package-details">
+                        <p data-en="Up to 3 hours of grilling service" data-fr="Jusqu'à 3 heures de service de grillade">Up to 3 hours of grilling service</p>
+                        <ul class="package-features">
+                            <li><i class="fas fa-check" style="color: var(--burgundy);"></i> <span data-en="Serves up to 20 people" data-fr="Pour jusqu'à 20 personnes">Serves up to 20 people</span></li>
+                            <li><i class="fas fa-check" style="color: var(--burgundy);"></i> <span data-en="Basic soya preparation" data-fr="Préparation de soya de base">Basic soya preparation</span></li>
+                            <li><i class="fas fa-check" style="color: var(--burgundy);"></i> <span data-en="2 side dishes" data-fr="2 accompagnements">2 side dishes</span></li>
+                            <li><i class="fas fa-times" style="color: #ccc;"></i> <span data-en="Custom spices not included" data-fr="Épices sur mesure non incluses">Custom spices not included</span></li>
+                        </ul>
+                        <a href="./services.html#booking" class="btn btn-primary" data-en="Book Now" data-fr="Réserver">Book Now</a>
+                    </div>
+                </div>
+                <div class="package-card">
+                    <div class="package-header">
+                        <h3 data-en="Premium Package" data-fr="Forfait Premium">Premium Package</h3>
+                        <div class="package-price">$599</div>
+                        <p data-en="Our most popular option" data-fr="Notre option la plus populaire">Our most popular option</p>
+                    </div>
+                    <div class="package-details">
+                        <p data-en="Up to 5 hours of grilling service" data-fr="Jusqu'à 5 heures de service de grillade">Up to 5 hours of grilling service</p>
+                        <ul class="package-features">
+                            <li><i class="fas fa-check" style="color: var(--burgundy);"></i> <span data-en="Serves up to 50 people" data-fr="Pour jusqu'à 50 personnes">Serves up to 50 people</span></li>
+                            <li><i class="fas fa-check" style="color: var(--burgundy);"></i> <span data-en="Full soya preparation" data-fr="Préparation complète de soya">Full soya preparation</span></li>
+                            <li><i class="fas fa-check" style="color: var(--burgundy);"></i> <span data-en="4 side dishes" data-fr="4 accompagnements">4 side dishes</span></li>
+                            <li><i class="fas fa-check" style="color: var(--burgundy);"></i> <span data-en="Custom spices included" data-fr="Épices sur mesure incluses">Custom spices included</span></li>
+                        </ul>
+                        <a href="./services.html#booking" class="btn btn-primary" data-en="Book Now" data-fr="Réserver">Book Now</a>
+                    </div>
+                </div>
+                <div class="package-card">
+                    <div class="package-header">
+                        <h3 data-en="Deluxe Package" data-fr="Forfait Deluxe">Deluxe Package</h3>
+                        <div class="package-price">$999</div>
+                        <p data-en="For the ultimate event experience" data-fr="Pour l'expérience événementielle ultime">For the ultimate event experience</p>
+                    </div>
+                    <div class="package-details">
+                        <p data-en="Full day grilling service (8 hours)" data-fr="Service de grillade toute la journée (8 heures)">Full day grilling service (8 hours)</p>
+                        <ul class="package-features">
+                            <li><i class="fas fa-check" style="color: var(--burgundy);"></i> <span data-en="Serves up to 100 people" data-fr="Pour jusqu'à 100 personnes">Serves up to 100 people</span></li>
+                            <li><i class="fas fa-check" style="color: var(--burgundy);"></i> <span data-en="Premium soya preparation" data-fr="Préparation de soya premium">Premium soya preparation</span></li>
+                            <li><i class="fas fa-check" style="color: var(--burgundy);"></i> <span data-en="6 side dishes" data-fr="6 accompagnements">6 side dishes</span></li>
+                            <li><i class="fas fa-check" style="color: var(--burgundy);"></i> <span data-en="All custom spices included" data-fr="Toutes les épices sur mesure incluses">All custom spices included</span></li>
+                        </ul>
+                        <a href="./services.html#booking" class="btn btn-primary" data-en="Book Now" data-fr="Réserver">Book Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2 data-en="Customer Testimonials" data-fr="Témoignages de Clients">Customer Testimonials</h2>
+                <p data-en="What our customers say about us" data-fr="Ce que nos clients disent de nous">What our customers say about us</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <p class="testimonial-text" data-en="&quot;The soya from Grillardes Anna Soya is absolutely incredible! The flavors are unmatched in Montreal. I order every week for my family!&quot;" data-fr="&quot;Le soya de Grillardes Anna Soya est absolument incroyable ! Les saveurs sont inégalées à Montréal. Je commande chaque semaine pour ma famille !&quot;">"The soya from Grillardes Anna Soya is absolutely incredible! The flavors are unmatched in Montreal. I order every week for my family!"</p>
+                    <p class="testimonial-author">- Marie L., Montreal</p>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text" data-en="&quot;We hired Anna Soya for our corporate event and everyone was blown away. Professional service and amazing food! Will definitely book again.&quot;" data-fr="&quot;Nous avons engagé Anna Soya pour notre événement d'entreprise et tout le monde a été époustouflé. Service professionnel et nourriture incroyable ! Je réserverai certainement à nouveau.&quot;">"We hired Anna Soya for our corporate event and everyone was blown away. Professional service and amazing food! Will definitely book again."</p>
+                    <p class="testimonial-author">- Jonathan T., Event Planner</p>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text" data-en="&quot;Their spices transformed my home grilling. I can't believe how much better everything tastes with their custom blends. Highly recommended!&quot;" data-fr="&quot;Leurs épices ont transformé ma grillade à domicile. Je n'arrive pas à croire à quel point tout a meilleur goût avec leurs mélanges sur mesure. Fortement recommandé !&quot;">"Their spices transformed my home grilling. I can't believe how much better everything tastes with their custom blends. Highly recommended!"</p>
+                    <p class="testimonial-author">- Sophie G., Food Enthusiast</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2 data-en="Ready to Experience the Best?" data-fr="Prêt à Vivre le Meilleur ?">Ready to Experience the Best?</h2>
+            <p data-en="Place your order today or book our services for your next event. Taste the difference that quality ingredients and authentic recipes make." data-fr="Passez votre commande aujourd'hui ou réservez nos services pour votre prochain événement. Goûtez la différence que font des ingrédients de qualité et des recettes authentiques.">Place your order today or book our services for your next event. Taste the difference that quality ingredients and authentic recipes make.</p>
+            <div class="hero-buttons">
+                <a href="./contact.html#order-form" class="btn btn-primary" data-en="Order Now" data-fr="Commander">Order Now</a>
+                <a href="./services.html#booking" class="btn btn-secondary" data-en="Book for Event" data-fr="Réserver pour Événement">Book for Event</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3>Grillardes Anna Soya</h3>
+                    <p data-en="Montreal's premier grilling service and provider of premium roasted beef (soya) and authentic spices." data-fr="Le service de grillade premier de Montréal et fournisseur de bœuf rôti premium (soya) et d'épices authentiques.">Montreal's premier grilling service and provider of premium roasted beef (soya) and authentic spices.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3 data-en="Quick Links" data-fr="Liens Rapides">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="./index.html" data-en="Home" data-fr="Accueil">Home</a></li>
+                        <li><a href="./about.html" data-en="About Us" data-fr="À Propos">About Us</a></li>
+                        <li><a href="./services.html" data-en="Services" data-fr="Services">Services</a></li>
+                        <li><a href="./contact.html#order-form" data-en="Order" data-fr="Commander">Order</a></li>
+                        <li><a href="gallery.html" data-en="Gallery" data-fr="Galerie">Gallery</a></li>
+						<li><a href="./services.html#booking" data-en="Event Booking" data-fr="Réservation Événement">Event Booking</a></li>
+                        <li><a href="./contact.html" data-en="Contact" data-fr="Contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3 data-en="Contact Us" data-fr="Contactez-Nous">Contact Us</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-phone"></i> (514) 812-9142</li>
+                        <li><i class="fas fa-envelope"></i> info@grillardesannasoya.com</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Montreal, Canada</li>
+                        <li><i class="fas fa-clock"></i> <span data-en="Mon-Sat: 10AM - 8PM" data-fr="Lun-Sam: 10H - 20H">Mon-Sat: 10AM - 8PM</span></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3 data-en="Newsletter" data-fr="Infolettre">Newsletter</h3>
+                    <p data-en="Subscribe to get updates on our latest offers and events" data-fr="Abonnez-vous pour recevoir des mises à jour sur nos dernières offres et événements">Subscribe to get updates on our latest offers and events</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your Email Address" data-en-placeholder="Your Email Address" data-fr-placeholder="Votre Adresse Email">
+                        <button type="submit" class="btn btn-secondary" data-en="Subscribe" data-fr="S'abonner">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Grillardes Anna Soya. <span data-en="All rights reserved." data-fr="Tous droits réservés.">All rights reserved.</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle functionality
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navMenu = document.querySelector('.nav-menu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            
+            // Change icon based on menu state
+            const icon = mobileMenuBtn.querySelector('i');
+            if (navMenu.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+        
+        // Close menu when clicking on a link
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                const icon = mobileMenuBtn.querySelector('i');
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            });
+        });
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!navMenu.contains(e.target) && 
+                !mobileMenuBtn.contains(e.target) && 
+                navMenu.classList.contains('active')) {
+                navMenu.classList.remove('active');
+                const icon = mobileMenuBtn.querySelector('i');
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+        
+        // Language toggle functionality
+        const languageToggle = document.getElementById('languageToggle');
+        let currentLanguage = 'en'; // Default language
+        
+        // Function to toggle language
+        function toggleLanguage() {
+            currentLanguage = currentLanguage === 'en' ? 'fr' : 'en';
+            updateLanguage(currentLanguage);
+            languageToggle.textContent = currentLanguage === 'en' ? 'FR' : 'EN';
+            
+            // Save language preference to localStorage
+            localStorage.setItem('preferredLanguage', currentLanguage);
+        }
+        
+        // Function to update all text content based on selected language
+        function updateLanguage(lang) {
+            // Update all elements with data attributes for translation
+            document.querySelectorAll('[data-en], [data-fr]').forEach(element => {
+                if (element.hasAttribute(`data-${lang}`)) {
+                    if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+                        element.placeholder = element.getAttribute(`data-${lang}-placeholder`);
+                    } else {
+                        if (element.hasAttribute('data-en-inner')) {
+                            element.innerHTML = element.getAttribute(`data-${lang}`);
+                        } else {
+                            element.textContent = element.getAttribute(`data-${lang}`);
+                        }
+                    }
+                }
+            });
+            
+            // Update HTML lang attribute
+            document.documentElement.lang = lang;
+        }
+        
+        // Initialize language from localStorage or default to 'en'
+        const savedLanguage = localStorage.getItem('preferredLanguage');
+        if (savedLanguage) {
+            currentLanguage = savedLanguage;
+            languageToggle.textContent = currentLanguage === 'en' ? 'FR' : 'EN';
+        }
+        
+        // Update page with the current language
+        updateLanguage(currentLanguage);
+        
+        // Add event listener to the language toggle button
+        languageToggle.addEventListener('click', toggleLanguage);
+        
+        // Function to show code tabs
+        function showCode(language) {
+            // Hide all code content
+            document.querySelectorAll('.code-content').forEach(content => {
+                content.classList.remove('active');
+            });
+            
+            // Remove active class from all tabs
+            document.querySelectorAll('.code-tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            // Show selected code content
+            document.getElementById(`${language}-code`).classList.add('active');
+            
+            // Set active class to clicked tab
+            event.target.classList.add('active');
+        }
+        
+        // Function to resize window for demo purposes
+        function resizeWindow(width) {
+            window.resizeTo(width, 800);
+            window.focus();
+        }
+    </script>
+    
+</body>
+</html>

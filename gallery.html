@@ -1,0 +1,1120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - Grillardes Anna Soya</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Color Variables */
+        :root {
+            --burgundy: #8B0000;
+            --gold: #FFD700;
+            --charcoal: #000000;
+            --white: #FFFFFF;
+            --light-bg: #f9f9f9;
+        }
+        
+        /* Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: var(--charcoal);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        
+        h1 {
+            font-size: 2.8rem;
+            text-transform: uppercase;
+        }
+        
+        h2 {
+            font-size: 2.2rem;
+            color: var(--burgundy);
+            text-transform: uppercase;
+        }
+        
+        h3 {
+            font-size: 1.8rem;
+            color: var(--gold);
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 14px 32px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            margin: 10px 10px 10px 0;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem;
+        }
+        
+        .btn-primary {
+            background-color: var(--burgundy);
+            color: var(--white);
+            border: 2px solid var(--burgundy);
+        }
+        
+        .btn-primary:hover {
+            background-color: transparent;
+            color: var(--burgundy);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(139, 0, 0, 0.2);
+        }
+        
+        .btn-secondary {
+            background-color: var(--gold);
+            color: var(--charcoal);
+            border: 2px solid var(--gold);
+        }
+        
+        .btn-secondary:hover {
+            background-color: transparent;
+            color: var(--charcoal);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(255, 215, 0, 0.2);
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: var(--charcoal);
+            padding: 15px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            color: var(--gold);
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 800;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo span {
+            color: var(--burgundy);
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            align-items: center;
+        }
+        
+        .nav-menu li {
+            margin-left: 25px;
+        }
+        
+        .nav-menu a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+            font-size: 1rem;
+            text-transform: uppercase;
+        }
+        
+        .nav-menu a:hover {
+            color: var(--gold);
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            color: var(--white);
+            font-size: 1.5rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+        
+        /* Language Toggle Button */
+        .language-toggle {
+            background: none;
+            border: 2px solid var(--gold);
+            color: var(--white);
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            margin-left: 15px;
+        }
+        
+        .language-toggle:hover {
+            background-color: var(--gold);
+            color: var(--charcoal);
+        }
+        
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1555939594-58d7cb561ad1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+            padding: 150px 0 80px;
+            text-align: center;
+            color: var(--white);
+            margin-top: 70px;
+        }
+        
+        .page-header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            color: var(--white);
+            line-height: 1.2;
+        }
+        
+        .page-header h1 span {
+            color: var(--gold);
+        }
+        
+        .page-header p {
+            font-size: 1.2rem;
+            margin-bottom: 2.5rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* Gallery Section */
+        .gallery-section {
+            padding: 100px 0;
+            background-color: var(--light-bg);
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .section-title p {
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .gallery-filters {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+        
+        .filter-btn {
+            padding: 10px 20px;
+            background-color: var(--white);
+            border: 2px solid var(--burgundy);
+            border-radius: 30px;
+            color: var(--burgundy);
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .filter-btn:hover, .filter-btn.active {
+            background-color: var(--burgundy);
+            color: var(--white);
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+        }
+        
+        .gallery-item {
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            height: 300px;
+        }
+        
+        .gallery-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .gallery-item:hover .gallery-img {
+            transform: scale(1.1);
+        }
+        
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+            padding: 20px;
+            color: var(--white);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+        
+        .gallery-title {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+            font-weight: 700;
+        }
+        
+        .gallery-desc {
+            font-size: 0.9rem;
+        }
+        
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            padding-top: 50px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+        
+        .modal-content {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 800px;
+            animation: zoom 0.6s;
+        }
+        
+        @keyframes zoom {
+            from {transform: scale(0)}
+            to {transform: scale(1)}
+        }
+        
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: var(--white);
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+        
+        .close:hover {
+            color: var(--gold);
+        }
+        
+        .modal-caption {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 800px;
+            text-align: center;
+            color: var(--white);
+            padding: 10px 0;
+            font-weight: 600;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            padding: 100px 0;
+            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('https://images.unsplash.com/photo-1600891964092-4316c288032e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: var(--white);
+            text-align: center;
+        }
+        
+        .cta-section h2 {
+            color: var(--gold);
+            margin-bottom: 20px;
+        }
+        
+        .cta-section p {
+            max-width: 700px;
+            margin: 0 auto 40px;
+            font-size: 1.1rem;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--charcoal);
+            color: var(--white);
+            padding: 80px 0 30px;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column h3 {
+            color: var(--gold);
+            margin-bottom: 25px;
+            font-size: 1.4rem;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background-color: var(--burgundy);
+        }
+        
+        .footer-links {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .footer-links li i {
+            margin-right: 10px;
+            color: var(--gold);
+            width: 20px;
+        }
+        
+        .footer-links a {
+            color: var(--white);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--gold);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 25px;
+        }
+        
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 42px;
+            height: 42px;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: var(--white);
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            font-size: 1.1rem;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--gold);
+            color: var(--charcoal);
+            transform: translateY(-3px);
+        }
+        
+        .newsletter-form {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .newsletter-form input {
+            padding: 12px 15px;
+            margin-bottom: 15px;
+            border: none;
+            border-radius: 4px;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: var(--white);
+        }
+        
+        .newsletter-form input::placeholder {
+            color: #ccc;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+        
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            h2 {
+                font-size: 2rem;
+            }
+            
+            .page-header h1 {
+                font-size: 3rem;
+            }
+            
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+        }
+        
+        @media (max-width: 868px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            .nav-menu {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                flex-direction: column;
+                background-color: var(--charcoal);
+                width: 100%;
+                height: calc(100vh - 70px);
+                transition: left 0.3s ease;
+                padding: 40px 20px;
+                z-index: 999;
+                overflow-y: auto;
+            }
+            
+            .nav-menu.active {
+                left: 0;
+            }
+            
+            .nav-menu li {
+                margin: 15px 0;
+                margin-left: 0;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .page-header {
+                padding: 130px 0 60px;
+                margin-top: 60px;
+            }
+            
+            .page-header h1 {
+                font-size: 2.5rem;
+            }
+            
+            .gallery-section,
+            .cta-section {
+                padding: 80px 0;
+            }
+            
+            .btn {
+                padding: 12px 25px;
+                font-size: 0.9rem;
+            }
+            
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            }
+            
+            .gallery-item {
+                height: 250px;
+            }
+            
+            .language-toggle {
+                margin: 15px 0;
+                order: 3;
+                width: 100%;
+                text-align: center;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .page-header h1 {
+                font-size: 2rem;
+            }
+            
+            .page-header p {
+                font-size: 1rem;
+            }
+            
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .gallery-item {
+                height: 300px;
+            }
+            
+            .modal-content {
+                width: 95%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="./index.html" class="logo">Grillardes <span>Anna Soya</span></a>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="./index.html" data-en="Home" data-fr="Accueil">Home</a></li>
+                <li><a href="./about.html" data-en="About Us" data-fr="À Propos">About Us</a></li>
+                <li><a href="./event.html" data-en="Event" data-fr="Événements">Event</a></li>
+                <li><a href="./services.html" data-en="Services" data-fr="Services">Services</a></li>
+                <li><a href="./gallery.html" data-en="Gallery" data-fr="Galerie">Gallery</a></li>
+                <li><a href="./contact.html" data-en="Contact" data-fr="Contact">Contact</a></li>
+                <li>
+                    <button class="language-toggle" id="languageToggle">FR</button>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1 data-en="Our Gallery" data-fr="Notre Galerie">Our <span>Gallery</span></h1>
+            <p data-en="Explore mouth-watering images of our premium soya, signature spices, and memorable grilling events" data-fr="Découvrez des images alléchantes de notre soya premium, nos épices signature et nos événements de grillade mémorables">Explore mouth-watering images of our premium soya, signature spices, and memorable grilling events</p>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery-section" id="spicee">
+        <div class="container">
+            <div class="section-title">
+                <h2 data-en="Delicious Moments" data-fr="Moments Délicieux">Delicious Moments</h2>
+                <p data-en="Browse through our collection of culinary masterpieces and memorable events" data-fr="Parcourez notre collection de chefs-d'œuvre culinaires et d'événements mémorables">Browse through our collection of culinary masterpieces and memorable events</p>
+            </div>
+            
+            <div class="gallery-filters">
+                <button class="filter-btn active" data-filter="all" data-en="All" data-fr="Tous">All</button>
+                <button class="filter-btn" data-filter="soya" data-en="Soya Dishes" data-fr="Plats de Soya">Soya Dishes</button>
+                <button class="filter-btn" data-filter="spices" data-en="Spices" data-fr="Épices">Spices</button>
+                <button class="filter-btn" data-filter="events" data-en="Events" data-fr="Événements">Events</button>
+                <button class="filter-btn" data-filter="grilling" data-en="Grilling" data-fr="Grillade">Grilling</button>
+            </div>
+            
+            <div class="gallery-grid">
+                <!-- Soya Images -->
+                <div class="gallery-item" data-category="soya">
+                    <img src="./g1.jpeg" alt="Premium Soya Tray" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <h3 class="gallery-title" data-en="Premium Soya Tray" data-fr="Plateau de Soya Premium">Premium Soya Tray</h3>
+                        <p class="gallery-desc" data-en="Our signature soya served with roasted vegetables" data-fr="Notre soya signature servi avec des légumes rôtis">Our signature soya served with roasted vegetables</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="soya">
+                    <img src="./g0.jpeg" alt="Gourmet Soya Plate" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <h3 class="gallery-title" data-en="Gourmet Soya Plate" data-fr="Assiette Gourmet Soya">Gourmet Soya Plate</h3>
+                        <p class="gallery-desc" data-en="Tender soya slices with garlic mashed potatoes" data-fr="Tranches de soya tendres avec purée de pommes de terre à l'ail">Tender soya slices with garlic mashed potatoes</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="soya">
+                    <img src="./g3.jpeg" alt="Soya Snack Cup" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <h3 class="gallery-title" data-en="Soya Snack Cup" data-fr="Coupe-Collation Soya">Soya Snack Cup</h3>
+                        <p class="gallery-desc" data-en="Perfect for on-the-go enjoyment" data-fr="Parfait pour une dégustation sur le pouce">Perfect for on-the-go enjoyment</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="soya">
+                    <img src="./g4.jpeg" alt="Soya Platter" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <h3 class="gallery-title" data-en="Soya Platter" data-fr="Plateau de Soya">Soya Platter</h3>
+                        <p class="gallery-desc" data-en="Perfect for sharing with family and friends" data-fr="Parfait pour partager avec la famille et les amis">Perfect for sharing with family and friends</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="soya">
+                    <img src="./g5.jpeg" alt="Soya Grill" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <h3 class="gallery-title" data-en="Soya Grill" data-fr="Grillade de Soya">Soya Grill</h3>
+                        <p class="gallery-desc" data-en="Fresh off the grill with our signature spices" data-fr="Fraîchement sorti du grill avec nos épices signature">Fresh off the grill with our signature spices</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="soya">
+                    <img src="./g6.jpeg" alt="Soya Feast" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <h3 class="gallery-title" data-en="Soya Feast" data-fr="Festin de Soya">Soya Feast</h3>
+                        <p class="gallery-desc" data-en="A complete meal with sides and sauces" data-fr="Un repas complet avec accompagnements et sauces">A complete meal with sides and sauces</p>
+                    </div>
+                </div>
+                
+                <!-- Spices Images -->
+                <div class="gallery-item" data-category="spices">
+                    <img src="./gs2.jpeg" alt="Signature Spice Collection" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <h3 class="gallery-title" data-en="Signature Spice Collection" data-fr="Collection d'Épices Signature">Signature Spice Collection</h3>
+                        <p class="gallery-desc" data-en="Our handcrafted spice blends" data-fr="Nos mélanges d'épices artisanaux">Our handcrafted spice blends</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="spices">
+                    <img src="./gs1.jpeg" alt="Fish Marinade Spice" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <h3 class="gallery-title" data-en="Fish Marinade Magic" data-fr="Magie de Marinade pour Poisson">Fish Marinade Magic</h3>
+                        <p class="gallery-desc" data-en="Perfect for grilling salmon and other fish" data-fr="Parfait pour griller le saumon et autres poissons">Perfect for grilling salmon and other fish</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="spices">
+                    <img src="./gs4.jpeg" alt="Ultimate Grill Master Kit" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <h3 class="gallery-title" data-en="Ultimate Grill Master Kit" data-fr="Kit Ultime du Maître Grilleur">Ultimate Grill Master Kit</h3>
+                        <p class="gallery-desc" data-en="Everything you need for the perfect barbecue" data-fr="Tout ce dont vous avez besoin pour le barbecue parfait">Everything you need for the perfect barbecue</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="spices">
+                    <img src="./gs3.jpeg" alt="Spice Display" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <h3 class="gallery-title" data-en="Spice Display" data-fr="Présentation d'Épices">Spice Display</h3>
+                        <p class="gallery-desc" data-en="Our colorful array of signature spices" data-fr="Notre gamme colorée d'épices signature">Our colorful array of signature spices</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="spices">
+                    <img src="./gs5.jpeg" alt="Spice Blends" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <h3 class="gallery-title" data-en="Spice Blends" data-fr="Mélanges d'Épices">Spice Blends</h3>
+                        <p class="gallery-desc" data-en="Custom blends for every grilling need" data-fr="Mélanges personnalisés pour tous les besoins de grillade">Custom blends for every grilling need</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="spices">
+                    <img src="./g9.jpeg" alt="Spice Packaging" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <h3 class="gallery-title" data-en="Spice Packaging" data-fr="Emballage d'Épices">Spice Packaging</h3>
+                        <p class="gallery-desc" data-en="Beautifully packaged spices ready for delivery" data-fr="Épices magnifiquement emballées prêtes pour la livraison">Beautifully packaged spices ready for delivery</p>
+                    </div>
+                </div>
+                
+                <!-- Events Images -->
+                <div class="gallery-item" data-category="events">
+                    <img src="./gc3.jpeg" alt="Wedding Event" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <h3 class="gallery-title" data-en="Wedding Celebration" data-fr="Célébration de Mariage">Wedding Celebration</h3>
+                        <p class="gallery-desc" data-en="Grilling service for a beautiful wedding reception" data-fr="Service de grillade pour une belle réception de mariage">Grilling service for a beautiful wedding reception</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="events">
+                    <img src="https://images.unsplash.com/photo-1544025162-d76694265947?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1169&q=80" alt="Corporate Event" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <h3 class="gallery-title" data-en="Corporate Event" data-fr="Événement d'Entreprise">Corporate Event</h3>
+                        <p class="gallery-desc" data-en="Professional grilling for company celebrations" data-fr="Grillade professionnelle pour les célébrations d'entreprise">Professional grilling for company celebrations</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="events">
+                    <img src="./gc1.jpeg" alt="Birthday Party" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <h3 class="gallery-title" data-en="Birthday Party" data-fr="Fête d'Anniversaire">Birthday Party</h3>
+                        <p class="gallery-desc" data-en="Making special occasions even more memorable" data-fr="Rendre les occasions spéciales encore plus mémorables">Making special occasions even more memorable</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="events">
+                    <img src="https://images.unsplash.com/photo-1532634922-8fe0b757fb13?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1172&q=80" alt="Family Gathering" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <h3 class="gallery-title" data-en="Family Gathering" data-fr="Réunion Familiale">Family Gathering</h3>
+                        <p class="gallery-desc" data-en="Creating memorable moments with loved ones" data-fr="Créer des moments mémorables avec les êtres chers">Creating memorable moments with loved ones</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="events">
+                    <img src="./gc4.jpeg" alt="Festival Grilling" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <h3 class="gallery-title" data-en="Festival Grilling" data-fr="Grillade de Festival">Festival Grilling</h3>
+                        <p class="gallery-desc" data-en="Serving crowds at local festivals and events" data-fr="Servir les foules lors de festivals et événements locaux">Serving crowds at local festivals and events</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="events">
+                    <img src="https://images.unsplash.com/photo-1467003909585-2f8a72700288?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80" alt="Catering Setup" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <h3 class="gallery-title" data-en="Catering Setup" data-fr="Installation de Traiteur">Catering Setup</h3>
+                        <p class="gallery-desc" data-en="Professional setup for any event size" data-fr="Installation professionnelle pour tout type d'événement">Professional setup for any event size</p>
+                    </div>
+                </div>
+                
+                <!-- Grilling Images -->
+                <div class="gallery-item" data-category="grilling">
+                    <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Grilling Process" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <h3 class="gallery-title" data-en="Grilling Process" data-fr="Processus de Grillade">Grilling Process</h3>
+                        <p class="gallery-desc" data-en="Our expert grill masters at work" data-fr="Nos maîtres grilleurs experts au travail">Our expert grill masters at work</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="grilling">
+                    <img src="https://images.unsplash.com/photo-1600891964092-4316c288032e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" alt="Grilling Setup" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <h3 class="gallery-title" data-en="Professional Setup" data-fr="Installation Professionnelle">Professional Setup</h3>
+                        <p class="gallery-desc" data-en="Our mobile grilling station" data-fr="Notre station de grillade mobile">Our mobile grilling station</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="grilling">
+                    <img src="./g11.jpeg" alt="Backyard Grilling" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <h3 class="gallery-title" data-en="Backyard Grilling" data-fr="Grillade dans la Cour">Backyard Grilling</h3>
+                        <p class="gallery-desc" data-en="Bringing the restaurant experience to your home" data-fr="Apportant l'expérience restaurant à votre domicile">Bringing the restaurant experience to your home</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="soya">
+                    <img src="https://images.unsplash.com/photo-1606755962773-d324e0a13086?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="Soya Platter" class="gallery-img">
+                    <div class="gallery-overlay">
+                         <h3 class="gallery-title" data-en="Soya Platter" data-fr="Plateau de Soya">Soya Platter</h3>
+                        <p class="gallery-desc" data-en="Perfect for sharing with family and friends" data-fr="Parfait pour partager avec la famille et les amis">Perfect for sharing with family and friends</p>
+                    </div>
+                </div>
+                
+              
+                
+                <div class="gallery-item" data-category="events">
+                    <img src="./g10.jpeg" alt="Family Gathering" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <h3 class="gallery-title" data-en="Family Gathering" data-fr="Réunion Familiale">Family Gathering</h3>
+                        <p class="gallery-desc" data-en="Creating memorable moments with loved ones" data-fr="Créer des moments mémorables avec les êtres chers">Creating memorable moments with loved ones</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Image Modal -->
+    <div id="imageModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="modalImage">
+        <div id="modalCaption" class="modal-caption"></div>
+    </div>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2 data-en="Ready to Experience the Best?" data-fr="Prêt à Vivre le Meilleur ?">Ready to Experience the Best?</h2>
+            <p data-en="Place your order today or book our services for your next event. Taste the difference that quality ingredients and authentic recipes make." data-fr="Passez votre commande aujourd'hui ou réservez nos services pour votre prochain événement. Goûtez la différence que font des ingrédients de qualité et des recettes authentiques.">Place your order today or book our services for your next event. Taste the difference that quality ingredients and authentic recipes make.</p>
+            <div class="hero-buttons">
+                <a href="./contact.html#order-form" class="btn btn-primary" data-en="Order Now" data-fr="Commander">Order Now</a>
+                <a href="./services.html#booking" class="btn btn-secondary" data-en="Book for Event" data-fr="Réserver pour Événement">Book for Event</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3>Grillardes Anna Soya</h3>
+                    <p data-en="Montreal's premier grilling service and provider of premium roasted beef (soya) and authentic spices." data-fr="Le service de grillade premier de Montréal et fournisseur de bœuf rôti premium (soya) et d'épices authentiques.">Montreal's premier grilling service and provider of premium roasted beef (soya) and authentic spices.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3 data-en="Quick Links" data-fr="Liens Rapides">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="./index.html" data-en="Home" data-fr="Accueil">Home</a></li>
+                        <li><a href="./about.html" data-en="About Us" data-fr="À Propos">About Us</a></li>
+                        <li><a href="./services.html" data-en="Services" data-fr="Services">Services</a></li>
+                        <li><a href="./contact.html#order-form" data-en="Order" data-fr="Commander">Order</a></li>
+                        <li><a href="gallery.html" data-en="Gallery" data-fr="Galerie">Gallery</a></li>
+						<li><a href="./services.html#booking" data-en="Event Booking" data-fr="Réservation Événement">Event Booking</a></li>
+                        <li><a href="./contact.html" data-en="Contact" data-fr="Contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3 data-en="Contact Us" data-fr="Contactez-Nous">Contact Us</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-phone"></i> (514) 812-4567</li>
+                        <li><i class="fas fa-envelope"></i> info@grillardesannasoya.com</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Montreal, Canada</li>
+                        <li><i class="fas fa-clock"></i> <span data-en="Mon-Sat: 10AM - 8PM" data-fr="Lun-Sam: 10H - 20H">Mon-Sat: 10AM - 8PM</span></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3 data-en="Newsletter" data-fr="Infolettre">Newsletter</h3>
+                    <p data-en="Subscribe to get updates on our latest offers and events" data-fr="Abonnez-vous pour recevoir des mises à jour sur nos dernières offres et événements">Subscribe to get updates on our latest offers and events</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your Email Address" data-en-placeholder="Your Email Address" data-fr-placeholder="Votre Adresse Email">
+                        <button type="submit" class="btn btn-secondary" data-en="Subscribe" data-fr="S'abonner">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Grillardes Anna Soya. <span data-en="All rights reserved." data-fr="Tous droits réservés.">All rights reserved.</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle functionality
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navMenu = document.querySelector('.nav-menu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            
+            // Change icon based on menu state
+            const icon = mobileMenuBtn.querySelector('i');
+            if (navMenu.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+        
+        // Close menu when clicking on a link
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                const icon = mobileMenuBtn.querySelector('i');
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            });
+        });
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!navMenu.contains(e.target) && 
+                !mobileMenuBtn.contains(e.target) && 
+                navMenu.classList.contains('active')) {
+                navMenu.classList.remove('active');
+                const icon = mobileMenuBtn.querySelector('i');
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+
+        // Gallery Filtering
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const galleryItems = document.querySelectorAll('.gallery-item');
+        
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                
+                // Add active class to clicked button
+                button.classList.add('active');
+                
+                // Get filter value
+                const filterValue = button.getAttribute('data-filter');
+                
+                // Show/hide gallery items based on filter
+                galleryItems.forEach(item => {
+                    if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Modal functionality
+        const modal = document.getElementById('imageModal');
+        const modalImg = document.getElementById('modalImage');
+        const captionText = document.getElementById('modalCaption');
+        const closeModal = document.querySelector('.close');
+        
+        // Add click event to all gallery items
+        galleryItems.forEach(item => {
+            item.addEventListener('click', () => {
+                modal.style.display = 'block';
+                modalImg.src = item.querySelector('.gallery-img').src;
+                captionText.innerHTML = item.querySelector('.gallery-title').innerHTML;
+            });
+        });
+        
+        // Close modal when clicking on X
+        closeModal.addEventListener('click', () => {
+            modal.style.display = 'none';
+        });
+        
+        // Close modal when clicking outside the image
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
+
+        // Animation on scroll
+        const animateOnScroll = () => {
+            const elements = document.querySelectorAll('.gallery-item');
+            
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.3;
+                
+                if (elementPosition < screenPosition) {
+                    element.style.opacity = 1;
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        };
+
+        // Initialize elements for animation
+        document.querySelectorAll('.gallery-item').forEach(element => {
+            element.style.opacity = 0;
+            element.style.transform = 'translateY(20px)';
+            element.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+        });
+
+        // Listen for scroll events
+        window.addEventListener('scroll', animateOnScroll);
+        // Initial check
+        window.addEventListener('load', animateOnScroll);
+
+                // Language toggle functionality
+                const languageToggle = document.getElementById('languageToggle');
+        let currentLanguage = 'en'; // Default language
+        
+        // Function to toggle language
+        function toggleLanguage() {
+            currentLanguage = currentLanguage === 'en' ? 'fr' : 'en';
+            updateLanguage(currentLanguage);
+            languageToggle.textContent = currentLanguage === 'en' ? 'FR' : 'EN';
+            
+            // Save language preference to localStorage
+            localStorage.setItem('preferredLanguage', currentLanguage);
+        }
+        
+        // Function to update all text content based on selected language
+        function updateLanguage(lang) {
+            // Update all elements with data attributes for translation
+            document.querySelectorAll('[data-en], [data-fr]').forEach(element => {
+                if (element.hasAttribute(`data-${lang}`)) {
+                    if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+                        element.placeholder = element.getAttribute(`data-${lang}-placeholder`);
+                    } else {
+                        if (element.hasAttribute('data-en-inner')) {
+                            element.innerHTML = element.getAttribute(`data-${lang}`);
+                        } else {
+                            element.textContent = element.getAttribute(`data-${lang}`);
+                        }
+                    }
+                }
+            });
+            
+            // Update HTML lang attribute
+            document.documentElement.lang = lang;
+        }
+        
+        // Initialize language from localStorage or default to 'en'
+        const savedLanguage = localStorage.getItem('preferredLanguage');
+        if (savedLanguage) {
+            currentLanguage = savedLanguage;
+            languageToggle.textContent = currentLanguage === 'en' ? 'FR' : 'EN';
+        }
+        
+        // Update page with the current language
+        updateLanguage(currentLanguage);
+        
+        // Add event listener to the language toggle button
+        languageToggle.addEventListener('click', toggleLanguage);
+        
+        // Function to show code tabs
+        function showCode(language) {
+            // Hide all code content
+            document.querySelectorAll('.code-content').forEach(content => {
+                content.classList.remove('active');
+            });
+            
+            // Remove active class from all tabs
+            document.querySelectorAll('.code-tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            // Show selected code content
+            document.getElementById(`${language}-code`).classList.add('active');
+            
+            // Set active class to clicked tab
+            event.target.classList.add('active');
+        }
+        
+        // Function to resize window for demo purposes
+        function resizeWindow(width) {
+            window.resizeTo(width, 800);
+            window.focus();
+        }
+    </script>
+</body>
+</html>
