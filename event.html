@@ -290,6 +290,146 @@
             font-size: 0.95rem;
         }
         
+        /* Events Section */
+        .events-section {
+            padding: 100px 0;
+            background-color: var(--light-bg);
+        }
+        
+        .events-section h2 {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .events-tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+            border-bottom: 2px solid var(--burgundy);
+        }
+        
+        .event-tab {
+            padding: 15px 30px;
+            background: none;
+            border: none;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--charcoal);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-bottom: 3px solid transparent;
+        }
+        
+        .event-tab.active {
+            color: var(--burgundy);
+            border-bottom: 3px solid var(--gold);
+        }
+        
+        .event-tab:hover {
+            color: var(--burgundy);
+        }
+        
+        .events-container {
+            display: none;
+        }
+        
+        .events-container.active {
+            display: block;
+        }
+        
+        .events-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .event-card {
+            background-color: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .event-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .event-image {
+            height: 220px;
+            overflow: hidden;
+        }
+        
+        .event-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .event-card:hover .event-image img {
+            transform: scale(1.1);
+        }
+        
+        .event-info {
+            padding: 25px;
+        }
+        
+        .event-date {
+            display: inline-block;
+            background-color: var(--burgundy);
+            color: var(--white);
+            padding: 5px 15px;
+            border-radius: 4px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+        }
+        
+        .event-info h3 {
+            margin-bottom: 10px;
+            color: var(--charcoal);
+            font-size: 1.4rem;
+        }
+        
+        .event-location {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        .event-location i {
+            margin-right: 8px;
+            color: var(--burgundy);
+        }
+        
+        .event-description {
+            margin-bottom: 20px;
+            color: #555;
+        }
+        
+        .event-status {
+            display: inline-block;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        
+        .status-past {
+            background-color: #f0f0f0;
+            color: #666;
+        }
+        
+        .status-upcoming {
+            background-color: var(--gold);
+            color: var(--charcoal);
+        }
+        
         /* Gallery Section */
         .gallery-section {
             padding: 100px 0;
@@ -636,6 +776,11 @@
             .gallery-grid {
                 gap: 20px;
             }
+            
+            .events-grid {
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+                gap: 20px;
+            }
         }
         
         @media (max-width: 868px) {
@@ -705,6 +850,17 @@
             .gallery-grid {
                 grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
             }
+            
+            .events-tabs {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .event-tab {
+                width: 100%;
+                text-align: center;
+                margin-bottom: 5px;
+            }
         }
         
         @media (max-width: 668px) {
@@ -765,6 +921,10 @@
             
             .gallery-item {
                 height: 220px;
+            }
+            
+            .events-grid {
+                grid-template-columns: 1fr;
             }
         }
         
@@ -1023,6 +1183,269 @@
             <div class="hero-buttons">
                 <a href="#gallery" class="btn btn-primary" data-en="View Gallery" data-fr="Voir la Galerie">View Gallery</a>
                 <a href="./services.html#booking" class="btn btn-secondary" data-en="Book Your Event" data-fr="Réserver Votre Événement">Book Your Event</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Events Section -->
+    <section class="events-section">
+        <div class="container">
+            <h2 data-en="Our Events" data-fr="Nos Événements">Our Events</h2>
+            <div class="events-tabs">
+                <button class="event-tab active" data-tab="past-events" data-en="Past Events" data-fr="Événements Passés">Past Events</button>
+                <button class="event-tab" data-tab="upcoming-events" data-en="Upcoming Events" data-fr="Événements à Venir">Upcoming Events</button>
+            </div>
+            
+            <!-- Past Events -->
+            <div id="past-events" class="events-container active">
+                <div class="events-grid">
+                    <!-- Event 1 -->
+                    <div class="event-card">
+                        <div class="event-image">
+                            <img src="./lovenight.jpeg" alt="Love Night Event">
+                        </div>
+                        <div class="event-info">
+                            <span class="event-date">Feb 14, 2024</span>
+                            <h3 data-en="Valentine's Love Night" data-fr="Soirée d'Amour de la Saint-Valentin">Valentine's Love Night</h3>
+                            <div class="event-location">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span data-en=" Montreal" data-fr="Montréal"> Montreal</span>
+                            </div>
+                            <p class="event-description" data-en="A romantic evening featuring our special grilled delicacies, live music, and an unforgettable ambiance for couples." data-fr="Une soirée romantique mettant en vedette nos délices grillés spéciaux, de la musique live et une ambiance inoubliable pour les couples.">A romantic evening featuring our special grilled delicacies, live music, and an unforgettable ambiance for couples.</p>
+                            <span class="event-status status-past" data-en="Past Event" data-fr="Événement Passé">Past Event</span>
+                        </div>
+                    </div>
+                    
+                
+                    
+                    <!-- Event 3 -->
+                    <div class="event-card">
+                        <div class="event-image">
+                            <img src="./summer.jpeg" alt="Summer Grill Party">
+                        </div>
+                        <div class="event-info">
+                            <span class="event-date">Jul 15, 2024</span>
+                            <h3 data-en="Summer Grill Party" data-fr="Fête d'Été Grillée">Summer Grill Party</h3>
+                            <div class="event-location">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span data-en=" Montreal" data-fr=" Montréal"> Montreal</span>
+                            </div>
+                            <p class="event-description" data-en="A vibrant outdoor grilling event with live DJ, dance performances, and unlimited grilled specialties." data-fr="Un événement de grillade en plein air avec DJ live, spectacles de danse et spécialités grillées illimitées.">A vibrant outdoor grilling event with live DJ, dance performances, and unlimited grilled specialties.</p>
+                            <span class="event-status status-past" data-en="Past Event" data-fr="Événement Passé">Past Event</span>
+                        </div>
+                    </div>
+                    
+
+                    
+                    <!-- Event 5 -->
+                    <div class="event-card">
+                        <div class="event-image">
+                            <img src="./building.jpeg" alt="Corporate Team Building">
+                        </div>
+                        <div class="event-info">
+                            <span class="event-date">Sep 10, 2024</span>
+                            <h3 data-en="Corporate Team Building" data-fr="Team Building d'Entreprise">Corporate Team Building</h3>
+                            <div class="event-location">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span data-en="Montreal " data-fr="Montréal">Montreal</span>
+                            </div>
+                            <p class="event-description" data-en="Interactive grilling workshop for corporate teams, fostering collaboration through culinary experiences." data-fr="Atelier de grillade interactif pour les équipes d'entreprise, favorisant la collaboration à travers des expériences culinaires.">Interactive grilling workshop for corporate teams, fostering collaboration through culinary experiences.</p>
+                            <span class="event-status status-past" data-en="Past Event" data-fr="Événement Passé">Past Event</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Event 6 -->
+                    <div class="event-card">
+                        <div class="event-image">
+                            <img src="./hal2.jpeg" alt="Halloween Grill Night">
+                        </div>
+                        <div class="event-info">
+                            <span class="event-date">Oct 31, 2024</span>
+                            <h3 data-en="Halloween Grill Night" data-fr="Soirée Grill d'Halloween">Halloween Grill Night</h3>
+                            <div class="event-location">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span data-en="Grillardes Anna Soya HQ" data-fr="Siège de Grillardes Anna Soya">Grillardes Anna Soya HQ</span>
+                            </div>
+                            <p class="event-description" data-en="Spooky-themed grilling event with costume contest, special Halloween menu, and haunted house ambiance." data-fr="Événement de grillade à thème effrayant avec concours de costumes, menu spécial Halloween et ambiance de maison hantée.">Spooky-themed grilling event with costume contest, special Halloween menu, and haunted house ambiance.</p>
+                            <span class="event-status status-past" data-en="Past Event" data-fr="Événement Passé">Past Event</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Upcoming Events -->
+            <div id="upcoming-events" class="events-container">
+                <div class="events-grid">
+                    <!-- Event 1 -->
+                    <div class="event-card">
+                        <div class="event-image">
+                            <img src="./ny.jpeg" alt="New Year's Eve Celebration">
+                        </div>
+                        <div class="event-info">
+                            <span class="event-date">Dec 31, 2024</span>
+                            <h3 data-en="New Year's Eve Celebration" data-fr="Célébration du Nouvel An">New Year's Eve Celebration</h3>
+                            <div class="event-location">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span data-en=" Montreal" data-fr="Montréal"> Montreal</span>
+                            </div>
+                            <p class="event-description" data-en="Ring in the new year with our premium grilled specialties, live entertainment, and champagne toast at midnight." data-fr="Accueillez la nouvelle année avec nos spécialités grillées premium, des divertissements en direct et un toast au champagne à minuit.">Ring in the new year with our premium grilled specialties, live entertainment, and champagne toast at midnight.</p>
+                            <span class="event-status status-upcoming" data-en="Upcoming" data-fr="À Venir">Upcoming</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Event 2 -->
+                    <div class="event-card">
+                        <div class="event-image">
+                            <img src="./winter.jpeg" alt="Winter Grill Festival">
+                        </div>
+                        <div class="event-info">
+                            <span class="event-date">Jan 15, 2025</span>
+                            <h3 data-en="Winter Grill Festival" data-fr="Festival de Grillade d'Hiver">Winter Grill Festival</h3>
+                            <div class="event-location">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span data-en=" Montreal" data-fr="Montréal"> Montreal</span>
+                            </div>
+                            <p class="event-description" data-en="Embrace the winter with our heated outdoor grilling experience, featuring warm drinks and cozy ambiance." data-fr="Profitez de l'hiver avec notre expérience de grillade en plein air chauffée, proposant des boissons chaudes et une ambiance chaleureuse.">Embrace the winter with our heated outdoor grilling experience, featuring warm drinks and cozy ambiance.</p>
+                            <span class="event-status status-upcoming" data-en="Upcoming" data-fr="À Venir">Upcoming</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Event 3 -->
+                    <div class="event-card">
+                        <div class="event-image">
+                            <img src="./lovenight.jpeg" alt="Valentine's Love Night 2025">
+                        </div>
+                        <div class="event-info">
+                            <span class="event-date">Feb 14, 2025</span>
+                            <h3 data-en="Valentine's Love Night 2025" data-fr="Soirée d'Amour de la Saint-Valentin 2025">Valentine's Love Night 2025</h3>
+                            <div class="event-location">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span data-en="Grillardes Anna Soya HQ" data-fr="Siège de Grillardes Anna Soya">Grillardes Anna Soya HQ</span>
+                            </div>
+                            <p class="event-description" data-en="Returning with more romance, better ambiance, and exclusive couple packages for the perfect date night." data-fr="De retour avec plus de romance, une meilleure ambiance et des forfaits couple exclusifs pour une soirée parfaite.">Returning with more romance, better ambiance, and exclusive couple packages for the perfect date night.</p>
+                            <span class="event-status status-upcoming" data-en="Upcoming" data-fr="À Venir">Upcoming</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Event 4 -->
+                    <div class="event-card">
+                        <div class="event-image">
+                            <img src="https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="African Food Festival 2025">
+                        </div>
+                        <div class="event-info">
+                            <span class="event-date">May 25, 2025</span>
+                            <h3 data-en="African Food Festival 2025" data-fr="Festival de la Cuisine Africaine 2025">African Food Festival 2025</h3>
+                            <div class="event-location">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span data-en="Grillardes Anna Soya HQ" data-fr="Siège de Grillardes Anna Soya">Grillardes Anna Soya HQ</span>
+                            </div>
+                            <p class="event-description" data-en="Bigger and better than ever! Expanded food stalls, more cultural performances, and interactive cooking demos." data-fr="Plus grand et meilleur que jamais! Plus de stands de nourriture, plus de spectacles culturels et des démonstrations de cuisine interactives.">Bigger and better than ever! Expanded food stalls, more cultural performances, and interactive cooking demos.</p>
+                            <span class="event-status status-upcoming" data-en="Upcoming" data-fr="À Venir">Upcoming</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Event 5 -->
+                    <div class="event-card">
+                        <div class="event-image">
+                            <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80" alt="Summer Grill Series">
+                        </div>
+                        <div class="event-info">
+                            <span class="event-date">Jun 15 - Aug 15, 2025</span>
+                            <h3 data-en="Summer Grill Series" data-fr="Série de Grillades d'Été">Summer Grill Series</h3>
+                            <div class="event-location">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span data-en="Grillardes Anna Soya HQ" data-fr="Siège de Grillardes Anna Soya">Grillardes Anna Soya HQ</span>
+                            </div>
+                            <p class="event-description" data-en="Weekly outdoor grilling events across Montreal parks, featuring different themes and special guests each week." data-fr="Événements de grillade en plein air hebdomadaires dans les parcs de Montréal, avec différents thèmes et invités spéciaux chaque semaine.">Weekly outdoor grilling events across Montreal parks, featuring different themes and special guests each week.</p>
+                            <span class="event-status status-upcoming" data-en="Upcoming" data-fr="À Venir">Upcoming</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Event 6 -->
+                    <div class="event-card">
+                        <div class="event-image">
+                            <img src="./summer2.jpeg" alt="Corporate Summer Party">
+                        </div>
+                        <div class="event-info">
+                            <span class="event-date">Jul 20, 2025</span>
+                            <h3 data-en="Corporate Summer Party" data-fr="Fête d'Été d'Entreprise">Corporate Summer Party</h3>
+                            <div class="event-location">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span data-en="Grillardes Anna Soya HQ" data-fr="Siège de Grillardes Anna Soya">Grillardes Anna Soya HQ</span>
+                            </div>
+                            <p class="event-description" data-en="Exclusive corporate event with customized menu options, team-building activities, and premium service." data-fr="Événement d'entreprise exclusif avec options de menu personnalisées, activités de team-building et service premium.">Exclusive corporate event with customized menu options, team-building activities, and premium service.</p>
+                            <span class="event-status status-upcoming" data-en="Upcoming" data-fr="À Venir">Upcoming</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Event 7 -->
+                    <div class="event-card">
+                        <div class="event-image">
+                            <img src="./back.jpeg" alt="Back to School Grill Night">
+                        </div>
+                        <div class="event-info">
+                            <span class="event-date">Sep 5, 2025</span>
+                            <h3 data-en="Back to School Grill Night" data-fr="Soirée Grill de la Rentrée">Back to School Grill Night</h3>
+                            <div class="event-location">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span data-en="Grillardes Anna Soya HQ" data-fr="Siège de Grillardes Anna Soya">Grillardes Anna Soya HQ</span>
+                            </div>
+                            <p class="event-description" data-en="Special event for students with discounted prices, live music, and study break activities." data-fr="Événement spécial pour les étudiants avec des prix réduits, de la musique live et des activités de pause-étude.">Special event for students with discounted prices, live music, and study break activities.</p>
+                            <span class="event-status status-upcoming" data-en="Upcoming" data-fr="À Venir">Upcoming</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Event 8 -->
+                    <div class="event-card">
+                        <div class="event-image">
+                            <img src="./hacktoberfest.jpeg" alt="Oktoberfest Grill Edition">
+                        </div>
+                        <div class="event-info">
+                            <span class="event-date">Oct 10, 2025</span>
+                            <h3 data-en="Oktoberfest Grill Edition" data-fr="Édition Grill d'Oktoberfest">Oktoberfest Grill Edition</h3>
+                            <div class="event-location">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span data-en="Grillardes Anna Soya HQ" data-fr="Siège de Grillardes Anna Soya">Grillardes Anna Soya HQ</span>
+                            </div>
+                            <p class="event-description" data-en="African twist on German Oktoberfest with grilled specialties, beer pairings, and cultural fusion cuisine." data-fr="Version africaine de l'Oktoberfest allemand avec des spécialités grillées, des accords bière et une cuisine de fusion culturelle.">African twist on German Oktoberfest with grilled specialties, beer pairings, and cultural fusion cuisine.</p>
+                            <span class="event-status status-upcoming" data-en="Upcoming" data-fr="À Venir">Upcoming</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Event 9 -->
+                    <div class="event-card">
+                        <div class="event-image">
+                            <img src="./halo.jpeg" alt="Halloween Grill Night 2025">
+                        </div>
+                        <div class="event-info">
+                            <span class="event-date">Oct 31, 2025</span>
+                            <h3 data-en="Halloween Grill Night 2025" data-fr="Soirée Grill d'Halloween 2025">Halloween Grill Night 2025</h3>
+                            <div class="event-location">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span data-en="Grillardes Anna Soya HQ" data-fr="Siège de Grillardes Anna Soya">Grillardes Anna Soya HQ</span>
+                            </div>
+                            <p class="event-description" data-en="Spookier than ever with haunted maze, costume contest with bigger prizes, and special Halloween menu." data-fr="Plus effrayant que jamais avec un labyrinthe hanté, un concours de costumes avec des prix plus importants et un menu spécial Halloween.">Spookier than ever with haunted maze, costume contest with bigger prizes, and special Halloween menu.</p>
+                            <span class="event-status status-upcoming" data-en="Upcoming" data-fr="À Venir">Upcoming</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Event 10 -->
+                    <div class="event-card">
+                        <div class="event-image">
+                            <img src="./g12.jpeg" alt="Holiday Grill Festival">
+                        </div>
+                        <div class="event-info">
+                            <span class="event-date">Dec 15-23, 2025</span>
+                            <h3 data-en="Holiday Grill Festival" data-fr="Festival de Grillade des Fêtes">Holiday Grill Festival</h3>
+                            <div class="event-location">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span data-en="Grillardes Anna Soya HQ" data-fr="Siège de Grillardes Anna Soya">Grillardes Anna Soya HQ</span>
+                            </div>
+                            <p class="event-description" data-en="Festive grilling event with holiday specials, gift packages, and family-friendly activities for the season." data-fr="Événement de grillade festif avec des spéciaux de vacances, des forfaits-cadeaux et des activités familiales pour la saison.">Festive grilling event with holiday specials, gift packages, and family-friendly activities for the season.</p>
+                            <span class="event-status status-upcoming" data-en="Upcoming" data-fr="À Venir">Upcoming</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -1375,6 +1798,24 @@
                 icon.classList.remove('fa-times');
                 icon.classList.add('fa-bars');
             }
+        });
+        
+        // Event tabs functionality
+        const eventTabs = document.querySelectorAll('.event-tab');
+        const eventContainers = document.querySelectorAll('.events-container');
+        
+        eventTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                const targetTab = tab.getAttribute('data-tab');
+                
+                // Remove active class from all tabs and containers
+                eventTabs.forEach(t => t.classList.remove('active'));
+                eventContainers.forEach(c => c.classList.remove('active'));
+                
+                // Add active class to clicked tab and corresponding container
+                tab.classList.add('active');
+                document.getElementById(targetTab).classList.add('active');
+            });
         });
         
         // Language toggle functionality
