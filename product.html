@@ -1,0 +1,1136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - Grillardes Anna Soya | Montreal's Finest Grilling Experience</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Color Variables */
+        :root {
+            --burgundy: #8B0000;
+            --gold: #FFD700;
+            --charcoal: #1C1C1C;
+            --white: #FFFFFF;
+            --light-bg: #f9f9f9;
+            --light-gray: #f0f0f0;
+        }
+        
+        /* Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: var(--charcoal);
+            line-height: 1.6;
+            overflow-x: hidden;
+            background-color: var(--light-bg);
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        
+        h1 {
+            font-size: 2.8rem;
+            text-transform: uppercase;
+        }
+        
+        h2 {
+            font-size: 2.2rem;
+            color: var(--burgundy);
+            text-transform: uppercase;
+        }
+        
+        h3 {
+            font-size: 1.8rem;
+            color: var(--gold);
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 14px 32px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            margin: 10px 10px 10px 0;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem;
+            cursor: pointer;
+            border: none;
+        }
+        
+        .btn-primary {
+            background-color: var(--burgundy);
+            color: var(--white);
+            border: 2px solid var(--burgundy);
+        }
+        
+        .btn-primary:hover {
+            background-color: transparent;
+            color: var(--burgundy);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(139, 0, 0, 0.2);
+        }
+        
+        .btn-secondary {
+            background-color: var(--gold);
+            color: var(--charcoal);
+            border: 2px solid var(--gold);
+        }
+        
+        .btn-secondary:hover {
+            background-color: transparent;
+            color: var(--charcoal);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(255, 215, 0, 0.2);
+        }
+        
+        .btn-small {
+            padding: 10px 20px;
+            font-size: 0.9rem;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: var(--charcoal);
+            padding: 15px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            color: var(--gold);
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 800;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo span {
+            color: var(--burgundy);
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            align-items: center;
+        }
+        
+        .nav-menu li {
+            margin-left: 25px;
+        }
+        
+        .nav-menu a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+            font-size: 1rem;
+            text-transform: uppercase;
+        }
+        
+        .nav-menu a:hover {
+            color: var(--gold);
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            color: var(--white);
+            font-size: 1.5rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+        
+        /* Language Toggle Button */
+        .language-toggle {
+            background: none;
+            border: 2px solid var(--gold);
+            color: var(--white);
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            margin-left: 15px;
+        }
+        
+        .language-toggle:hover {
+            background-color: var(--gold);
+            color: var(--charcoal);
+        }
+        
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1555939594-58d7cb561ad1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+            padding: 150px 0 80px;
+            text-align: center;
+            color: var(--white);
+            margin-top: 70px;
+        }
+        
+        .page-header h1 {
+            color: var(--white);
+            margin-bottom: 20px;
+        }
+        
+        .page-header h1 span {
+            color: var(--gold);
+        }
+        
+        .breadcrumb {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            margin-top: 20px;
+        }
+        
+        .breadcrumb li {
+            margin: 0 10px;
+            color: var(--gold);
+        }
+        
+        .breadcrumb li a {
+            color: var(--white);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .breadcrumb li a:hover {
+            color: var(--gold);
+        }
+        
+        .breadcrumb li:not(:last-child)::after {
+            content: ">";
+            margin-left: 10px;
+            color: var(--white);
+        }
+        
+        /* Product Categories */
+        .product-categories {
+            padding: 80px 0;
+            background-color: var(--white);
+        }
+        
+        .categories-tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+            border-bottom: 2px solid var(--light-gray);
+        }
+        
+        .category-tab {
+            padding: 15px 30px;
+            background: none;
+            border: none;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            color: var(--charcoal);
+            border-bottom: 3px solid transparent;
+        }
+        
+        .category-tab.active {
+            color: var(--burgundy);
+            border-bottom: 3px solid var(--burgundy);
+        }
+        
+        .category-tab:hover {
+            color: var(--burgundy);
+        }
+        
+        .category-content {
+            display: none;
+        }
+        
+        .category-content.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        /* Products Grid */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .product-card {
+            background-color: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            text-align: center;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .product-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background-color: var(--burgundy);
+            color: var(--white);
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            z-index: 2;
+        }
+        
+        .product-img {
+            height: 220px;
+            width: 100%;
+            object-fit: cover;
+        }
+        
+        .product-content {
+            padding: 25px;
+        }
+        
+        .product-title {
+            font-size: 1.4rem;
+            color: var(--burgundy);
+            margin-bottom: 10px;
+        }
+        
+        .product-desc {
+            color: #666;
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+        }
+        
+        .product-options {
+            margin: 15px 0;
+            text-align: left;
+        }
+        
+        .option-label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--charcoal);
+        }
+        
+        .option-list {
+            list-style: none;
+            margin-left: 15px;
+        }
+        
+        .option-list li {
+            margin-bottom: 5px;
+            position: relative;
+            padding-left: 15px;
+        }
+        
+        .option-list li:before {
+            content: "•";
+            color: var(--burgundy);
+            position: absolute;
+            left: 0;
+        }
+        
+        .order-info {
+            background-color: var(--light-bg);
+            padding: 15px;
+            border-radius: 4px;
+            margin-top: 20px;
+            text-align: center;
+        }
+        
+        .order-info p {
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+        }
+        
+        /* Spice Collection */
+        .spice-collection {
+            padding: 80px 0;
+            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('https://images.unsplash.com/photo-1533089860892-a7c6f0a88666?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80');
+            background-size: cover;
+            background-position: center;
+            color: var(--white);
+        }
+        
+        .spice-collection h2 {
+            color: var(--gold);
+        }
+        
+        .spices-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+        
+        .spice-item {
+            text-align: center;
+            padding: 25px 20px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 215, 0, 0.2);
+        }
+        
+        .spice-icon {
+            font-size: 2.5rem;
+            color: var(--gold);
+            margin-bottom: 15px;
+        }
+        
+        .spice-item h3 {
+            margin-bottom: 10px;
+            font-size: 1.4rem;
+        }
+        
+        /* Custom Spices Section */
+        .custom-spices {
+            padding: 80px 0;
+            background-color: var(--white);
+        }
+        
+        .custom-spices-content {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+        
+        .custom-spices-text {
+            flex: 1;
+        }
+        
+        .custom-spices-image {
+            flex: 1;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .custom-spices-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        /* FAQ Section */
+        .faq-section {
+            padding: 80px 0;
+            background-color: var(--light-bg);
+        }
+        
+        .faq-item {
+            margin-bottom: 20px;
+            border: 1px solid #eee;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .faq-question {
+            padding: 20px;
+            background-color: var(--white);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+        }
+        
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+        
+        .faq-item.active .faq-answer {
+            padding: 20px;
+            max-height: 500px;
+        }
+        
+        .faq-question i {
+            transition: transform 0.3s ease;
+        }
+        
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--charcoal);
+            color: var(--white);
+            padding: 80px 0 30px;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column h3 {
+            color: var(--gold);
+            margin-bottom: 25px;
+            font-size: 1.4rem;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background-color: var(--burgundy);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .footer-links li i {
+            margin-right: 10px;
+            color: var(--gold);
+            width: 20px;
+        }
+        
+        .footer-links a {
+            color: var(--white);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--gold);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 25px;
+        }
+        
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 42px;
+            height: 42px;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: var(--white);
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            font-size: 1.1rem;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--gold);
+            color: var(--charcoal);
+            transform: translateY(-3px);
+        }
+        
+        .newsletter-form {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .newsletter-form input {
+            padding: 12px 15px;
+            margin-bottom: 15px;
+            border: none;
+            border-radius: 4px;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: var(--white);
+        }
+        
+        .newsletter-form input::placeholder {
+            color: #ccc;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+        
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            h2 {
+                font-size: 2rem;
+            }
+            
+            .products-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+                gap: 20px;
+            }
+            
+            .categories-tabs {
+                flex-wrap: wrap;
+            }
+            
+            .category-tab {
+                padding: 10px 15px;
+                font-size: 1rem;
+            }
+            
+            .custom-spices-content {
+                flex-direction: column;
+            }
+            
+            .custom-spices-text, .custom-spices-image {
+                flex: none;
+                width: 100%;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-menu {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                flex-direction: column;
+                background-color: var(--charcoal);
+                width: 100%;
+                height: calc(100vh - 70px);
+                transition: left 0.3s ease;
+                padding: 40px 20px;
+                z-index: 999;
+                overflow-y: auto;
+            }
+            
+            .nav-menu.active {
+                left: 0;
+            }
+            
+            .nav-menu li {
+                margin: 15px 0;
+                margin-left: 0;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .page-header {
+                padding: 130px 0 60px;
+                margin-top: 70px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .product-content {
+                padding: 20px;
+            }
+            
+            .btn {
+                padding: 12px 25px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="index.html" class="logo">Grillardes <span>Anna Soya</span></a>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="index.html" data-en="Home" data-fr="Accueil">Home</a></li>
+                <li><a href="about.html" data-en="About Us" data-fr="À Propos">About Us</a></li>
+                <li><a href="product.html" data-en="Products" data-fr="Produits" class="active">Products</a></li>
+                <li><a href="services.html" data-en="Services" data-fr="Services">Services</a></li>
+                <li><a href="gallery.html" data-en="Gallery" data-fr="Galerie">Gallery</a></li>
+                <li><a href="contact.html" data-en="Contact" data-fr="Contact">Contact</a></li>
+                <li>
+                    <button class="language-toggle" id="languageToggle">FR</button>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1 data-en="Our Premium Products" data-fr="Nos Produits Premium">Our <span>Premium</span> Products</h1>
+            <p data-en="Discover our delicious selection of soya dishes and authentic spices" data-fr="Découvrez notre délicieuse sélection de plats de soya et d'épices authentiques">Discover our delicious selection of soya dishes and authentic spices</p>
+           
+        </div>
+    </section>
+
+    <!-- Product Categories -->
+    <section class="product-categories">
+        <div class="container">
+            <div class="categories-tabs">
+                <button class="category-tab active" data-category="soya" data-en="Soya Products" data-fr="Produits Soya">Soya Products</button>
+                <button class="category-tab" data-category="spices" data-en="Spices" data-fr="Épices">Spices</button>
+            </div>
+
+            <!-- Soya Products -->
+            <div class="category-content active" id="soya-content">
+                <div class="products-grid">
+                    <!-- Soya Tray -->
+                    <div class="product-card">
+                        <div class="product-badge" data-en="Popular" data-fr="Populaire">Popular</div>
+                        <img src="./tray2.jpeg" alt="Soya Tray" class="product-img">
+                        <div class="product-content">
+                            <h3 class="product-title" data-en="Soya Tray" data-fr="Plateau Soya">Soya Tray</h3>
+                            <p class="product-desc" data-en="Our premium roasted beef soya, slow-cooked to perfection with our signature blend of spices. Perfect for family gatherings and special occasions." data-fr="Notre soya de bœuf rôti premium, mijoté à la perfection avec notre mélange signature d'épices. Parfait pour les réunions de famille et les occasions spéciales.">Our premium roasted beef soya, slow-cooked to perfection with our signature blend of spices. Perfect for family gatherings and special occasions.</p>
+                            <div class="product-options">
+                                <label class="option-label" data-en="Available Sizes" data-fr="Tailles Disponibles">Available Sizes</label>
+                                <ul class="option-list">
+                                    <li data-en="Small (serves 2-3)" data-fr="Petit (pour 2-3 personnes)">Small (serves 2-3)</li>
+                                    <li data-en="Medium (serves 4-6)" data-fr="Moyen (pour 4-6 personnes)">Medium (serves 4-6)</li>
+                                    <li data-en="Large (serves 8-10)" data-fr="Grand (pour 8-10 personnes)">Large (serves 8-10)</li>
+                                </ul>
+                            </div>
+                            <div class="order-info">
+                                <p data-en="To place an order, please contact us directly" data-fr="Pour passer commande, veuillez nous contacter directement">To place an order, please contact us directly</p>
+                                <a href="contact.html" class="btn btn-primary btn-small" data-en="Contact Us" data-fr="Nous Contacter">Contact Us</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Soya Cup -->
+                    <div class="product-card">
+                        <img src="./cup.jpeg" alt="Soya Cup" class="product-img">
+                        <div class="product-content">
+                            <h3 class="product-title" data-en="Soya Cup" data-fr="Coupe Soya">Soya Cup</h3>
+                            <p class="product-desc" data-en="Perfect for individual servings or quick snacks. Our flavorful soya bites in a convenient cup format." data-fr="Parfait pour les portions individuelles ou les collations rapides. Nos bouchées de soya savoureuses dans un format de coupe pratique.">Perfect for individual servings or quick snacks. Our flavorful soya bites in a convenient cup format.</p>
+                            <div class="order-info">
+                                <p data-en="To place an order, please contact us directly" data-fr="Pour passer commande, veuillez nous contacter directement">To place an order, please contact us directly</p>
+                                <a href="contact.html" class="btn btn-primary btn-small" data-en="Contact Us" data-fr="Nous Contacter">Contact Us</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Soya Plate -->
+                    <div class="product-card">
+                        <img src="./plate.jpeg" alt="Soya Plate" class="product-img">
+                        <div class="product-content">
+                            <h3 class="product-title" data-en="Soya Plate" data-fr="Assiette Soya">Soya Plate</h3>
+                            <p class="product-desc" data-en="A complete meal featuring our tender soya slices served with your choice of sides. A satisfying option for lunch or dinner." data-fr="Un repas complet avec nos tranches de soya tendres servies avec vos accompagnements choisis. Une option satisfaisante pour le déjeuner ou le dîner.">A complete meal featuring our tender soya slices served with your choice of sides. A satisfying option for lunch or dinner.</p>
+                            <div class="order-info">
+                                <p data-en="To place an order, please contact us directly" data-fr="Pour passer commande, veuillez nous contacter directement">To place an order, please contact us directly</p>
+                                <a href="contact.html" class="btn btn-primary btn-small" data-en="Contact Us" data-fr="Nous Contacter">Contact Us</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Spices -->
+            <div class="category-content" id="spices-content">
+                <div class="products-grid">
+                    <!-- Fish Marinade -->
+                    <div class="product-card">
+                        <div class="product-badge" data-en="Bestseller" data-fr="Meilleure Vente">Bestseller</div>
+                        <img src="./fish.jpeg" alt="Fish Marinade" class="product-img">
+                        <div class="product-content">
+                            <h3 class="product-title" data-en="Fish Marinade" data-fr="Marinade Poisson">Fish Marinade</h3>
+                            <p class="product-desc" data-en="Our special blend of herbs and spices designed specifically for fish. Perfect for grilling, baking, or pan-searing." data-fr="Notre mélange spécial d'herbes et d'épices conçu spécifiquement pour le poisson. Parfait pour griller, cuire au four ou saisir à la poêle.">Our special blend of herbs and spices designed specifically for fish. Perfect for grilling, baking, or pan-searing.</p>
+                            <div class="product-options">
+                                <label class="option-label" data-en="Available Quantities" data-fr="Quantités Disponibles">Available Quantities</label>
+                                <ul class="option-list">
+                                    <li data-en="Small (100g)" data-fr="Petit (100g)">Small (100g)</li>
+                                    <li data-en="Medium (250g)" data-fr="Moyen (250g)">Medium (250g)</li>
+                                    <li data-en="Large (500g)" data-fr="Grand (500g)">Large (500g)</li>
+                                </ul>
+                            </div>
+                            <div class="order-info">
+                                <p data-en="To place an order, please contact us directly" data-fr="Pour passer commande, veuillez nous contacter directement">To place an order, please contact us directly</p>
+                                <a href="contact.html" class="btn btn-primary btn-small" data-en="Contact Us" data-fr="Nous Contacter">Contact Us</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Soya Spice and Seasoning -->
+                    <div class="product-card">
+                        <img src="./soya_sauce.jpeg" alt="Soya Spice and Seasoning" class="product-img">
+                        <div class="product-content">
+                            <h3 class="product-title" data-en="Soya Spice and Seasoning" data-fr="Épice et Assaisonnement Soya">Soya Spice and Seasoning</h3>
+                            <p class="product-desc" data-en="Our signature blend that gives our soya its distinctive flavor. Also perfect for seasoning other meats and vegetables." data-fr="Notre mélange signature qui donne à notre soya sa saveur distinctive. Également parfait pour assaisonner d'autres viandes et légumes.">Our signature blend that gives our soya its distinctive flavor. Also perfect for seasoning other meats and vegetables.</p>
+                            <div class="order-info">
+                                <p data-en="To place an order, please contact us directly" data-fr="Pour passer commande, veuillez nous contacter directement">To place an order, please contact us directly</p>
+                                <a href="contact.html" class="btn btn-primary btn-small" data-en="Contact Us" data-fr="Nous Contacter">Contact Us</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Pork Seasoning -->
+                    <div class="product-card">
+                        <img src="./pork.jpeg" alt="Pork Seasoning" class="product-img">
+                        <div class="product-content">
+                            <h3 class="product-title" data-en="Pork Seasoning" data-fr="Assaisonnement Porc">Pork Seasoning</h3>
+                            <p class="product-desc" data-en="Specially formulated for pork dishes. Enhances the natural flavors of ribs, chops, and pulled pork." data-fr="Spécialement formulé pour les plats de porc. Améliore les saveurs naturelles des côtes, des côtelettes et du porc effiloché.">Specially formulated for pork dishes. Enhances the natural flavors of ribs, chops, and pulled pork.</p>
+                            <div class="order-info">
+                                <p data-en="To place an order, please contact us directly" data-fr="Pour passer commande, veuillez nous contacter directement">To place an order, please contact us directly</p>
+                                <a href="contact.html" class="btn btn-primary btn-small" data-en="Contact Us" data-fr="Nous Contacter">Contact Us</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Custom Spices Section -->
+    <section class="custom-spices">
+        <div class="container">
+            <div class="custom-spices-content">
+                <div class="custom-spices-text">
+                    <h2 data-en="Custom Spice Blends" data-fr="Mélanges d'Épices Sur Mesure">Custom Spice Blends</h2>
+                    <p data-en="We create custom spice blends tailored to your specific tastes and preferences. Whether you're a home grilling enthusiast or a professional chef, we can develop the perfect spice mix for your needs." data-fr="Nous créons des mélanges d'épices sur mesure adaptés à vos goûts et préférences spécifiques. Que vous soyez un passionné de grillade à domicile ou un chef professionnel, nous pouvons développer le mélange d'épices parfait pour vos besoins.">We create custom spice blends tailored to your specific tastes and preferences. Whether you're a home grilling enthusiast or a professional chef, we can develop the perfect spice mix for your needs.</p>
+                    <p data-en="Contact us to discuss your requirements and we'll create a unique blend just for you." data-fr="Contactez-nous pour discuter de vos besoins et nous créerons un mélange unique juste pour vous.">Contact us to discuss your requirements and we'll create a unique blend just for you.</p>
+                    <a href="contact.html" class="btn btn-primary" data-en="Request Custom Blend" data-fr="Demander un Mélange Personnalisé">Request Custom Blend</a>
+                </div>
+                <div class="custom-spices-image">
+                    <img src="./tray.jpeg" alt="Custom Spices">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Spice Collection -->
+    <section class="spice-collection">
+        <div class="container">
+            <div class="section-title">
+                <h2 data-en="Our Signature Spices" data-fr="Nos Épices Signature">Our Signature Spices</h2>
+                <p data-en="Elevate your grilling with our authentic spice blends" data-fr="Élevez votre grillade avec nos mélanges d'épices authentiques">Elevate your grilling with our authentic spice blends</p>
+            </div>
+            <div class="spices-grid">
+                <div class="spice-item">
+                    <div class="spice-icon">
+                        <i class="fas fa-fish"></i>
+                    </div>
+                    <h3 data-en="Fish Marinade" data-fr="Marinade Poisson">Fish Marinade</h3>
+                    <p data-en="Perfect for grilling salmon, trout, and other fish" data-fr="Parfait pour griller le saumon, la truite et autres poissons">Perfect for grilling salmon, trout, and other fish</p>
+                </div>
+                <div class="spice-item">
+                    <div class="spice-icon">
+                        <i class="fas fa-drumstick-bite"></i>
+                    </div>
+                    <h3 data-en="Chicken Spice" data-fr="Épice Poulet">Chicken Spice</h3>
+                    <p data-en="Our special blend for juicy, flavorful chicken" data-fr="Notre mélange spécial pour un poulet juteux et savoureux">Our special blend for juicy, flavorful chicken</p>
+                </div>
+                <div class="spice-item">
+                    <div class="spice-icon">
+                        <i class="fas fa-hamburger"></i>
+                    </div>
+                    <h3 data-en="Beef Spice" data-fr="Épice Bœuf">Beef Spice</h3>
+                    <p data-en="Enhance the natural flavors of beef" data-fr="Améliore les saveurs naturelles du bœuf">Enhance the natural flavors of beef</p>
+                </div>
+                <div class="spice-item">
+                    <div class="spice-icon">
+                        <i class="fas fa-bacon"></i>
+                    </div>
+                    <h3 data-en="Pork Seasoning" data-fr="Assaisonnement Porc">Pork Seasoning</h3>
+                    <p data-en="Perfect for ribs, chops, and pulled pork" data-fr="Parfait pour les côtes, les côtelettes et le porc effiloché">Perfect for ribs, chops, and pulled pork</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="section-title">
+                <h2 data-en="Frequently Asked Questions" data-fr="Foire Aux Questions">Frequently Asked Questions</h2>
+                <p data-en="Find answers to common questions about our products" data-fr="Trouvez des réponses aux questions courantes sur nos produits">Find answers to common questions about our products</p>
+            </div>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span data-en="What is the shelf life of your spices?" data-fr="Quelle est la durée de conservation de vos épices ?">What is the shelf life of your spices?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p data-en="Our spices have a shelf life of 12 months when stored in a cool, dry place away from direct sunlight." data-fr="Nos épices ont une durée de conservation de 12 mois lorsqu'elles sont stockées dans un endroit frais et sec à l'abri de la lumière directe du soleil.">Our spices have a shelf life of 12 months when stored in a cool, dry place away from direct sunlight.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span data-en="Do you offer delivery?" data-fr="Offrez-vous la livraison ?">Do you offer delivery?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p data-en="Yes, we offer delivery throughout Montreal and surrounding areas. Delivery fees vary based on distance." data-fr="Oui, nous offrons la livraison dans tout Montréal et les environs. Les frais de livraison varient en fonction de la distance.">Yes, we offer delivery throughout Montreal and surrounding areas. Delivery fees vary based on distance.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span data-en="Can I customize my spice blend?" data-fr="Puis-je personnaliser mon mélange d'épices ?">Can I customize my spice blend?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p data-en="Absolutely! We offer custom spice blends tailored to your specific tastes. Contact us to discuss your preferences." data-fr="Absolument ! Nous proposons des mélanges d'épices sur mesure adaptés à vos goûts spécifiques. Contactez-nous pour discuter de vos préférences.">Absolutely! We offer custom spice blends tailored to your specific tastes. Contact us to discuss your preferences.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span data-en="How do I place an order?" data-fr="Comment passer commande ?">How do I place an order?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p data-en="You can place an order by contacting us directly via phone, email, or through our contact form. We'll guide you through the ordering process." data-fr="Vous pouvez passer commande en nous contactant directement par téléphone, par email ou via notre formulaire de contact. Nous vous guiderons tout au long du processus de commande.">You can place an order by contacting us directly via phone, email, or through our contact form. We'll guide you through the ordering process.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3>Grillardes Anna Soya</h3>
+                    <p data-en="Montreal's premier grilling service and provider of premium roasted beef (soya) and authentic spices." data-fr="Le service de grillade premier de Montréal et fournisseur de bœuf rôti premium (soya) et d'épices authentiques.">Montreal's premier grilling service and provider of premium roasted beef (soya) and authentic spices.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3 data-en="Quick Links" data-fr="Liens Rapides">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html" data-en="Home" data-fr="Accueil">Home</a></li>
+                        <li><a href="about.html" data-en="About Us" data-fr="À Propos">About Us</a></li>
+                        <li><a href="product.html" data-en="Products" data-fr="Produits">Products</a></li>
+                        <li><a href="services.html" data-en="Services" data-fr="Services">Services</a></li>
+                        <li><a href="gallery.html" data-en="Gallery" data-fr="Galerie">Gallery</a></li>
+                        <li><a href="contact.html" data-en="Contact" data-fr="Contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3 data-en="Contact Us" data-fr="Contactez-Nous">Contact Us</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-phone"></i> (514) 812-9142</li>
+                        <li><i class="fas fa-envelope"></i> info@grillardesannasoya.com</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Montreal, Canada</li>
+                        <li><i class="fas fa-clock"></i> <span data-en="Mon-Sat: 10AM - 8PM" data-fr="Lun-Sam: 10H - 20H">Mon-Sat: 10AM - 8PM</span></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3 data-en="Newsletter" data-fr="Infolettre">Newsletter</h3>
+                    <p data-en="Subscribe to get updates on our latest offers and events" data-fr="Abonnez-vous pour recevoir des mises à jour sur nos dernières offres et événements">Subscribe to get updates on our latest offers and events</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your Email Address" data-en-placeholder="Your Email Address" data-fr-placeholder="Votre Adresse Email">
+                        <button type="submit" class="btn btn-secondary" data-en="Subscribe" data-fr="S'abonner">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Grillardes Anna Soya. <span data-en="All rights reserved." data-fr="Tous droits réservés.">All rights reserved.</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle functionality
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navMenu = document.querySelector('.nav-menu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            
+            // Change icon based on menu state
+            const icon = mobileMenuBtn.querySelector('i');
+            if (navMenu.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+        
+        // Close menu when clicking on a link
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                const icon = mobileMenuBtn.querySelector('i');
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            });
+        });
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!navMenu.contains(e.target) && 
+                !mobileMenuBtn.contains(e.target) && 
+                navMenu.classList.contains('active')) {
+                navMenu.classList.remove('active');
+                const icon = mobileMenuBtn.querySelector('i');
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+        
+        // Language toggle functionality
+        const languageToggle = document.getElementById('languageToggle');
+        let currentLanguage = 'en'; // Default language
+        
+        // Function to toggle language
+        function toggleLanguage() {
+            currentLanguage = currentLanguage === 'en' ? 'fr' : 'en';
+            updateLanguage(currentLanguage);
+            languageToggle.textContent = currentLanguage === 'en' ? 'FR' : 'EN';
+            
+            // Save language preference to localStorage
+            localStorage.setItem('preferredLanguage', currentLanguage);
+        }
+        
+        // Function to update all text content based on selected language
+        function updateLanguage(lang) {
+            // Update all elements with data attributes for translation
+            document.querySelectorAll('[data-en], [data-fr]').forEach(element => {
+                if (element.hasAttribute(`data-${lang}`)) {
+                    if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+                        element.placeholder = element.getAttribute(`data-${lang}-placeholder`);
+                    } else {
+                        if (element.hasAttribute('data-en-inner')) {
+                            element.innerHTML = element.getAttribute(`data-${lang}`);
+                        } else {
+                            element.textContent = element.getAttribute(`data-${lang}`);
+                        }
+                    }
+                }
+            });
+            
+            // Update HTML lang attribute
+            document.documentElement.lang = lang;
+        }
+        
+        // Initialize language from localStorage or default to 'en'
+        const savedLanguage = localStorage.getItem('preferredLanguage');
+        if (savedLanguage) {
+            currentLanguage = savedLanguage;
+            languageToggle.textContent = currentLanguage === 'en' ? 'FR' : 'EN';
+        }
+        
+        // Update page with the current language
+        updateLanguage(currentLanguage);
+        
+        // Add event listener to the language toggle button
+        languageToggle.addEventListener('click', toggleLanguage);
+        
+        // Product category tabs functionality
+        const categoryTabs = document.querySelectorAll('.category-tab');
+        const categoryContents = document.querySelectorAll('.category-content');
+        
+        categoryTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                const category = tab.getAttribute('data-category');
+                
+                // Remove active class from all tabs and contents
+                categoryTabs.forEach(t => t.classList.remove('active'));
+                categoryContents.forEach(c => c.classList.remove('active'));
+                
+                // Add active class to clicked tab and corresponding content
+                tab.classList.add('active');
+                document.getElementById(`${category}-content`).classList.add('active');
+            });
+        });
+        
+        // FAQ functionality
+        const faqItems = document.querySelectorAll('.faq-item');
+        
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            
+            question.addEventListener('click', () => {
+                // Close all other FAQ items
+                faqItems.forEach(otherItem => {
+                    if (otherItem !== item) {
+                        otherItem.classList.remove('active');
+                    }
+                });
+                
+                // Toggle current FAQ item
+                item.classList.toggle('active');
+            });
+        });
+    </script>
+    
+</body>
+</html>
